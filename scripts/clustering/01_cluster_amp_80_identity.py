@@ -3,7 +3,7 @@ import pandas as pd
 import subprocess
 
 # =====================================================
-# PATH CONFIG (RELATIVE TO REPO)
+# PATH CONFIG
 # =====================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -17,9 +17,10 @@ MASTER_FILE = DATA_FINAL_DIR / "DB_MASTER_CLEAN.xlsx"
 
 FASTA_FILE = RESULTS_CLUSTER_DIR / "AMP_MASTER.fasta"
 
-CDHIT_OUTPUT = RESULTS_CLUSTER_DIR / "AMP_MASTER_cdhit80.fasta"
-MMSEQ_TMP = RESULTS_CLUSTER_DIR / "mmseq_tmp"
-MMSEQ_OUTPUT = RESULTS_CLUSTER_DIR / "AMP_MASTER_mmseq80"
+CDHIT_OUTPUT = RESULTS_CLUSTER_DIR / "AMP_MASTER_cdhit.fasta"
+MMSEQ_TMP = RESULTS_CLUSTER_DIR / "mmseq_tmp_amp"
+MMSEQ_OUTPUT = RESULTS_CLUSTER_DIR / "AMP_MASTER_mmseq"
+MMSEQ_REP_FASTA = RESULTS_CLUSTER_DIR / "AMP_MASTER_mmseq_rep_seq.fasta"
 
 IDENTITY_THRESHOLD = 0.8
 
@@ -63,7 +64,7 @@ def run_cdhit():
         "-M", "16000"
     ]
 
-    subprocess.run(cmd)
+    subprocess.run(cmd, check=True)
 
     print("CD-HIT clustering finished.")
 
@@ -84,7 +85,7 @@ def run_mmseq():
         "--cov-mode", "1"
     ]
 
-    subprocess.run(cmd)
+    subprocess.run(cmd, check=True)
 
     print("MMseqs clustering finished.")
 

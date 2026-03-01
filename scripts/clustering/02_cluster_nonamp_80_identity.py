@@ -8,16 +8,17 @@ import subprocess
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 DATA_INTERMEDIATE_DIR = PROJECT_ROOT / "data" / "intermediate"
-RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering" / "non_amp"
+RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
 
 RESULTS_CLUSTER_DIR.mkdir(parents=True, exist_ok=True)
 
 INPUT_FASTA = DATA_INTERMEDIATE_DIR / "nonamp_clean_min5.fasta"
 
-CDHIT_OUTPUT = RESULTS_CLUSTER_DIR / "NONAMP_cdhit80.fasta"
+CDHIT_OUTPUT = RESULTS_CLUSTER_DIR / "NONAMP_cdhit.fasta"
 
-MMSEQ_TMP = RESULTS_CLUSTER_DIR / "mmseq_tmp"
-MMSEQ_OUTPUT = RESULTS_CLUSTER_DIR / "NONAMP_mmseq80"
+MMSEQ_TMP = RESULTS_CLUSTER_DIR / "mmseq_tmp_nonamp"
+MMSEQ_OUTPUT = RESULTS_CLUSTER_DIR / "NONAMP_mmseq"
+MMSEQ_REP_FASTA = RESULTS_CLUSTER_DIR / "NONAMP_mmseq_rep_seq.fasta"
 
 IDENTITY_THRESHOLD = 0.8
 
