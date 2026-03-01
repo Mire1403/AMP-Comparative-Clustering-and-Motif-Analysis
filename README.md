@@ -1,57 +1,95 @@
-# AMP Comparative Clustering and Motif Analysis
+# AMP Comparative Clustering & Motif Analysis
 
-Comparative computational analysis of antimicrobial peptide (AMP) clustering strategies and motif enrichment patterns.
+Reproducible pipeline to compare two redundancy-reduction strategies (CD-HIT vs MMseqs2) on antimicrobial peptide (AMP) motif discovery and enrichment using MEME Suite (MEME/STREME → FIMO → enrichment + FDR) and motif similarity analysis (Tomtom + graph components).
 
----
+## What this project does
 
-## Overview
+Given a curated AMP dataset and a matched non-AMP background:
+1. Builds standardized AMP datasets from multiple databases
+2. Creates a non-AMP control set and generates length/KR-matched background fragments
+3. Clusters AMPs and non-AMPs using **CD-HIT** and **MMseqs2**
+4. Performs motif discovery with **MEME** and **STREME**
+5. Scans sequences with **FIMO** and computes **enrichment (Fisher) + FDR**
+6. Compares motifs across pipelines using **Tomtom all-vs-all** and a **graph-based motif family analysis**
 
-This project investigates the impact of sequence clustering methodologies on downstream motif discovery and enrichment analysis in antimicrobial peptides (AMPs).
-
-Two clustering approaches (CD-HIT and MMseqs2) are systematically compared to evaluate differences in redundancy reduction and motif detection sensitivity. Motif enrichment across functional AMP categories is assessed using statistical testing (Chi-square and Fisher’s exact test).
-
----
-
-## Objectives
-
-- Compare sequence clustering approaches (CD-HIT vs MMseqs2)
-- Identify enriched sequence motifs using MEME Suite
-- Perform statistical enrichment analysis (Chi-square and Fisher tests)
-- Evaluate motif distribution across functional AMP categories
+The goal is to quantify how clustering affects downstream motif discovery and enrichment patterns.
 
 ---
 
-## Tools and Technologies
-
-- Python (NumPy, Pandas, SciPy, Biopython)
-- CD-HIT
-- MMseqs2
-- MEME Suite
-- Conda (Bioconda environment)
-
----
-
-## Project Structure
+## Repository structure
 ```
-scripts/ # Python analysis scripts
-data/ # Example input data
-results/ # Selected output figures and summaries
-docs/ # Workflow diagrams and supporting materials
+data/
+raw/ # Source datasets (not tracked if licensed/large)
+CAMP/
+DBAASP/
+dbAMP3/
+DRAMP/
+non_AMP/
+intermediate/ # Standardized + filtered tables (optional to track)
+final/ # Final AMP master table used downstream
+
+results/
+clustering/ # CD-HIT/MMseqs2 outputs (usually not tracked)
+background_generation/
+motif_discovery/ # MEME/STREME outputs
+motif_scanning/ # FIMO outputs
+motif_similarity/ # Tomtom outputs + global motif file
+statistics/ # Enrichment tables, summaries, plots, graph outputs
+
+scripts/
+data_processing/ # AMP dataset building and cleaning
+clustering/ # CD-HIT/MMseqs2 pipelines + comparison plots
+background_generation/
+motif_analysis/ # 10x generation + MEME/STREME + FIMO + Tomtom
+statistics/ # Enrichment/FDR + reporting + Tomtom graph components
 ```
+
+---
+
+## Pipeline order (high level)
+
+### A) Build AMP dataset
+1. Standardize databases (CAMP/DBAASP/dbAMP3/DRAMP) → `data/intermediate/*_standardized.xlsx`
+2. Structural filtering + dedup → `data/intermediate/*_structural_filtered.xlsx`
+3. Activity filtering (MIC parsing & unit conversion) → `data/intermediate/*_activity_filtered.xlsx`
+4. Merge into master → `data/intermediate/DB_MASTER.xlsx`
+5. Clean/normalize + inter-db dedup → `data/final/DB_MASTER_CLEAN.xlsx`
+
+### B) Build non-AMP dataset
+- Clean UniProt non-AMP FASTA → `data/intermediate/nonamp_clean_min5.fasta`
+
+### C) Clustering
+- AMPs: CD-HIT + MMseqs2 → `results/clustering/`
+- non-AMPs: CD-HIT + MMseqs2 → `results/clustering/`
+
+### D) Background generation
+- Generate length/KR-matched non-AMP fragments (e.g., 50x) → `results/background_generation/`
+
+### E) Motif discovery & scanning
+- Build 10x background subset → `results/motif_discovery/nonamp_*_10x.fasta`
+- Run STREME + MEME → `results/motif_discovery/`
+- Run FIMO (amps vs nonamps) → `results/motif_scanning/`
+
+### F) Statistics & similarity
+- Enrichment + FDR tables and plots → `results/statistics/fimo_enrichment/`
+- Reporting + robustness → `results/statistics/fimo_reporting/`
+- Tomtom all-vs-all + motif families graph → `results/motif_similarity/` and `results/statistics/tomtom_graph/`
 
 ---
 
 ## Reproducibility
 
-To recreate the computational environment:
-```
+Create environment:
+```bash
 conda env create -f environment.yml
 conda activate amp-analysis
 ```
+This repository prioritizes reproducibility.
+Large raw datasets and heavy tool outputs (MMseq tmp DBs, large FASTAs, full MEME suite html reports, etc.) are typically not tracked.
+Instead, scripts regenerate results under results/.
 
----
 
-## Author
+Author
 
-Mireia Rivas Bermúdez  
-BSc Biotechnology
+Mireia Rivas Bermúdez
+BSc Biotechnology (in progress) — interests: bioinformatics, computational biology, and data-driven motif analysis

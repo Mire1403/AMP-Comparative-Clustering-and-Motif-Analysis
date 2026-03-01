@@ -1,4 +1,5 @@
-#!/usr/bin/env python3
+
+from __future__ import annotations
 
 from pathlib import Path
 import sys
@@ -9,13 +10,26 @@ import matplotlib.pyplot as plt
 from scipy.stats import fisher_exact
 from statsmodels.stats.multitest import multipletests
 
-print("\nFIMO ENRICHMENT + FDR PIPELINE (repo-friendly)\n")
+print("\nFIMO ENRICHMENT + FDR PIPELINE \n")
 
 # =====================================================
-# PATH CONFIG (RELATIVE TO REPO)
+# REPO ROOT (robust)
 # =====================================================
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+def find_repo_root(start: Path) -> Path:
+    markers = [".git", "README.md", "requirements.txt", "pyproject.toml", "environment.yml"]
+    start = start.resolve()
+    for parent in [start] + list(start.parents):
+        if any((parent / m).exists() for m in markers):
+            return parent
+    # fallback: assume scripts/<category>/<file>.py
+    return start.parents[2]
+
+PROJECT_ROOT = find_repo_root(Path(__file__).parent)
+
+# =====================================================
+# PATH CONFIG
+# =====================================================
 
 FIMO_BASE = PROJECT_ROOT / "results" / "motif_scanning"
 OUT_DIR = PROJECT_ROOT / "results" / "statistics" / "fimo_enrichment"
@@ -27,26 +41,26 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 ALPHA_FISHER = 0.05
 ALPHA_FDR = 0.05
-PSEUDOCOUNT = 1  # for enrichment ratio smoothing
+PSEUDOCOUNT = 1  # enrichment smoothing
 
-# Expected locations produced by your repo-friendly FIMO script:
-# results/motif_scanning/{cdhit80|mmseq80}/{meme|streme}/{fimo_amps|fimo_nonamps}/fimo.tsv
+# Expected locations produced by your FIMO script:
+# results/motif_scanning/{cdhit|mmseq}/{meme|streme}/{fimo_amps|fimo_nonamps}/fimo.tsv
 STRUCTURE = {
-    ("cdhit80", "meme"): {
-        "amps": FIMO_BASE / "cdhit80" / "meme" / "fimo_amps" / "fimo.tsv",
-        "nonamps": FIMO_BASE / "cdhit80" / "meme" / "fimo_nonamps" / "fimo.tsv",
+    ("cdhit", "meme"): {
+        "amps": FIMO_BASE / "cdhit" / "meme" / "fimo_amps" / "fimo.tsv",
+        "nonamps": FIMO_BASE / "cdhit" / "meme" / "fimo_nonamps" / "fimo.tsv",
     },
-    ("cdhit80", "streme"): {
-        "amps": FIMO_BASE / "cdhit80" / "streme" / "fimo_amps" / "fimo.tsv",
-        "nonamps": FIMO_BASE / "cdhit80" / "streme" / "fimo_nonamps" / "fimo.tsv",
+    ("cdhit", "streme"): {
+        "amps": FIMO_BASE / "cdhit" / "streme" / "fimo_amps" / "fimo.tsv",
+        "nonamps": FIMO_BASE / "cdhit" / "streme" / "fimo_nonamps" / "fimo.tsv",
     },
-    ("mmseq80", "meme"): {
-        "amps": FIMO_BASE / "mmseq80" / "meme" / "fimo_amps" / "fimo.tsv",
-        "nonamps": FIMO_BASE / "mmseq80" / "meme" / "fimo_nonamps" / "fimo.tsv",
+    ("mmseq", "meme"): {
+        "amps": FIMO_BASE / "mmseq" / "meme" / "fimo_amps" / "fimo.tsv",
+        "nonamps": FIMO_BASE / "mmseq" / "meme" / "fimo_nonamps" / "fimo.tsv",
     },
-    ("mmseq80", "streme"): {
-        "amps": FIMO_BASE / "mmseq80" / "streme" / "fimo_amps" / "fimo.tsv",
-        "nonamps": FIMO_BASE / "mmseq80" / "streme" / "fimo_nonamps" / "fimo.tsv",
+    ("mmseq", "streme"): {
+        "amps": FIMO_BASE / "mmseq" / "streme" / "fimo_amps" / "fimo.tsv",
+        "nonamps": FIMO_BASE / "mmseq" / "streme" / "fimo_nonamps" / "fimo.tsv",
     },
 }
 
@@ -54,52 +68,44 @@ STRUCTURE = {
 # HELPERS
 # =====================================================
 
+def die(msg: str) -> None:
+    print(f"{msg}")
+    sys.exit(1)
+
 def read_fimo_tsv(path: Path) -> pd.DataFrame:
-    """
-    Reads FIMO TSV (skipping comment lines). Returns empty df if file is missing/empty.
-    """
+    """Read FIMO TSV (skip comments). Return empty DF if missing/invalid."""
     if not path.exists():
         return pd.DataFrame()
-
     try:
         df = pd.read_csv(path, sep="\t", comment="#")
     except Exception:
         return pd.DataFrame()
 
-    # Minimal expected columns:
-    # motif_id, sequence_name
     needed = {"motif_id", "sequence_name"}
     if not needed.issubset(df.columns):
         return pd.DataFrame()
-
     return df
 
-
 def safe_fisher(table):
-    """
-    table = [[a,b],[c,d]]
-    """
+    """table = [[a,b],[c,d]]"""
     try:
         oddsratio, pvalue = fisher_exact(table)
         return oddsratio, pvalue
     except Exception:
         return None, None
 
-
 def save_excel(df: pd.DataFrame, path: Path, sheet_name: str = "Results") -> None:
     with pd.ExcelWriter(path, engine="openpyxl") as writer:
         df.to_excel(writer, index=False, sheet_name=sheet_name)
-
 
 # =====================================================
 # 1) BUILD ENRICHMENT TABLE
 # =====================================================
 
-all_results = []
+all_results: list[dict] = []
 any_loaded = False
 
 for (clustering, tool), files in STRUCTURE.items():
-
     amps_path = files["amps"]
     nonamps_path = files["nonamps"]
 
@@ -113,20 +119,17 @@ for (clustering, tool), files in STRUCTURE.items():
     any_loaded = True
 
     motifs = set(df_amp["motif_id"]).union(set(df_non["motif_id"]))
-
-    total_amp_seq = df_amp["sequence_name"].nunique()
-    total_non_seq = df_non["sequence_name"].nunique()
+    total_amp_seq = int(df_amp["sequence_name"].nunique())
+    total_non_seq = int(df_non["sequence_name"].nunique())
 
     for motif in motifs:
-
-        amp_seq = df_amp.loc[df_amp["motif_id"] == motif, "sequence_name"].nunique()
-        non_seq = df_non.loc[df_non["motif_id"] == motif, "sequence_name"].nunique()
+        amp_seq = int(df_amp.loc[df_amp["motif_id"] == motif, "sequence_name"].nunique())
+        non_seq = int(df_non.loc[df_non["motif_id"] == motif, "sequence_name"].nunique())
 
         table = [
             [amp_seq, total_amp_seq - amp_seq],
             [non_seq, total_non_seq - non_seq],
         ]
-
         _, pvalue = safe_fisher(table)
 
         enrichment = (amp_seq + PSEUDOCOUNT) / (non_seq + PSEUDOCOUNT)
@@ -135,31 +138,28 @@ for (clustering, tool), files in STRUCTURE.items():
             "Clustering": clustering,
             "Tool": tool,
             "Motif": str(motif),
-            "AMP_sequences_with_hit": int(amp_seq),
-            "nonAMP_sequences_with_hit": int(non_seq),
-            "Total_AMP_sequences": int(total_amp_seq),
-            "Total_nonAMP_sequences": int(total_non_seq),
+            "AMP_sequences_with_hit": amp_seq,
+            "nonAMP_sequences_with_hit": non_seq,
+            "Total_AMP_sequences": total_amp_seq,
+            "Total_nonAMP_sequences": total_non_seq,
             "Enrichment_ratio": float(enrichment),
             "Fisher_pvalue": float(pvalue) if pvalue is not None else np.nan,
         })
 
 if not any_loaded:
-    print("\n❌ No valid FIMO TSV files found. Run FIMO first and check paths.\n")
-    sys.exit(1)
+    die("No valid FIMO TSV files found. Run FIMO first and check paths.")
 
 results_df = pd.DataFrame(all_results)
-
-# Clean numeric
 results_df["Enrichment_ratio"] = pd.to_numeric(results_df["Enrichment_ratio"], errors="coerce")
 results_df["Fisher_pvalue"] = pd.to_numeric(results_df["Fisher_pvalue"], errors="coerce")
 
 # =====================================================
-# 2) MULTIPLE TEST CORRECTION (FDR)
+# 2) MULTIPLE TEST CORRECTION (BH-FDR)
 # =====================================================
 
 mask_valid_p = results_df["Fisher_pvalue"].notna()
-
 results_df["FDR_corrected"] = np.nan
+
 if mask_valid_p.any():
     results_df.loc[mask_valid_p, "FDR_corrected"] = multipletests(
         results_df.loc[mask_valid_p, "Fisher_pvalue"].values,
@@ -169,7 +169,6 @@ if mask_valid_p.any():
 results_df["Significant_Fisher"] = (results_df["Fisher_pvalue"] < ALPHA_FISHER) & (results_df["Enrichment_ratio"] > 1)
 results_df["Significant_FDR"] = (results_df["FDR_corrected"] < ALPHA_FDR) & (results_df["Enrichment_ratio"] > 1)
 
-# Sort: enriched first, then p-values
 results_df = results_df.sort_values(
     by=["Significant_FDR", "Enrichment_ratio", "FDR_corrected"],
     ascending=[False, False, True],
@@ -232,7 +231,6 @@ print("\nSaved summary:", summary_combo_path)
 # 5) PLOTS
 # =====================================================
 
-# 5.1 Enrichment ratio distribution (all)
 plt.figure()
 vals = results_df["Enrichment_ratio"].dropna().values
 plt.hist(vals, bins=30)
@@ -243,7 +241,6 @@ plt.tight_layout()
 plt.savefig(OUT_DIR / "enrichment_ratio_distribution_all.png")
 plt.close()
 
-# 5.2 Top significant motifs (barplot)
 top_n = 30
 df_top = df_sig.sort_values("Enrichment_ratio", ascending=False).head(top_n)
 
@@ -258,7 +255,6 @@ if not df_top.empty:
     plt.savefig(OUT_DIR / "top_enriched_motifs_fdr.png")
     plt.close()
 
-# 5.3 Boxplot ER (significant only) by clustering
 if not df_sig.empty:
     data_mmseq = df_sig.loc[df_sig["Clustering"].str.contains("mmseq", case=False, na=False), "Enrichment_ratio"].dropna()
     data_cdhit = df_sig.loc[df_sig["Clustering"].str.contains("cdhit", case=False, na=False), "Enrichment_ratio"].dropna()
@@ -271,7 +267,6 @@ if not df_sig.empty:
     plt.savefig(OUT_DIR / "boxplot_er_significant_by_clustering.png")
     plt.close()
 
-# 5.4 Boxplot ER (significant only) by tool
 if not df_sig.empty:
     data_meme = df_sig.loc[df_sig["Tool"].str.contains("meme", case=False, na=False), "Enrichment_ratio"].dropna()
     data_streme = df_sig.loc[df_sig["Tool"].str.contains("streme", case=False, na=False), "Enrichment_ratio"].dropna()

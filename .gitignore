@@ -1,0 +1,57 @@
+############################
+# OS / Editor
+############################
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+############################
+# Python
+############################
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+############################
+# Data (raw often large/licensed)
+############################
+data/raw/**
+
+############################
+# Heavy results / tool outputs
+# (keep statistics summaries/plots tracked if you want)
+############################
+results/clustering/**
+results/motif_scanning/**
+results/motif_discovery/**
+
+# Tomtom can be large; if you plan to upload only summary later, ignore:
+results/motif_similarity/**
+
+# Background FASTAs can be large
+results/background_generation/**/*.fasta
+
+############################
+# MMseqs2 temp databases
+############################
+**/mmseq_tmp*/
+**/tmp*/
+*.db
+*.dbtype
+*.index
+*.lookup
+*.source
+*.clu*
+
+############################
+# MEME Suite verbose reports (optional)
+############################
+*.html
+*.xml
+*.eps
+
+############################
+# Logs
+############################
+*.log

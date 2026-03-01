@@ -1,17 +1,18 @@
-#!/usr/bin/env python3
+from __future__ import annotations
 
 from pathlib import Path
 import random
 from collections import defaultdict
-import numpy as np
-from scipy.stats import ks_2samp
 import subprocess
 import sys
+
+import numpy as np
+from scipy.stats import ks_2samp
 
 print("\nSMART 10x MOTIF PIPELINE\n")
 
 # =====================================================
-# PATH CONFIG (RELATIVE TO REPO)
+# PATH CONFIG 
 # =====================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -19,71 +20,95 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
 RESULTS_BACKGROUND_DIR = PROJECT_ROOT / "results" / "background_generation"
 RESULTS_MOTIF_DIR = PROJECT_ROOT / "results" / "motif_discovery"
-
 RESULTS_MOTIF_DIR.mkdir(parents=True, exist_ok=True)
 
-AMP_CDHIT = RESULTS_CLUSTER_DIR / "AMP_MASTER_cdhit80.fasta"
-AMP_MMSEQ = RESULTS_CLUSTER_DIR / "AMP_MASTER_mmseq80_rep_seq.fasta"
+# Inputs produced by your UPDATED clustering/background scripts
+AMP_CDHIT = RESULTS_CLUSTER_DIR / "AMP_MASTER_cdhit.fasta"
+AMP_MMSEQ = RESULTS_CLUSTER_DIR / "AMP_MASTER_mmseq_rep_seq.fasta"
 
-NONAMP50_CDHIT = RESULTS_BACKGROUND_DIR / "nonamp_cdhit80_50x_random_progressive.fasta"
-NONAMP50_MMSEQ = RESULTS_BACKGROUND_DIR / "nonamp_mmseq80_50x_random_progressive.fasta"
+NONAMP50_CDHIT = RESULTS_BACKGROUND_DIR / "nonamp_cdhit_50x_random_progressive.fasta"
+NONAMP50_MMSEQ = RESULTS_BACKGROUND_DIR / "nonamp_mmseq_50x_random_progressive.fasta"
+
+# =====================================================
+# CONFIG
+# =====================================================
 
 MULTIPLIER = 10
 ALPHA = 0.05
-random.seed(42)
+RANDOM_SEED = 42
+random.seed(RANDOM_SEED)
+
+# MEME/STREME parameters (same logic as you had)
+MINW = "6"
+MAXW = "20"
+STREME_NMOTIFS = "15"
+STREME_PVT = "0.01"
+MEME_NMOTIFS = "10"
+MEME_MAXSIZE = "10000000"
 
 # =====================================================
 # UTILITIES
 # =====================================================
 
-def read_fasta(path):
-    if not path.exists():
-        print(f"File not found: {path}")
-        sys.exit(1)
+def die(msg: str) -> None:
+    print(f"{msg}")
+    sys.exit(1)
 
-    seqs = []
-    with open(path) as f:
-        seq = ""
+def check_file(path: Path) -> None:
+    if not path.exists():
+        die(f"File not found: {path}")
+
+def read_fasta(path: Path) -> list[str]:
+    check_file(path)
+    seqs: list[str] = []
+    seq_parts: list[str] = []
+
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
         for line in f:
+            line = line.strip()
+            if not line:
+                continue
             if line.startswith(">"):
-                if seq:
-                    seqs.append(seq)
-                seq = ""
+                if seq_parts:
+                    seqs.append("".join(seq_parts).upper())
+                seq_parts = []
             else:
-                seq += line.strip()
-        if seq:
-            seqs.append(seq)
+                seq_parts.append(line)
+
+        if seq_parts:
+            seqs.append("".join(seq_parts).upper())
+
     return seqs
 
-
-def get_length_distribution(seqs):
+def get_length_distribution(seqs: list[str]) -> dict[int, int]:
     dist = defaultdict(int)
     for s in seqs:
         dist[len(s)] += 1
-    return dist
+    return dict(dist)
 
-
-def group_by_length(seqs):
+def group_by_length(seqs: list[str]) -> dict[int, list[str]]:
     groups = defaultdict(list)
     for s in seqs:
         groups[len(s)].append(s)
-    return groups
+    return dict(groups)
 
-
-def run_command(cmd):
+def run_command(cmd: list[str]) -> None:
     print("\nRunning:", " ".join(str(c) for c in cmd))
-    result = subprocess.run(cmd)
-    if result.returncode != 0:
-        print("❌ ERROR DETECTED. Stopping pipeline.")
-        sys.exit(1)
+    try:
+        subprocess.run(cmd, check=True)
+    except subprocess.CalledProcessError:
+        die("Command failed. Stopping pipeline.")
 
 # =====================================================
 # CORE GENERATOR
 # =====================================================
 
-def generate_10x(amp_fasta, nonamp50_fasta, label):
-
-    print(f"\n=== GENERATING 10x FOR {label.upper()} ===")
+def generate_10x(amp_fasta: Path, nonamp50_fasta: Path, label: str) -> Path:
+    """
+    Creates a 10x non-AMP FASTA by sampling from a pre-generated 50x background,
+    matching length distribution to AMP (x10).
+    """
+    print(f"\n=== GENERATING {MULTIPLIER}x FOR {label.upper()} ===")
 
     amp_seqs = read_fasta(amp_fasta)
     nonamp50_seqs = read_fasta(nonamp50_fasta)
@@ -93,16 +118,12 @@ def generate_10x(amp_fasta, nonamp50_fasta, label):
 
     target_counts = {L: amp_dist[L] * MULTIPLIER for L in amp_dist}
 
-    selected = []
+    selected: list[str] = []
 
-    for L in target_counts:
-
+    for L, required in sorted(target_counts.items()):
         available = nonamp_groups.get(L, [])
-        required = target_counts[L]
-
         if len(available) < required:
-            print(f"❌ Not enough sequences for length {L}")
-            sys.exit(1)
+            die(f"Not enough nonAMP sequences for length {L}: have {len(available)}, need {required}")
 
         sampled = random.sample(available, required)
         selected.extend(sampled)
@@ -110,82 +131,80 @@ def generate_10x(amp_fasta, nonamp50_fasta, label):
     print("Expected:", sum(target_counts.values()))
     print("Generated:", len(selected))
 
-    # VALIDATION
+    # VALIDATION: KS test on lengths
     amp_lengths = [len(s) for s in amp_seqs]
     nonamp_lengths = [len(s) for s in selected]
-
     ks_len = ks_2samp(amp_lengths, nonamp_lengths)
 
-    print("KS p-value:", ks_len.pvalue)
+    print("KS p-value (length):", ks_len.pvalue)
 
     if ks_len.pvalue < ALPHA:
-        print("❌ Distributions significantly different. Stopping.")
-        sys.exit(1)
-    else:
-        print("✅ Length distributions validated.")
+        die("Length distributions significantly different (KS test).")
 
-    output_fasta = RESULTS_MOTIF_DIR / f"nonamp_{label}_10x.fasta"
+    print(" Length distributions validated.")
 
-    with open(output_fasta, "w") as f:
-        for i, s in enumerate(selected):
-            f.write(f">NONAMP_{i}\n{s}\n")
+    output_fasta = RESULTS_MOTIF_DIR / f"nonamp_{label}_{MULTIPLIER}x.fasta"
+    with open(output_fasta, "w", encoding="utf-8") as f:
+        for i, s in enumerate(selected, start=1):
+            f.write(f">NONAMP_{label}_{i}\n{s}\n")
 
+    print("Saved:", output_fasta)
     return output_fasta
 
 # =====================================================
-# RUN PIPELINE FOR ONE DATASET
+# MOTIF DISCOVERY (STREME + MEME)
 # =====================================================
 
-def run_motif_pipeline(label, amp_fasta, nonamp50_fasta):
-
+def run_motif_pipeline(label: str, amp_fasta: Path, nonamp50_fasta: Path) -> None:
     nonamp10 = generate_10x(amp_fasta, nonamp50_fasta, label)
 
     # STREME
-    print(f"\n🚀 Running STREME ({label})")
-
+    print(f"\n Running STREME ({label})")
     streme_out = RESULTS_MOTIF_DIR / f"streme_{label}"
-
     run_command([
         "streme",
         "--p", str(amp_fasta),
         "--n", str(nonamp10),
         "--protein",
-        "--minw", "6",
-        "--maxw", "20",
-        "--nmotifs", "15",
-        "--pvt", "0.01",
-        "--oc", str(streme_out)
+        "--minw", MINW,
+        "--maxw", MAXW,
+        "--nmotifs", STREME_NMOTIFS,
+        "--pvt", STREME_PVT,
+        "--oc", str(streme_out),
     ])
-
-    print("✅ STREME completed.")
+    print(" STREME completed:", streme_out)
 
     # MEME
-    print(f"\n🚀 Running MEME ({label})")
-
+    print(f"\n Running MEME ({label})")
     meme_out = RESULTS_MOTIF_DIR / f"meme_{label}"
-
     run_command([
         "meme",
         str(amp_fasta),
         "-neg", str(nonamp10),
         "-mod", "zoops",
         "-objfun", "de",
-        "-nmotifs", "10",
-        "-minw", "6",
-        "-maxw", "20",
-        "-maxsize", "10000000",
-        "-oc", str(meme_out)
+        "-nmotifs", MEME_NMOTIFS,
+        "-minw", MINW,
+        "-maxw", MAXW,
+        "-maxsize", MEME_MAXSIZE,
+        "-oc", str(meme_out),
     ])
-
-    print("✅ MEME completed.")
+    print(" MEME completed:", meme_out)
 
 # =====================================================
-# RUN BOTH
+# MAIN
 # =====================================================
+
+def main():
+    check_file(AMP_CDHIT)
+    check_file(AMP_MMSEQ)
+    check_file(NONAMP50_CDHIT)
+    check_file(NONAMP50_MMSEQ)
+
+    run_motif_pipeline("cdhit", AMP_CDHIT, NONAMP50_CDHIT)
+    run_motif_pipeline("mmseq", AMP_MMSEQ, NONAMP50_MMSEQ)
+
+    print("\n FULL 10x MOTIF PIPELINE COMPLETED SUCCESSFULLY.\n")
 
 if __name__ == "__main__":
-
-    run_motif_pipeline("cdhit80", AMP_CDHIT, NONAMP50_CDHIT)
-    run_motif_pipeline("mmseq80", AMP_MMSEQ, NONAMP50_MMSEQ)
-
-    print("\n🎉 FULL 10x MOTIF PIPELINE COMPLETED SUCCESSFULLY.\n")
+    main()

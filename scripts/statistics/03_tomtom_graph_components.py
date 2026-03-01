@@ -1,16 +1,13 @@
 """
 Graph-based motif family analysis from Tomtom similarities.
-
 Expected inputs:
 - results/statistics/fimo_enrichment/fimo_enrichment_all.csv
 - results/motif_similarity/tomtom_all_vs_all/tomtom.tsv
-  (or change TOMTOM_SUBDIR below)
 
 Outputs:
 - results/statistics/tomtom_graph/component_analysis_all_vs_all.csv
 - results/statistics/tomtom_graph/global_summary.txt
 """
-
 from __future__ import annotations
 
 from pathlib import Path
@@ -21,20 +18,16 @@ import pandas as pd
 import networkx as nx
 from statsmodels.stats.multitest import multipletests
 
-
 # =====================================================
 # CONFIG
 # =====================================================
 
 ALPHA_FDR = 0.05
 ALPHA_TOMTOM_Q = 0.05
-
-# If you used a different folder name, change this:
-TOMTOM_SUBDIR = "tomtom_all_vs_all"  # e.g., "tomtom_sig_all_vs_all"
-
+TOMTOM_SUBDIR = "tomtom_all_vs_all"
 
 # =====================================================
-# REPO ROOT (robust)
+# REPO ROOT
 # =====================================================
 
 def find_repo_root(start: Path) -> Path:
@@ -43,9 +36,7 @@ def find_repo_root(start: Path) -> Path:
     for parent in [start] + list(start.parents):
         if any((parent / m).exists() for m in markers):
             return parent
-    # fallback: assume scripts/<category>/<file>.py
     return start.parents[2]
-
 
 PROJECT_ROOT = find_repo_root(Path(__file__).parent)
 
@@ -58,15 +49,13 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 OUT_COMPONENTS = OUT_DIR / "component_analysis_all_vs_all.csv"
 OUT_SUMMARY = OUT_DIR / "global_summary.txt"
 
-
 # =====================================================
 # HELPERS
 # =====================================================
 
 def die(msg: str) -> None:
-    print(f"❌ {msg}")
+    print(f" {msg}")
     sys.exit(1)
-
 
 def load_enrichment(enrich_csv: Path) -> pd.DataFrame:
     if not enrich_csv.exists():
@@ -79,7 +68,6 @@ def load_enrichment(enrich_csv: Path) -> pd.DataFrame:
     if missing:
         die(f"Enrichment CSV missing columns: {sorted(missing)}")
 
-    # normalize
     df["Motif"] = df["Motif"].astype(str).str.strip()
     df["Tool"] = df["Tool"].astype(str).str.strip().str.lower()
     df["Clustering"] = df["Clustering"].astype(str).str.strip().str.lower()
@@ -87,8 +75,9 @@ def load_enrichment(enrich_csv: Path) -> pd.DataFrame:
     df["Fisher_pvalue"] = pd.to_numeric(df["Fisher_pvalue"], errors="coerce")
     df = df.dropna(subset=["Motif", "Tool", "Clustering", "Enrichment_ratio", "Fisher_pvalue"])
 
-    # ensure FDR column exists (fallback if missing)
+    # ensure FDR_corrected exists
     if "FDR_corrected" not in df.columns or df["FDR_corrected"].isna().all():
+        df = df.copy()
         df["FDR_corrected"] = np.nan
         for (cl, tl), sub in df.groupby(["Clustering", "Tool"]):
             m = sub["Fisher_pvalue"].notna()
@@ -99,9 +88,7 @@ def load_enrichment(enrich_csv: Path) -> pd.DataFrame:
         df["FDR_corrected"] = pd.to_numeric(df["FDR_corrected"], errors="coerce")
 
     df["Significant_FDR"] = (df["FDR_corrected"] < ALPHA_FDR) & (df["Enrichment_ratio"] > 1)
-
     return df
-
 
 def load_tomtom(tomtom_tsv: Path) -> pd.DataFrame:
     if not tomtom_tsv.exists():
@@ -119,22 +106,16 @@ def load_tomtom(tomtom_tsv: Path) -> pd.DataFrame:
     tt["q-value"] = pd.to_numeric(tt["q-value"], errors="coerce")
 
     tt = tt.dropna(subset=["Query_ID", "Target_ID", "q-value"])
-
-    # remove self matches
     tt = tt[tt["Query_ID"] != tt["Target_ID"]]
-
-    # filter significant similarities
     tt = tt[tt["q-value"] < ALPHA_TOMTOM_Q].copy()
-
     return tt
-
 
 # =====================================================
 # MAIN
 # =====================================================
 
 def main():
-    print("\nTOMTOM GRAPH COMPONENTS (repo-friendly)\n")
+    print("\nTOMTOM GRAPH COMPONENTS \n")
     print("Project root:", PROJECT_ROOT)
     print("Enrichment :", ENRICH_CSV)
     print("Tomtom TSV :", TOMTOM_TSV)
@@ -145,33 +126,23 @@ def main():
 
     print("Total motifs in enrichment table:", len(df))
     print("Total significant motifs (FDR & ER>1):", len(df_sig))
-
     if df_sig.empty:
         die("No significant motifs found. Check enrichment outputs / thresholds.")
 
-    sig_set = set(df_sig["Motif"])
+    sig_set = set(df_sig["Motif"].tolist())
 
     tt = load_tomtom(TOMTOM_TSV)
-
-    # Keep only edges connecting significant motifs (avoid extra nodes / ID mismatch issues)
     tt = tt[tt["Query_ID"].isin(sig_set) & tt["Target_ID"].isin(sig_set)]
+    print(f"Significant Tomtom edges (q < {ALPHA_TOMTOM_Q} among significant motifs): {len(tt)}")
 
-    print("Significant Tomtom edges (q < {:.3g}) among significant motifs: {}".format(ALPHA_TOMTOM_Q, len(tt)))
-
-    # Build graph
     G = nx.Graph()
-
-    # add all significant motifs as nodes
     for motif in sig_set:
         G.add_node(motif)
-
-    # add edges from tomtom
     for _, row in tt.iterrows():
         G.add_edge(row["Query_ID"], row["Target_ID"])
 
     components = list(nx.connected_components(G))
     sizes = [len(c) for c in components]
-
     n_singletons = sum(1 for s in sizes if s == 1)
     n_families = sum(1 for s in sizes if s >= 2)
 
@@ -179,9 +150,7 @@ def main():
     print("Families (size >= 2):", n_families)
     print("Singletons (size = 1):", n_singletons)
 
-    # Component analysis
     component_summary = []
-
     for i, comp in enumerate(components, start=1):
         comp_list = sorted(list(comp))
         sub_df = df_sig[df_sig["Motif"].isin(comp_list)]
@@ -205,7 +174,6 @@ def main():
     component_df = pd.DataFrame(component_summary).sort_values(by=["Size", "Mean_ER"], ascending=[False, False])
     component_df.to_csv(OUT_COMPONENTS, index=False)
 
-    # Global summary
     with open(OUT_SUMMARY, "w", encoding="utf-8") as f:
         f.write("TOMTOM GRAPH COMPONENT SUMMARY\n\n")
         f.write(f"Enrichment input: {ENRICH_CSV}\n")
@@ -224,8 +192,7 @@ def main():
     print("\nSaved:")
     print("-", OUT_COMPONENTS)
     print("-", OUT_SUMMARY)
-    print("\n✅ Done.\n")
-
+    print("\n Done.\n")
 
 if __name__ == "__main__":
     main()
