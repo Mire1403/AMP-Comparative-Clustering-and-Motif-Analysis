@@ -1,106 +1,80 @@
 from __future__ import annotations
-
 from pathlib import Path
-import pandas as pd
 import re
+import json
+import pandas as pd
 
+from config import DATA_INTERMEDIATE_DIR, DATA_FINAL_DIR, RESULTS_DIR
 
-# =====================================================
-# PATH CONFIG (RELATIVE TO REPO)
-# =====================================================
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_INTERMEDIATE_DIR = PROJECT_ROOT / "data" / "intermediate"
-DATA_FINAL_DIR = PROJECT_ROOT / "data" / "final"
-DATA_FINAL_DIR.mkdir(parents=True, exist_ok=True)
-
-MASTER_FILE = DATA_INTERMEDIATE_DIR / "DB_MASTER.xlsx"
-OUTPUT_FILE = DATA_FINAL_DIR / "DB_MASTER_CLEAN.xlsx"
-
-
-# =====================================================
-# NORMALIZATION FUNCTIONS
-# =====================================================
-
-def normalize_organism(text) -> str:
-    if pd.isna(text):
+def normalize_organism(x) -> str:
+    if pd.isna(x):
         return ""
+    s = str(x)
+    s = re.sub(r"\(.*?\)", "", s)
+    s = s.replace("&&", ";")
+    s = re.sub(r"\s+", " ", s).strip()
+    return s.title()
 
-    text = str(text)
-
-    # remove content in parentheses
-    text = re.sub(r"\(.*?\)", "", text)
-
-    # replace &&
-    text = text.replace("&&", ";")
-
-    # collapse whitespace
-    text = re.sub(r"\s+", " ", text).strip()
-
-    return text.title()
-
-
-def normalize_taxonomy(text) -> str:
-    if pd.isna(text):
+def normalize_taxonomy(x) -> str:
+    if pd.isna(x):
         return ""
-
-    text = str(text)
-
-    # common replacements
-    text = text.replace("&&", ";")
-    text = text.replace(",", ";")
-
-    # remove spaces
-    text = re.sub(r"\s+", "", text)
-
-    parts = [p for p in text.split(";") if p]
-    parts = sorted(set(parts))
-
+    s = str(x).replace("&&", ";").replace(",", ";")
+    s = re.sub(r"\s+", "", s)
+    parts = sorted({p for p in s.split(";") if p})
     return ";".join(parts)
-
 
 def concat_unique(series: pd.Series) -> str:
     values = series.dropna().astype(str)
-    values = [v.strip() for v in values if v.strip() != ""]
-    if not values:
-        return ""
-    return " | ".join(sorted(set(values)))
+    values = [v.strip() for v in values if v.strip()]
+    return " | ".join(sorted(set(values))) if values else ""
 
+def export_fasta(df: pd.DataFrame, out_fasta: Path) -> None:
+    seqs = df["sequence"].astype(str).tolist()
+    with open(out_fasta, "w", encoding="utf-8") as f:
+        for i, seq in enumerate(seqs, start=1):
+            f.write(f">AMP_{i:06d}\n{seq}\n")
 
-# =====================================================
-# MAIN
-# =====================================================
+def main() -> None:
+    in_file = DATA_INTERMEDIATE_DIR / "DB_MASTER_04.parquet"
+    if not in_file.exists():
+        raise FileNotFoundError(in_file)
 
-def clean_master() -> None:
-    if not MASTER_FILE.exists():
-        print(f"❌ Not found: {MASTER_FILE}")
-        return
+    df = pd.read_parquet(in_file)
+    n0 = len(df)
 
-    df = pd.read_excel(MASTER_FILE)
-    print("Initial sequences:", len(df))
+    if "organism" in df.columns:
+        df["organism"] = df["organism"].apply(normalize_organism)
+    if "taxonomy" in df.columns:
+        df["taxonomy"] = df["taxonomy"].apply(normalize_taxonomy)
 
-    # Normalize fields if present
-    if "Organism" in df.columns:
-        df["Organism"] = df["Organism"].apply(normalize_organism)
+    # global dedup by sequence (merge metadata)
+    grouped = df.groupby("sequence", as_index=False).agg(concat_unique)
+    grouped["length"] = grouped["sequence"].astype(str).str.len()
 
-    if "Taxonomy" in df.columns:
-        df["Taxonomy"] = df["Taxonomy"].apply(normalize_taxonomy)
+    out_parquet = DATA_FINAL_DIR / "DB_MASTER_CLEAN.parquet"
+    grouped.to_parquet(out_parquet, index=False)
 
-    # Group by sequence: merge text columns by unique values
-    grouped = df.groupby("Sequence", as_index=False).agg(concat_unique)
+    out_fasta = DATA_FINAL_DIR / "AMP_MASTER.fasta"
+    export_fasta(grouped, out_fasta)
 
-    print("After removing inter-database duplicates:", len(grouped))
+    stats = {
+        "initial_rows_master_04": int(n0),
+        "final_unique_sequences": int(len(grouped)),
+        "length_min": int(grouped["length"].min()),
+        "length_mean": float(grouped["length"].mean()),
+        "length_max": int(grouped["length"].max()),
+    }
 
-    # Stats
-    if "Source_DB" in grouped.columns:
-        print("\nBreakdown by Source_DB:")
-        print(grouped["Source_DB"].value_counts())
+    (RESULTS_DIR / "final_stats.json").write_text(json.dumps(stats, indent=2), encoding="utf-8")
 
-    grouped.to_excel(OUTPUT_FILE, index=False)
+    # tiny preview safe for GitHub
+    preview_cols = [c for c in ["source_db", "protein_name", "organism", "taxonomy", "sequence", "length"] if c in grouped.columns]
+    grouped[preview_cols].head(20).to_csv(RESULTS_DIR / "final_preview.csv", index=False)
 
-    print("\n✅ Saved cleaned master at:")
-    print(OUTPUT_FILE)
-
+    print(f"✅ clean+export: {len(grouped)} unique seqs")
+    print(f"   - {out_parquet}")
+    print(f"   - {out_fasta}")
+    print(f"   - {RESULTS_DIR / 'final_stats.json'}")
 
 if __name__ == "__main__":
-    clean_master()
+    main()

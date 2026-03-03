@@ -1,63 +1,24 @@
-from pathlib import Path
+from __future__ import annotations
 import pandas as pd
+from config import DATA_INTERMEDIATE_DIR
 
-# =====================================================
-# PATH CONFIG (RELATIVE TO REPO)
-# =====================================================
+def main() -> None:
+    dfs = []
+    for db in ["CAMP", "DBAASP", "dbAMP3", "DRAMP"]:
+        f = DATA_INTERMEDIATE_DIR / f"{db}_03_mic_filtered.parquet"
+        if f.exists():
+            dfs.append(pd.read_parquet(f))
+        else:
+            print(f"⚠️ missing: {f.name}")
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_INTERMEDIATE_DIR = PROJECT_ROOT / "data" / "intermediate"
+    if not dfs:
+        raise SystemExit("No DBs loaded.")
 
-DB_NAMES = ["CAMP", "DBAASP", "dbAMP3", "DRAMP"]
+    master = pd.concat(dfs, ignore_index=True)
+    out = DATA_INTERMEDIATE_DIR / "DB_MASTER_04.parquet"
+    master.to_parquet(out, index=False)
 
-OUTPUT_FILE = DATA_INTERMEDIATE_DIR / "DB_MASTER.xlsx"
-
-# =====================================================
-# MAIN
-# =====================================================
-
-def create_master():
-
-    all_dfs = []
-
-    for db_name in DB_NAMES:
-
-        file_path = DATA_INTERMEDIATE_DIR / f"{db_name}_activity_filtered.xlsx"
-
-        if not file_path.exists():
-            print(f"❌ No file found: {file_path.name}")
-            continue
-
-        print(f"Reading {file_path.name}")
-
-        df = pd.read_excel(file_path)
-
-        df["Source_DB"] = db_name  # trazabilidad
-
-        all_dfs.append(df)
-
-    if not all_dfs:
-        print("No data loaded.")
-        return
-
-    master_df = pd.concat(all_dfs, ignore_index=True)
-
-    print("\n========================================")
-    print("DB MASTER CREATED")
-    print("========================================")
-    print("Total sequences:", len(master_df))
-    print("Breakdown by DB:")
-    print(master_df["Source_DB"].value_counts())
-    print("========================================\n")
-
-    master_df.to_excel(OUTPUT_FILE, index=False)
-
-    print("Saved at:", OUTPUT_FILE)
-
-
-# =====================================================
-# RUN
-# =====================================================
+    print(f"✅ master built: {len(master)} rows -> {out.name}")
 
 if __name__ == "__main__":
-    create_master()
+    main()

@@ -11,7 +11,10 @@ dependencies:
   - scipy
   - matplotlib
   - seaborn
+  - pyarrow
   - biopython
   - cd-hit
   - mmseqs2
   - meme
+  - openpyxl
+  

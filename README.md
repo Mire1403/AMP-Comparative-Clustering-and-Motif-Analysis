@@ -85,9 +85,13 @@ conda env create -f environment.yml
 conda activate amp-analysis
 ```
 This repository prioritizes reproducibility.
-Large raw datasets and heavy tool outputs (MMseq tmp DBs, large FASTAs, full MEME suite html reports, etc.) are typically not tracked.
-Instead, scripts regenerate results under results/.
 
+Raw source databases (CAMP, DBAASP, dbAMP3, DRAMP) are not included due to licensing and redistribution restrictions.
+
+Instead, standardized intermediate parquet files are provided in data/intermediate/ to allow the pipeline to be reproduced from Step 2 onward without requiring raw database downloads.
+
+Large tool outputs (MMseqs temporary databases, full MEME HTML reports, large FASTA files, etc.) are typically not tracked.
+All results can be regenerated using the scripts under scripts/.
 
 **Author**
 

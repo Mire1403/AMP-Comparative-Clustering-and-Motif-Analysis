@@ -1,115 +1,68 @@
+from __future__ import annotations
+import re
 from pathlib import Path
 import pandas as pd
-import re
 
-# =====================================================
-# PATH CONFIG (RELATIVE TO REPO)
-# =====================================================
+from config import (
+    DATA_INTERMEDIATE_DIR,
+    MIN_LENGTH,
+    MAX_LENGTH,
+    VALID_AA,
+    UNWANTED_NAME_PATTERNS,
+)
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-DATA_INTERMEDIATE_DIR = PROJECT_ROOT / "data" / "intermediate"
+def is_natural(seq: str) -> bool:
+    if not seq:
+        return False
+    return all(aa in VALID_AA for aa in seq)
 
-DB_NAMES = ["CAMP", "DBAASP", "dbAMP3", "DRAMP"]
+def filter_one(db_name: str) -> Path:
+    in_file = DATA_INTERMEDIATE_DIR / f"{db_name}_01_standardized.parquet"
+    if not in_file.exists():
+        raise FileNotFoundError(in_file)
 
-MIN_LENGTH = 5
+    df = pd.read_parquet(in_file)
+    n0 = len(df)
 
-UNWANTED_NAME_PATTERNS = [
-    "synthetic",
-    "designed",
-    "construct",
-    "analog",
-    "mutant",
-    "fragment",
-    "truncated"
-]
+    # length
+    df["length"] = df["sequence"].astype(str).str.len()
+    df = df[(df["length"] >= MIN_LENGTH) & (df["length"] <= MAX_LENGTH)]
+    n_len = len(df)
 
-# =====================================================
-# FILTERING FUNCTION
-# =====================================================
+    # natural AA only
+    df = df[df["sequence"].astype(str).apply(is_natural)]
+    n_nat = len(df)
 
-def filter_database(db_name):
+    # remove "synthetic" in validation_source
+    if "validation_source" in df.columns:
+        mask = df["validation_source"].astype(str).str.contains("synthetic", case=False, na=False)
+        df = df[~mask]
+    n_syn = len(df)
 
-    # 🔁 Ahora leemos los archivos generados por Script 01
-    file_path = DATA_INTERMEDIATE_DIR / f"{db_name}_standardized.xlsx"
+    # unwanted protein_name patterns
+    if "protein_name" in df.columns:
+        pattern = "|".join(map(re.escape, UNWANTED_NAME_PATTERNS))
+        mask = df["protein_name"].astype(str).str.contains(pattern, case=False, na=False)
+        df = df[~mask]
+    n_name = len(df)
 
-    if not file_path.exists():
-        print(f"No {db_name}_standardized.xlsx found in {DATA_INTERMEDIATE_DIR}")
-        return
+    # dedup within DB
+    before = len(df)
+    df = df.drop_duplicates(subset=["sequence"])
+    n_dedup = len(df)
 
-    df = pd.read_excel(file_path)
+    out_file = DATA_INTERMEDIATE_DIR / f"{db_name}_02_structural_filtered.parquet"
+    df.to_parquet(out_file, index=False)
 
-    total_initial = len(df)
+    print(
+        f"{db_name}: start={n0} -> len={n_len} -> natural={n_nat} -> no_synth={n_syn} -> name_ok={n_name} -> dedup={n_dedup}"
+    )
+    return out_file
 
-    # -------------------------------------------------
-    # Remove sequences < 5 aa
-    # -------------------------------------------------
-    df["Length"] = df["Sequence"].astype(str).str.len()
-    removed_short = (df["Length"] < MIN_LENGTH).sum()
-    df = df[df["Length"] >= MIN_LENGTH]
-
-    # -------------------------------------------------
-    # Remove synthetic in Validation/Source
-    # -------------------------------------------------
-    if "Validation/Source" in df.columns:
-        mask_synth_val = df["Validation/Source"].astype(str).str.contains(
-            "synthetic", case=False, na=False
-        )
-        removed_synth_validation = mask_synth_val.sum()
-        df = df[~mask_synth_val]
-    else:
-        removed_synth_validation = 0
-
-    # -------------------------------------------------
-    # Remove unwanted patterns in Protein_name
-    # -------------------------------------------------
-    if "Protein_name" in df.columns:
-        pattern = "|".join(UNWANTED_NAME_PATTERNS)
-        mask_unwanted_name = df["Protein_name"].astype(str).str.contains(
-            pattern, case=False, na=False
-        )
-        removed_unwanted_name = mask_unwanted_name.sum()
-        df = df[~mask_unwanted_name]
-    else:
-        removed_unwanted_name = 0
-
-    # -------------------------------------------------
-    # Remove 100% identical sequences
-    # -------------------------------------------------
-    before_dedup = len(df)
-    df = df.drop_duplicates(subset=["Sequence"])
-    removed_duplicates = before_dedup - len(df)
-
-    total_final = len(df)
-
-    # -------------------------------------------------
-    # Save filtered file (not final yet — MIC comes next)
-    # -------------------------------------------------
-    output_file = DATA_INTERMEDIATE_DIR / f"{db_name}_structural_filtered.xlsx"
-    df.drop(columns=["Length"], errors="ignore").to_excel(output_file, index=False)
-
-    # -------------------------------------------------
-    # Print stats
-    # -------------------------------------------------
-    print("\n========================================")
-    print(f"STRUCTURAL FILTERING STATS - {db_name}")
-    print("========================================")
-    print("Initial:", total_initial)
-    print("Removed short (<5 aa):", removed_short)
-    print("Removed synthetic (Validation):", removed_synth_validation)
-    print("Removed unwanted name patterns:", removed_unwanted_name)
-    print("Removed duplicates (100% identical):", removed_duplicates)
-    print("Final:", total_final)
-    print("Saved:", output_file)
-    print("========================================\n")
-
-
-# =====================================================
-# RUN ALL DATABASES
-# =====================================================
+def main() -> None:
+    for db_name in ["CAMP", "DBAASP", "dbAMP3", "DRAMP"]:
+        filter_one(db_name)
+    print("✅ step02 done")
 
 if __name__ == "__main__":
-
-    for db_name in DB_NAMES:
-        filter_database(db_name)
-
-    print("Step 02 (structural filtering) completed successfully.")
+    main()
