@@ -89,7 +89,7 @@ Large raw datasets and heavy tool outputs (MMseq tmp DBs, large FASTAs, full MEM
 Instead, scripts regenerate results under results/.
 
 
-Author
+**Author**
 
 Mireia Rivas Bermúdez
 BSc Biotechnology (in progress) — interests: bioinformatics, computational biology, and data-driven motif analysis
