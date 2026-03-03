@@ -18,7 +18,7 @@ __pycache__/
 ############################
 data/raw/**
 data/intermediate/*.csv
-
+data/intermediate/nonamp_clean_min5.fasta
 ############################
 # Heavy results / tool outputs
 # (keep statistics summaries/plots tracked if you want)
