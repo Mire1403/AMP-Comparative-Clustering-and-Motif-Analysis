@@ -45,6 +45,13 @@ results/background_generation/**/*.fasta
 *.source
 *.clu*
 
+# Reproducible FASTA intermediates
+results/clustering/AMP_MASTER.fasta
+results/clustering/AMP_MASTER_mmseq_all_seqs.fasta
+
+# Non-AMP clustering outputs
+results/clustering/NONAMP_*
+
 ############################
 # MEME Suite verbose reports (optional)
 ############################

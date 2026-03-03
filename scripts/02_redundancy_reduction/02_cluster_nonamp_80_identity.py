@@ -1,15 +1,12 @@
+from __future__ import annotations
+
 from pathlib import Path
 import subprocess
-
-# =====================================================
-# PATH CONFIG (RELATIVE TO REPO)
-# =====================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 DATA_INTERMEDIATE_DIR = PROJECT_ROOT / "data" / "intermediate"
 RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
-
 RESULTS_CLUSTER_DIR.mkdir(parents=True, exist_ok=True)
 
 INPUT_FASTA = DATA_INTERMEDIATE_DIR / "nonamp_clean_min5.fasta"
@@ -18,19 +15,13 @@ CDHIT_OUTPUT = RESULTS_CLUSTER_DIR / "NONAMP_cdhit.fasta"
 
 MMSEQ_TMP = RESULTS_CLUSTER_DIR / "mmseq_tmp_nonamp"
 MMSEQ_OUTPUT = RESULTS_CLUSTER_DIR / "NONAMP_mmseq"
-MMSEQ_REP_FASTA = RESULTS_CLUSTER_DIR / "NONAMP_mmseq_rep_seq.fasta"
 
 IDENTITY_THRESHOLD = 0.8
 
-# =====================================================
-# 1️⃣ RUN CD-HIT
-# =====================================================
 
-def run_cdhit():
-
+def run_cdhit() -> None:
     if not INPUT_FASTA.exists():
-        print(f"Input FASTA not found: {INPUT_FASTA}")
-        return
+        raise FileNotFoundError(f"Input FASTA not found: {INPUT_FASTA}")
 
     cmd = [
         "cd-hit",
@@ -40,20 +31,15 @@ def run_cdhit():
         "-n", "5",
         "-aS", "1.0",
         "-T", "4",
-        "-M", "16000"
+        "-M", "16000",
     ]
-
     subprocess.run(cmd, check=True)
-
-    print("CD-HIT clustering finished.")
-    print("Output:", CDHIT_OUTPUT)
+    print(f"✅ CD-HIT done: {CDHIT_OUTPUT}")
 
 
-# =====================================================
-# 2️⃣ RUN MMSEQS
-# =====================================================
-
-def run_mmseq():
+def run_mmseq() -> None:
+    if not INPUT_FASTA.exists():
+        raise FileNotFoundError(f"Input FASTA not found: {INPUT_FASTA}")
 
     cmd = [
         "mmseqs", "easy-cluster",
@@ -62,22 +48,13 @@ def run_mmseq():
         str(MMSEQ_TMP),
         "--min-seq-id", str(IDENTITY_THRESHOLD),
         "-c", str(IDENTITY_THRESHOLD),
-        "--cov-mode", "1"
+        "--cov-mode", "1",
     ]
-
     subprocess.run(cmd, check=True)
+    print(f"✅ MMseqs done: {MMSEQ_OUTPUT}*")
 
-    print("MMseqs clustering finished.")
-    print("Output prefix:", MMSEQ_OUTPUT)
-
-
-# =====================================================
-# MAIN
-# =====================================================
 
 if __name__ == "__main__":
-
     run_cdhit()
     run_mmseq()
-
-    print("\nNon-AMP clustering pipeline completed successfully.\n")
+    print("\n✅ Non-AMP clustering pipeline completed.\n")
