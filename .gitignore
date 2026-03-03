@@ -17,6 +17,7 @@ __pycache__/
 # Data (raw often large/licensed)
 ############################
 data/raw/**
+data/intermediate/*.csv
 
 ############################
 # Heavy results / tool outputs

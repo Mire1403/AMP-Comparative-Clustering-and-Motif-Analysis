@@ -6,6 +6,7 @@ import pandas as pd
 
 from config import DATA_INTERMEDIATE_DIR, DATA_FINAL_DIR, RESULTS_DIR
 
+
 def normalize_organism(x) -> str:
     if pd.isna(x):
         return ""
@@ -15,6 +16,7 @@ def normalize_organism(x) -> str:
     s = re.sub(r"\s+", " ", s).strip()
     return s.title()
 
+
 def normalize_taxonomy(x) -> str:
     if pd.isna(x):
         return ""
@@ -23,16 +25,26 @@ def normalize_taxonomy(x) -> str:
     parts = sorted({p for p in s.split(";") if p})
     return ";".join(parts)
 
+
 def concat_unique(series: pd.Series) -> str:
     values = series.dropna().astype(str)
     values = [v.strip() for v in values if v.strip()]
     return " | ".join(sorted(set(values))) if values else ""
 
+
 def export_fasta(df: pd.DataFrame, out_fasta: Path) -> None:
-    seqs = df["sequence"].astype(str).tolist()
+    seqs = (
+        df["sequence"]
+        .dropna()
+        .astype(str)
+        .str.strip()
+    )
+    seqs = [s for s in seqs.tolist() if s]
+
     with open(out_fasta, "w", encoding="utf-8") as f:
         for i, seq in enumerate(seqs, start=1):
             f.write(f">AMP_{i:06d}\n{seq}\n")
+
 
 def main() -> None:
     in_file = DATA_INTERMEDIATE_DIR / "DB_MASTER_04.parquet"
@@ -44,12 +56,22 @@ def main() -> None:
 
     if "organism" in df.columns:
         df["organism"] = df["organism"].apply(normalize_organism)
+
     if "taxonomy" in df.columns:
         df["taxonomy"] = df["taxonomy"].apply(normalize_taxonomy)
 
-    # global dedup by sequence (merge metadata)
-    grouped = df.groupby("sequence", as_index=False).agg(concat_unique)
+    # Global dedup by sequence (merge metadata)
+    grouped = (
+        df
+        .groupby("sequence", as_index=False)
+        .agg({col: concat_unique for col in df.columns if col != "sequence"})
+    )
+
     grouped["length"] = grouped["sequence"].astype(str).str.len()
+
+    # Ensure output directories exist
+    DATA_FINAL_DIR.mkdir(parents=True, exist_ok=True)
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     out_parquet = DATA_FINAL_DIR / "DB_MASTER_CLEAN.parquet"
     grouped.to_parquet(out_parquet, index=False)
@@ -65,16 +87,27 @@ def main() -> None:
         "length_max": int(grouped["length"].max()),
     }
 
-    (RESULTS_DIR / "final_stats.json").write_text(json.dumps(stats, indent=2), encoding="utf-8")
+    (RESULTS_DIR / "final_stats.json").write_text(
+        json.dumps(stats, indent=2),
+        encoding="utf-8"
+    )
 
-    # tiny preview safe for GitHub
-    preview_cols = [c for c in ["source_db", "protein_name", "organism", "taxonomy", "sequence", "length"] if c in grouped.columns]
-    grouped[preview_cols].head(20).to_csv(RESULTS_DIR / "final_preview.csv", index=False)
+    preview_cols = [
+        c for c in
+        ["source_db", "protein_name", "organism", "taxonomy", "sequence", "length"]
+        if c in grouped.columns
+    ]
+
+    grouped[preview_cols].head(20).to_csv(
+        RESULTS_DIR / "final_preview.csv",
+        index=False
+    )
 
     print(f"✅ clean+export: {len(grouped)} unique seqs")
     print(f"   - {out_parquet}")
     print(f"   - {out_fasta}")
     print(f"   - {RESULTS_DIR / 'final_stats.json'}")
+
 
 if __name__ == "__main__":
     main()

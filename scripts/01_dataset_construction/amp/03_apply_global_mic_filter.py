@@ -1,10 +1,13 @@
 from __future__ import annotations
+
 from pathlib import Path
 import re
 import numpy as np
 import pandas as pd
 
 from config import DATA_INTERMEDIATE_DIR, MIC_THRESHOLD_UGML
+
+DBS = ["CAMP", "DBAASP", "dbAMP3", "DRAMP"]
 
 AA_WEIGHTS = {
     "A": 89.1, "R": 174.2, "N": 132.1, "D": 133.1,
@@ -20,15 +23,21 @@ UNIT_PATTERNS = {
     "mg/mL": r"(?:mg\/ml)",
     "ng/mL": r"(?:ng\/ml|nanograms?\/ml)",
 }
+
 MIC_KEYWORD = r"(?:\bmic\b|\bmic50\b|\bmic90\b)"
 
-def calculate_mw(sequence: str) -> float:
-    return float(sum(AA_WEIGHTS.get(aa, 0.0) for aa in str(sequence).upper().strip()))
+REPORT_FILE = DATA_INTERMEDIATE_DIR / "step03_mic_filter_report.csv"
 
-def _norm(x) -> str:
+def calculate_mw(sequence: str) -> float:
+    seq = str(sequence).upper().strip()
+    return float(sum(AA_WEIGHTS.get(aa, 0.0) for aa in seq))
+
+
+def _norm_text(x) -> str:
     if pd.isna(x):
         return ""
     return str(x).replace("≤", "<=").replace("≥", ">=").lower()
+
 
 def detect_unit(text: str) -> str | None:
     for unit, pat in UNIT_PATTERNS.items():
@@ -36,8 +45,12 @@ def detect_unit(text: str) -> str | None:
             return unit
     return None
 
+
 def extract_mic(text: str) -> list[tuple[float, str | None]]:
-    text = _norm(text)
+    """
+    Extract MIC values as (value, unit). Supports ranges '2-4' (returns both).
+    """
+    text = _norm_text(text)
     if not re.search(MIC_KEYWORD, text, flags=re.I):
         return []
 
@@ -49,7 +62,7 @@ def extract_mic(text: str) -> list[tuple[float, str | None]]:
         flags=re.I
     )
 
-    out = []
+    out: list[tuple[float, str | None]] = []
     for m in pat.finditer(text):
         v1 = float(m.group(1))
         v2 = m.group(2)
@@ -63,13 +76,16 @@ def extract_mic(text: str) -> list[tuple[float, str | None]]:
                     break
             if unit is None and token in {"um", "µm", "μm"}:
                 unit = "uM"
+
         if unit is None:
             unit = detect_unit(text)
 
         out.append((v1, unit))
         if v2:
             out.append((float(v2), unit))
+
     return out
+
 
 def to_ugml(value: float, unit: str | None, mw: float) -> float | None:
     if unit == "ug/mL":
@@ -82,47 +98,71 @@ def to_ugml(value: float, unit: str | None, mw: float) -> float | None:
         return (value * mw) / 1000.0 if mw > 0 else None
     return None
 
+
 def filter_one(db_name: str) -> Path:
     in_file = DATA_INTERMEDIATE_DIR / f"{db_name}_02_structural_filtered.parquet"
     if not in_file.exists():
-        raise FileNotFoundError(in_file)
-
-    df = pd.read_parquet(in_file)
+        print(f"⚠️ {db_name}: missing input -> {in_file.name} (skipping)")
+        return in_file
+    df = pd.read_parquet(in_file).copy()
+    if "sequence" not in df.columns:
+        print(f"⚠️ {db_name}: no 'sequence' column (skipping)")
+        return in_file
     n0 = len(df)
+    if n0 == 0:
+        raise ValueError(f"Empty input file: {in_file}")
 
+    # Build MIC search text without creating "nan"
     combined = (
-        df.get("activity", "").astype(str).fillna("") + " " +
-        df.get("target_group", "").astype(str).fillna("") + " " +
-        df.get("target_object", "").astype(str).fillna("")
+        df.get("activity", pd.Series([""] * n0)).astype("string").fillna("") + " " +
+        df.get("target_group", pd.Series([""] * n0)).astype("string").fillna("") + " " +
+        df.get("target_object", pd.Series([""] * n0)).astype("string").fillna("")
     )
 
-    mw = df["sequence"].astype(str).apply(calculate_mw)
+    mw = df["sequence"].astype("string").fillna("").apply(calculate_mw)
 
     min_mic = []
+    unit_detected = []
+
     for txt, m in zip(combined.tolist(), mw.tolist()):
         vals = []
+        units = set()
+
         for v, u in extract_mic(txt):
             cv = to_ugml(v, u, m)
             if cv is not None:
                 vals.append(cv)
+                if u:
+                    units.add(u)
+
         min_mic.append(float(min(vals)) if vals else np.nan)
+        unit_detected.append(";".join(sorted(units)) if units else "")
 
     df["min_mic_ugml"] = min_mic
+    df["mic_unit_detected"] = unit_detected
 
     has = df["min_mic_ugml"].notna()
     rm = has & (df["min_mic_ugml"] >= MIC_THRESHOLD_UGML)
 
-    df2 = df.loc[~rm].copy()
+    df_out = df.loc[~rm].copy()
     out_file = DATA_INTERMEDIATE_DIR / f"{db_name}_03_mic_filtered.parquet"
-    df2.to_parquet(out_file, index=False)
+    df_out.to_parquet(out_file, index=False)
 
-    print(f"{db_name}: start={n0} mic_parsed={int(has.sum())} removed_mic={int(rm.sum())} final={len(df2)}")
+    print(
+        f"{db_name}: start={n0} "
+        f"mic_parsed={int(has.sum())} "
+        f"removed_mic={int(rm.sum())} "
+        f"final={len(df_out)} "
+        f"-> {out_file.name}"
+    )
     return out_file
 
+
 def main() -> None:
-    for db in ["CAMP", "DBAASP", "dbAMP3", "DRAMP"]:
+    for db in DBS:
         filter_one(db)
     print("✅ step03 done")
+
 
 if __name__ == "__main__":
     main()
