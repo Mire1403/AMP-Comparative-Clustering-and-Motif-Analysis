@@ -52,12 +52,29 @@ results/clustering/AMP_MASTER_mmseq_all_seqs.fasta
 # Non-AMP clustering outputs
 results/clustering/NONAMP_*
 
+# ignore heavy pipeline outputs
+results/background_generation/
+results/clustering/
+results/motif_discovery/
+results/motif_scanning/
+
+# keep statistics
+!results/statistics/
+
+# ignore temp files
+*.tmp
+*.log
+mmseq_tmp*
+
 ############################
 # MEME Suite verbose reports (optional)
 ############################
 *.html
 *.xml
 *.eps
+
+# Manifest files
+*manifest.txt
 
 ############################
 # Logs

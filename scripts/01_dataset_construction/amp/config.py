@@ -14,7 +14,7 @@ DATA_FINAL_DIR.mkdir(parents=True, exist_ok=True)
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 DB_PATHS = {
-    "CAMP": DATA_RAW_DIR / "CAMP" / "CAMP_2026-02-16 15-21-23.txt",
+    "CAMP": DATA_RAW_DIR / "CAMP" / "CAMP.txt",
     "DBAASP": DATA_RAW_DIR / "DBAASP" / "peptides.csv",
     "dbAMP3": DATA_RAW_DIR / "dbAMP3" / "dbAMP3_pepinfo.xlsx",
     "DRAMP": DATA_RAW_DIR / "DRAMP" / "natural_amps.txt",
