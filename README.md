@@ -37,11 +37,11 @@ motif_similarity/ # Tomtom outputs + global motif file
 statistics/ # Enrichment tables, summaries, plots, graph outputs
 
 scripts/
-data_processing/ # AMP dataset building and cleaning
-clustering/ # CD-HIT/MMseqs2 pipelines + comparison plots
-background_generation/
-motif_analysis/ # 10x generation + MEME/STREME + FIMO + Tomtom
-statistics/ # Enrichment/FDR + reporting + Tomtom graph components
+01_data_construction/ # AMP dataset building and cleaning
+02_redundancy_reduction/ # CD-HIT/MMseqs2 pipelines + comparison plots
+03_background_sampling/
+04_motif_analysis/ # 10x generation + MEME/STREME + FIMO + Tomtom
+05_statistics/ # Enrichment/FDR + reporting + Tomtom graph components
 ```
 
 ---
@@ -63,7 +63,7 @@ statistics/ # Enrichment/FDR + reporting + Tomtom graph components
 - non-AMPs: CD-HIT + MMseqs2 → `results/clustering/`
 
 ### D) Background generation
-- Generate length/KR-matched non-AMP fragments (e.g., 50x) → `results/background_generation/`
+- Generate length/KR-matched non-AMP fragments → `results/background_generation/`
 
 ### E) Motif discovery & scanning
 - Build 10x background subset → `results/motif_discovery/nonamp_*_10x.fasta`
