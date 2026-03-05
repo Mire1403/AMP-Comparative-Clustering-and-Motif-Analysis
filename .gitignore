@@ -81,3 +81,11 @@ sequences.tsv
 # Logs
 ############################
 *.log
+
+# --- Allow lightweight motif discovery outputs (track these) ---
+!results/motif_discovery/
+!results/motif_discovery/**/
+!results/motif_discovery/**/meme.html
+!results/motif_discovery/**/meme.txt
+!results/motif_discovery/**/streme.html
+!results/motif_discovery/**/streme.txt
