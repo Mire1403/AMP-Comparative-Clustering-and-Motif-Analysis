@@ -44,7 +44,7 @@ NONAMP_FASTA_MMSEQ = RESULTS_CLUSTER_DIR / "NONAMP_mmseq_rep_seq.fasta"
 # =====================================================
 
 MULTIPLIER = 10
-MIN_LENGTH = 5
+MIN_LENGTH = 6
 RANDOM_SEED = 42
 ALPHA = 0.05
 

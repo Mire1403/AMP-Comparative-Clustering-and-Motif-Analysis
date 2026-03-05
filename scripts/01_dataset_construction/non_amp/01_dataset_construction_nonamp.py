@@ -19,7 +19,7 @@ INPUT_FASTA = DATA_RAW_DIR / "uniprot_nonamp_raw.fasta"
 OUTPUT_FASTA = DATA_INTERMEDIATE_DIR / "nonamp_clean_min5.fasta"
 REPORT_CSV = DATA_INTERMEDIATE_DIR / "nonamp_clean_min5_report.csv"
 
-MIN_LEN = 5
+MIN_LEN = 6
 VALID_AA = set("ACDEFGHIKLMNPQRSTVWY")
 
 # =====================================================

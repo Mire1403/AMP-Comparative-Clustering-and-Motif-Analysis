@@ -6,6 +6,6 @@ p-value: 1.0
 Interpretation (alpha=0.05): NOT significantly different
 
 K+R Composition Distribution:
-KS statistic: 0.25506483882919595
+KS statistic: 0.254799939144987
 p-value: 0.0
 Interpretation (alpha=0.05): Significantly different

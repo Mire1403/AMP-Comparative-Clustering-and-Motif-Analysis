@@ -20,7 +20,7 @@ DB_PATHS = {
     "DRAMP": DATA_RAW_DIR / "DRAMP" / "natural_amps.txt",
 }
 
-MIN_LENGTH = 5
+MIN_LENGTH = 6
 MAX_LENGTH = 80
 
 # MIC filter

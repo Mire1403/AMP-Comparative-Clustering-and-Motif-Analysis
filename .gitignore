@@ -67,11 +67,12 @@ results/motif_scanning/
 mmseq_tmp*
 
 ############################
-# MEME Suite verbose reports (optional)
+# MEME Suite verbose reports
 ############################
-*.html
-*.xml
 *.eps
+sites.tsv
+sequences.tsv
+*.xml
 
 # Manifest files
 *manifest.txt

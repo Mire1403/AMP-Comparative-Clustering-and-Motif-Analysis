@@ -1,3 +1,3 @@
 label,multiplier,expected,generated,coverage,background_fasta,ks_len_stat,ks_len_p,ks_kr_stat,ks_kr_p,len_match_ok,kr_match_ok
 cdhit,10,86820,86820,1.0,/mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/background_generation/nonamp_cdhit_10x_len_kr_matched_progressive_random.fasta,0.0,1.0,0.20944482838055745,3.1814608406221222e-304,True,False
-mmseq,10,134950,134950,1.0,/mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/background_generation/nonamp_mmseq_10x_len_kr_matched_progressive_random.fasta,0.0,1.0,0.25506483882919595,0.0,True,False
+mmseq,10,131460,131460,1.0,/mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/background_generation/nonamp_mmseq_10x_len_kr_matched_progressive_random.fasta,0.0,1.0,0.254799939144987,0.0,True,False
