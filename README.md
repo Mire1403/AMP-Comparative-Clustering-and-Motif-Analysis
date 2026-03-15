@@ -4,9 +4,13 @@ Reproducible bioinformatics pipeline to benchmark two redundancy-reduction strat
 
 The project evaluates whether the choice of clustering strategy systematically affects the motifs recovered downstream and their statistical support.
 
+---
+
 ## Research question
 
 Does the choice of redundancy-reduction strategy (CD-HIT vs MMseqs2) systematically influence the identity, enrichment, and robustness of antimicrobial peptide motifs discovered downstream?
+
+---
 
 ## Overview
 
@@ -103,13 +107,14 @@ Final outputs:
 - ``data/final/DB_MASTER_CLEAN.parquet``
 - ``data/final/AMP_MASTER.fasta``
 
-### **Non-AMP background.** 
+#### **Non-AMP background.** 
 ``scripts/01_dataset_construction/non_amp/01_dataset_construction_nonamp.py`` filters a UniProt-derived non-AMP FASTA by:
 - minimum peptide length,
 - valid amino acid alphabet,
 - sequence uniqueness.
 
 This produces the cleaned non-AMP pool used for background sampling.
+
 
 ### Stage 2 — Redundancy reduction 
 Scripts in ``scripts/02_redundancy_reduction/`` cluster AMP and non-AMP sequence sets independently at 80% sequence identity using:
@@ -120,12 +125,14 @@ This yields representative sequence sets for both clustering strategies.
 
 A comparison script generates descriptive statistics and validation plots for the resulting representative sets.
 
+
 ### Stage 3 — Background sampling
 `scripts/03_background_sampling/` generates a **10× non-AMP background** for each clustering condition.
 - peptide length distribution,
 - per-length K+R composition.
 
 Post-generation validation is performed using two-sample Kolmogorov–Smirnov tests and diagnostic plots.
+
 
 ### Stage 4 — Motif analysis 
 Scripts in ``scripts/04_motif_analysis/`` perform motif discovery and scanning.
@@ -145,6 +152,7 @@ This covers all combinations of:
 - 2 clustering strategies,
 - 2 motif discovery tools,
 - 2 sequence sets.
+
 
 ### Stage 5 — Statistics and motif-family analysis
 Scripts in ``scripts/05_statistics/`` perform enrichment analysis, reporting, family-level robustness analysis, and logo generation.
@@ -183,7 +191,9 @@ Scripts in ``scripts/05_statistics/`` perform enrichment analysis, reporting, fa
 Sequence logos are generated for all motifs belonging to robust motif families using Logomaker.
 Each family receives its own directory containing motif logos and summary tables.
 
+
 ---
+
 
 ## Execution order
 
