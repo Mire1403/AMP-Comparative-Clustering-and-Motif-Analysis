@@ -1,0 +1,5 @@
+Clustering,Tool,AMP_status,nonAMP_status,AMP_rows,nonAMP_rows,AMP_motifs,nonAMP_motifs,Shared_motifs,Frac_nonAMP_zero,Suspicious,Comment
+cdhit,meme,ok_using_motif_id,ok_using_motif_id,16368,1121,20,13,13,0.35,False,ok
+cdhit,streme,ok_using_motif_id,ok_using_motif_id,14868,993,57,17,17,0.7018,True,high fraction of motifs with nonAMP=0
+mmseq,meme,ok_using_motif_id,ok_using_motif_id,27550,1984,20,16,16,0.2,False,ok
+mmseq,streme,ok_using_motif_id,ok_using_motif_id,23435,14613,69,60,60,0.1304,False,ok

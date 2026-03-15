@@ -1,0 +1,199 @@
+############################
+# OS / Editors
+############################
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+############################
+# Python
+############################
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+############################
+# Environments
+############################
+.env
+.venv/
+venv/
+env/
+ENV/
+conda-meta/
+
+############################
+# Raw data (large / licensed)
+############################
+data/raw/
+
+############################
+# Intermediate data
+# Keep parquet only; ignore local exports
+############################
+data/intermediate/*.csv
+data/intermediate/*.tsv
+data/intermediate/*.fasta
+data/intermediate/*.fa
+data/intermediate/*.fna
+
+############################
+# Background generation (heavy, reproducible)
+############################
+results/background_generation/
+
+############################
+# AMP DB build
+# Keep selected lightweight summary outputs only
+############################
+results/01_amp_db_build/*
+!results/01_amp_db_build/final_preview.csv
+!results/01_amp_db_build/final_stats.json
+
+############################
+# Clustering outputs
+# Keep only validation pngs
+############################
+results/02_clustering/
+results/clustering/*
+
+!results/clustering/validation_cdhit/
+results/clustering/validation_cdhit/*
+!results/clustering/validation_cdhit/*.png
+
+!results/clustering/validation_mmseq/
+results/clustering/validation_mmseq/*
+!results/clustering/validation_mmseq/*.png
+
+############################
+# Motif discovery
+# Keep only html and txt reports
+############################
+results/04_motif_discovery/*
+
+!results/04_motif_discovery/meme_cdhit/
+results/04_motif_discovery/meme_cdhit/*
+!results/04_motif_discovery/meme_cdhit/*.html
+!results/04_motif_discovery/meme_cdhit/*.txt
+
+!results/04_motif_discovery/meme_mmseq/
+results/04_motif_discovery/meme_mmseq/*
+!results/04_motif_discovery/meme_mmseq/*.html
+!results/04_motif_discovery/meme_mmseq/*.txt
+
+!results/04_motif_discovery/streme_cdhit/
+results/04_motif_discovery/streme_cdhit/*
+!results/04_motif_discovery/streme_cdhit/*.html
+!results/04_motif_discovery/streme_cdhit/*.txt
+
+!results/04_motif_discovery/streme_mmseq/
+results/04_motif_discovery/streme_mmseq/*
+!results/04_motif_discovery/streme_mmseq/*.html
+!results/04_motif_discovery/streme_mmseq/*.txt
+
+############################
+# FIMO scanning
+# Full scan outputs are reproducible and not tracked
+############################
+results/05_motif_scanning/
+
+############################
+# Statistics
+# Ignore by default, then selectively keep lightweight outputs
+############################
+results/statistics/*
+
+# Clustering stats
+!results/statistics/clustering/
+results/statistics/clustering/*
+!results/statistics/clustering/*.csv
+!results/statistics/clustering/*.png
+!results/statistics/clustering/*.txt
+!results/statistics/clustering/*.parquet
+
+# Background sampling stats
+!results/statistics/background_sampling/
+results/statistics/background_sampling/*
+!results/statistics/background_sampling/*.csv
+!results/statistics/background_sampling/*.png
+!results/statistics/background_sampling/*.txt
+!results/statistics/background_sampling/*.parquet
+
+# 03_fimo_enrichment
+!results/statistics/03_fimo_enrichment/
+results/statistics/03_fimo_enrichment/*
+!results/statistics/03_fimo_enrichment/*.csv
+!results/statistics/03_fimo_enrichment/*.png
+!results/statistics/03_fimo_enrichment/*.txt
+!results/statistics/03_fimo_enrichment/*.parquet
+
+# 04_fimo_reporting
+!results/statistics/04_fimo_reporting/
+results/statistics/04_fimo_reporting/*
+!results/statistics/04_fimo_reporting/*.csv
+!results/statistics/04_fimo_reporting/*.png
+!results/statistics/04_fimo_reporting/*.txt
+!results/statistics/04_fimo_reporting/*.parquet
+
+# 05_motif_family_analysis
+!results/statistics/05_motif_family_analysis/
+results/statistics/05_motif_family_analysis/*
+!results/statistics/05_motif_family_analysis/*.csv
+!results/statistics/05_motif_family_analysis/*.png
+!results/statistics/05_motif_family_analysis/*.txt
+!results/statistics/05_motif_family_analysis/*.parquet
+
+# 06_final_reporting
+!results/statistics/06_final_reporting/
+results/statistics/06_final_reporting/*
+!results/statistics/06_final_reporting/*.csv
+!results/statistics/06_final_reporting/*.png
+!results/statistics/06_final_reporting/*.txt
+!results/statistics/06_final_reporting/*.parquet
+
+############################
+# Local exploration / spreadsheets
+############################
+*.xlsx
+
+############################
+# MEME Suite verbose outputs
+############################
+*.eps
+*.xml
+sites.tsv
+sequences.tsv
+
+############################
+# Large sequence / clustering artifacts
+############################
+*.fasta
+*.fa
+*.fna
+*.clstr
+
+############################
+# MMseqs2 temporary databases / temp dirs
+############################
+**/mmseq_tmp*/
+**/tmp*/
+*.db
+*.dbtype
+*.index
+*.lookup
+*.source
+*.clu*
+
+############################
+# Logs / temporary files
+############################
+*.tmp
+*.temp
+*.log

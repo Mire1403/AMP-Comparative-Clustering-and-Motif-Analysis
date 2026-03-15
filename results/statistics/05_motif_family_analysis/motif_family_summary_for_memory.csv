@@ -1,0 +1,12 @@
+﻿Family_ID;Representative_motif;Representative_class;n_unique_motifs;n_pipelines;Pipelines_present;median_ER;min_FDR;Family_members;mean_Total_hits;mean_AMP_hit_frequency_pct;n_infinite_ER
+FAM_042;FVYVLIJFLSLF;Hydrophobic/signal-like;3;3;"cdhit_streme;mmseq_meme;mmseq_streme";2138.5;0.0;"FLSLFL;FVYVLIJFLSLF;IJFLSLFLVV";804.3333333333334;9.2;1
+FAM_067;MAKILKFVY;Hydrophobic/signal-like;4;3;"cdhit_streme;mmseq_meme;mmseq_streme";94.6875;0.0;"ILKFVYA;MAKILK;MAKILKFVY;MAQISK";319.0;4.78;3
+FAM_080;LKKLLKKLKK;Cationic-rich;3;2;"cdhit_streme;mmseq_meme";537.8571428571429;0.0;"KKLEKLAKKI;KLKLLCKLKK;LKKLLKKLKK";1408.0;15.006666666666666;0
+FAM_133;VVAATYVL;Hydrophobic/signal-like;2;2;"cdhit_streme;mmseq_streme";410.0;0.0;"VVAATY;VVAATYVL";216.5;2.725;1
+FAM_108;PRPRPPPR;Cationic-rich;2;2;"mmseq_meme;mmseq_streme";61.90744920993228;0.0;"PRPRPPPR;PRPXPPPPRPPRPPP";1140.0;5.085;0
+FAM_015;CINGKCKC;Cys-rich;2;2;"cdhit_meme;mmseq_meme";;0.0;"CINGKCKC;KCINGVCC";1543.0;21.145;2
+FAM_017;CKCTKDC;Cys-rich;2;2;"cdhit_meme;mmseq_meme";;0.0;"CKCTKDC;CKJTKTC";897.0;12.84;2
+FAM_061;GTCDLLS;Other;2;2;"cdhit_streme;mmseq_streme";29.36936936936937;1.5967253855160148e-239;"GTCDLLS;TCDLLS";253.0;3.42;1
+FAM_118;RIRVAVIR;Cationic-rich;2;2;"mmseq_meme;mmseq_streme";9.851084856924668;1.7360125738156778e-237;"RIRVAVIR;RVAVIRA";354.0;3.9749999999999996;0
+FAM_004;AGPAVGVI;Hydrophobic/signal-like;2;2;"cdhit_streme;mmseq_streme";50.69062500000001;5.9326677368594745e-177;"AGPAVGVI;IKAGPAV";236.0;3.0300000000000002;0
+FAM_003;AGGSRQ;Gly-rich;2;2;"cdhit_streme;mmseq_streme";11.25;1.0037477668756456e-50;"AGGSRPQ;AGGSRQ";43.0;0.645;1
