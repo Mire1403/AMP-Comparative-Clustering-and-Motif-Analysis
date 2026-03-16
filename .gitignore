@@ -61,16 +61,16 @@ results/01_amp_db_build/*
 # Clustering outputs
 # Keep only validation pngs
 ############################
-results/02_clustering/
-results/clustering/*
+!results/02_clustering/
+results/02_clustering/*
 
-!results/clustering/validation_cdhit/
-results/clustering/validation_cdhit/*
-!results/clustering/validation_cdhit/*.png
+!results/02_clustering/validation_cdhit/
+results/02_clustering/validation_cdhit/*
+!results/02_clustering/validation_cdhit/*.png
 
-!results/clustering/validation_mmseq/
-results/clustering/validation_mmseq/*
-!results/clustering/validation_mmseq/*.png
+!results/02_clustering/validation_mmseq/
+results/02_clustering/validation_mmseq/*
+!results/02_clustering/validation_mmseq/*.png
 
 ############################
 # Motif discovery
