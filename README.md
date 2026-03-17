@@ -26,6 +26,7 @@ Starting from a curated AMP collection and a matched non-AMP background, the pip
 8. groups significant motifs into families using sequence similarity and identifies robust families reproduced across multiple pipelines.
 
 The final output is a ranked set of **robust AMP motif families** reproducible across multiple pipeline configurations.
+This design enables direct comparison of motif discovery consistency and robustness across independent computational pipelines.
 
 ---
 
@@ -35,8 +36,9 @@ The most relevant outputs for interpretation are located in:
 
 - `results/statistics/03_fimo_enrichment/` — motif enrichment tables
 - `results/statistics/04_fimo_reporting/` — cleaned significant motif summaries and plots
-- `results/statistics/05_motif_family_analysis/` — motif family assignments and robustness analysis
-- `results/statistics/06_final_reporting/` — final ranked motif families and sequence logos
+- `results/statistics/05b_motif_family_analysis_tomtom/` — Tomtom-based motif family assignments and robustness analysis
+- `results/statistics/06b_final_reporting_tomtom/` — final ranked motif families
+- `results/statistics/07b_motif_logos_tomtom/` — family-organised motif logos
 
 ---
 
@@ -67,20 +69,27 @@ The most relevant outputs for interpretation are located in:
 │   └── 06_generate_logos/
 │
 ├── results/
-│   ├── amp_db_build/
-│   ├── clustering/
-│   ├── background_generation/            # Not tracked
+│   ├── 01_amp_db_build/
+│   ├── 02_clustering/
+│   ├── 03_background/            # Not tracked
 │   ├── 04_motif_discovery/               # MEME/STREME reports
 │   ├── 05_motif_scanning/                # FIMO outputs (not tracked)
 │   └── statistics/
-│       ├── clustering/
-│       ├── background_sampling/
+│       ├── 01_clustering/
+│       ├── 02_background_sampling/
 │       ├── 03_fimo_enrichment/
 │       ├── 04_fimo_reporting/
 │       ├── 05_motif_family_analysis/
-│       └── 06_final_reporting/
+│       ├── 05b_motif_family_analysis_tomtom/
+│       ├── 06_final_reporting/
+│       ├── 06b_final_reporting_tomtom/
+│       ├── 07_motif_logos/
+│       └── 07b_motif_logos_tomtom/
 │
-├── environment.yml
+├── envs/
+│   ├── environment.yml  # Core analysis environment
+│   └── environment_meme.yml  # MEME Suite environment
+│   
 ├── .gitignore
 └── README.md
 ```
@@ -142,6 +151,8 @@ Scripts in ``scripts/04_motif_analysis/`` perform motif discovery and scanning.
 - **STREME** (discriminative motif discovery),
 - **MEME** (ZOOPS model, discriminative setting),
 using the matched non-AMP background as the negative set.
+
+This step must be run within the MEME environment (`amp_meme`).
 
 #### **Motif scanning**
 ``02_run_fimo_scanning.py`` scans the discovered motif models with **FIMO** across:
@@ -233,9 +244,10 @@ All scripts resolve paths relative to the repository root and can therefore be r
 ---
 
 ## Installation
-Create the conda environment
+### 1. Core Python environment (data processing and statistics)
+
 ```bash
-conda env create -f environment.yml
+conda env create -f envs/environment.yml
 conda activate amp_motif
 ```
 Core Python dependencies include:
@@ -248,10 +260,31 @@ Core Python dependencies include:
 - pyarrow
 - logomaker
 
-External tools required on `PATH`:
+This environment is used for dataset construction, statistical analysis, and reporting.
+
+### 2. Motif discovery environment (MEME Suite)
+Motif discovery requires MEME Suite, which has specific Python and system dependencies.
+A separate environment is provided for full reproducibility.
+
+```bash
+conda env create -f envs/environment_meme.yml
+conda activate amp_meme
+```
+Check installation:
+
+```bash
+meme --version
+streme --version
+tomtom --version
+```
+
+### External tools required
+
+The following tools must be installed and available in the corresponding environments:
+
 - CD-HIT
 - MMseqs2
-- MEME Suite (meme, streme, fimo)
+- MEME Suite (`meme`, `streme`, `fimo`, `tomtom`)
 
 ---
 
