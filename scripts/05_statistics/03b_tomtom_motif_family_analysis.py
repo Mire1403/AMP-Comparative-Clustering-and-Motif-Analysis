@@ -20,18 +20,20 @@ import matplotlib.pyplot as plt
 # CONFIG
 # =====================================================
 
+# Tomtom
 TOMTOM_BIN = "/home/mireia14/miniconda3/envs/amp-analysis/bin/tomtom"
-
-TOMTOM_QVALUE_THRESHOLD = 0.01
-TOMTOM_MIN_OVERLAP = 4
-MIN_COVERAGE = 0.70
+TOMTOM_QVALUE_THRESHOLD = 0.0001
+TOMTOM_MIN_OVERLAP = 6
+MIN_COVERAGE = 0.75
 REQUIRE_RECIPROCAL_HIT = True
 TOMTOM_DIST = "pearson"
 TOMTOM_MINIMAL = True
 
+# Family filtering / diagnostics
 MIN_PIPELINES_ROBUST = 2
 SUSPICIOUS_FAMILY_SIZE = 8
 
+# Plot colors
 CLASS_COLORS = {
     "Cys-rich": "#e07b54",
     "Gly-rich": "#6ab187",
@@ -78,7 +80,7 @@ TOMTOM_TSV = TOMTOM_OUT_DIR / "tomtom.tsv"
 # =====================================================
 
 def die(msg: str) -> None:
-    print(f"ERROR: {msg}")
+    print(msg)
     sys.exit(1)
 
 
@@ -132,30 +134,18 @@ def sanitize_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
 def save_csv(df: pd.DataFrame, path: Path) -> None:
     sanitize_dataframe(df).to_csv(
-        path,
-        index=False,
-        sep=";",
-        encoding="utf-8-sig",
-        quoting=csv.QUOTE_MINIMAL,
+        path, index=False, sep=";", encoding="utf-8-sig", quoting=csv.QUOTE_MINIMAL
     )
-
-
-def save_xlsx(df: pd.DataFrame, path: Path, sheet_name: str = "Results") -> None:
-    try:
-        with pd.ExcelWriter(path, engine="openpyxl") as writer:
-            sanitize_dataframe(df).to_excel(writer, index=False, sheet_name=sheet_name)
-    except Exception as e:
-        print(f"WARNING: could not write Excel file {path.name}: {e}")
 
 
 def finite_mean(x: pd.Series) -> float:
     x = pd.to_numeric(x, errors="coerce").replace([np.inf, -np.inf], np.nan)
-    return float(x.mean()) if not x.dropna().empty else np.nan
+    return x.mean()
 
 
 def finite_median(x: pd.Series) -> float:
     x = pd.to_numeric(x, errors="coerce").replace([np.inf, -np.inf], np.nan)
-    return float(x.median()) if not x.dropna().empty else np.nan
+    return x.median()
 
 
 def _class_color(cls: str) -> str:
@@ -196,8 +186,8 @@ def read_text(path: Path) -> str:
 
 def split_meme_header_and_blocks(text: str) -> tuple[list[str], list[list[str]]]:
     lines = text.splitlines()
-    header: list[str] = []
-    blocks: list[list[str]] = []
+    header = []
+    blocks = []
 
     i = 0
     while i < len(lines):
@@ -206,7 +196,7 @@ def split_meme_header_and_blocks(text: str) -> tuple[list[str], list[list[str]]]
         header.append(lines[i])
         i += 1
 
-    current: list[str] = []
+    current = []
     while i < len(lines):
         line = lines[i]
         if line.startswith("MOTIF "):
@@ -242,9 +232,9 @@ def parse_motif_width_from_block(block: list[str]) -> int | None:
 
 
 def build_combined_meme_file(motif_files: dict[str, Path], output_path: Path) -> pd.DataFrame:
-    all_blocks: list[list[str]] = []
-    metadata_rows: list[dict[str, object]] = []
-    final_header: list[str] | None = None
+    all_blocks = []
+    metadata_rows = []
+    final_header = None
 
     for pipeline, path in motif_files.items():
         if not path.exists():
@@ -313,26 +303,14 @@ def run_tomtom(query_file: Path, target_file: Path, out_dir: Path) -> None:
         shutil.rmtree(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    if TOMTOM_MINIMAL:
-        cmd = [
-            TOMTOM_BIN,
-            "-dist", TOMTOM_DIST,
-            "-min-overlap", str(TOMTOM_MIN_OVERLAP),
-            "-protein",
-            "-text",
-            str(query_file),
-            str(target_file),
-        ]
-    else:
-        cmd = [
-            TOMTOM_BIN,
-            "-oc", str(out_dir),
-            "-dist", TOMTOM_DIST,
-            "-min-overlap", str(TOMTOM_MIN_OVERLAP),
-            "-protein",
-            str(query_file),
-            str(target_file),
-        ]
+    cmd = [
+        TOMTOM_BIN,
+        "-dist", TOMTOM_DIST,
+        "-min-overlap", str(TOMTOM_MIN_OVERLAP),
+        "-text",
+        str(query_file),
+        str(target_file)
+    ]
 
     print("\nRunning Tomtom:")
     print(" ".join(cmd))
@@ -340,28 +318,17 @@ def run_tomtom(query_file: Path, target_file: Path, out_dir: Path) -> None:
     result = subprocess.run(cmd, capture_output=True, text=True)
 
     if result.returncode != 0:
-        print("\n--- TOMTOM STDOUT ---")
-        print(result.stdout[:5000] if result.stdout else "[empty]")
-        print("\n--- TOMTOM STDERR ---")
-        print(result.stderr[:5000] if result.stderr else "[empty]")
-        die(f"Tomtom failed with exit code {result.returncode}")
+        print(result.stderr)
+        die(f"Tomtom failed with return code {result.returncode}.")
 
-    if TOMTOM_MINIMAL:
-        TOMTOM_TSV.write_text(result.stdout, encoding="utf-8")
-    else:
-        if not TOMTOM_TSV.exists():
-            die(f"Tomtom finished but {TOMTOM_TSV} was not found.")
+    TOMTOM_TSV.write_text(result.stdout, encoding="utf-8")
 
 
 def load_tomtom_tsv(path: Path) -> pd.DataFrame:
     if not path.exists():
         die(f"Tomtom TSV not found: {path}")
 
-    try:
-        df = pd.read_csv(path, sep="\t", comment="#")
-    except Exception as e:
-        die(f"Could not parse Tomtom TSV: {e}")
-
+    df = pd.read_csv(path, sep="\t", comment="#")
     if df.empty:
         return df
 
@@ -369,7 +336,7 @@ def load_tomtom_tsv(path: Path) -> pd.DataFrame:
     return df
 
 
-def detect_tomtom_columns(df: pd.DataFrame) -> dict[str, str | None]:
+def detect_tomtom_columns(df: pd.DataFrame) -> dict[str, str]:
     cols = {c.lower(): c for c in df.columns}
 
     def pick(options: list[str]) -> str | None:
@@ -378,7 +345,7 @@ def detect_tomtom_columns(df: pd.DataFrame) -> dict[str, str | None]:
                 return cols[opt.lower()]
         return None
 
-    mapping: dict[str, str | None] = {
+    mapping = {
         "query_id": pick(["Query_ID", "Query ID"]),
         "target_id": pick(["Target_ID", "Target ID"]),
         "pvalue": pick(["p-value", "pvalue"]),
@@ -404,6 +371,12 @@ def build_tomtom_pairs_detailed(
     min_overlap: int,
     min_coverage: float,
 ) -> pd.DataFrame:
+    """
+    Builds a directional table A->B after applying:
+    - q-value threshold
+    - min overlap
+    - minimum relative coverage
+    """
     if tomtom_df.empty:
         return pd.DataFrame(columns=[
             "Query_ID", "Target_ID",
@@ -412,22 +385,22 @@ def build_tomtom_pairs_detailed(
             "Query_width", "Target_width",
             "Coverage_min_width",
             "Query_pipeline", "Target_pipeline",
-            "Query_original", "Target_original",
+            "Query_original", "Target_original"
         ])
 
     colmap = detect_tomtom_columns(tomtom_df)
     meta = motif_meta.set_index("tomtom_id").to_dict(orient="index")
 
-    rows: list[dict[str, object]] = []
+    rows = []
 
     for _, row in tomtom_df.iterrows():
-        qid = sanitize_token(row[colmap["query_id"]])  # type: ignore[index]
-        tid = sanitize_token(row[colmap["target_id"]])  # type: ignore[index]
+        qid = sanitize_token(row[colmap["query_id"]])
+        tid = sanitize_token(row[colmap["target_id"]])
 
         if qid == tid:
             continue
 
-        qval = pd.to_numeric(row[colmap["qvalue"]], errors="coerce")  # type: ignore[index]
+        qval = pd.to_numeric(row[colmap["qvalue"]], errors="coerce")
         if pd.isna(qval) or qval > qvalue_threshold:
             continue
 
@@ -442,9 +415,10 @@ def build_tomtom_pairs_detailed(
         twidth = pd.to_numeric(tmeta.get("motif_width"), errors="coerce")
         min_width = np.nanmin([qwidth, twidth]) if not (pd.isna(qwidth) and pd.isna(twidth)) else np.nan
 
-        coverage = np.nan
         if pd.notna(overlap) and pd.notna(min_width) and min_width > 0:
             coverage = overlap / min_width
+        else:
+            coverage = np.nan
 
         if pd.notna(coverage) and coverage < min_coverage:
             continue
@@ -476,7 +450,7 @@ def build_tomtom_pairs_detailed(
             "Query_width", "Target_width",
             "Coverage_min_width",
             "Query_pipeline", "Target_pipeline",
-            "Query_original", "Target_original",
+            "Query_original", "Target_original"
         ])
 
     return detailed.sort_values(["q_value", "E_value", "p_value"], ascending=[True, True, True])
@@ -486,6 +460,10 @@ def build_reciprocal_edges(
     directional_df: pd.DataFrame,
     require_reciprocal: bool,
 ) -> pd.DataFrame:
+    """
+    Converts directional hits into undirected edges.
+    If require_reciprocal=True, keeps only A->B and B->A confirmed pairs.
+    """
     if directional_df.empty:
         return pd.DataFrame(columns=[
             "Motif_A", "Motif_B",
@@ -493,13 +471,15 @@ def build_reciprocal_edges(
             "best_overlap", "mean_overlap",
             "best_coverage", "mean_coverage",
             "reciprocal",
+            "Pipeline_A", "Pipeline_B",
+            "Original_A", "Original_B"
         ])
 
     records = directional_df.to_dict(orient="records")
     dir_map = {(r["Query_ID"], r["Target_ID"]): r for r in records}
 
-    rows: list[dict[str, object]] = []
-    seen: set[tuple[str, str]] = set()
+    rows = []
+    seen = set()
 
     for (a, b), rab in dir_map.items():
         pair = canonical_pair(a, b)
@@ -519,6 +499,11 @@ def build_reciprocal_edges(
         evals = [x["E_value"] for x in [rab, rba] if x is not None and pd.notna(x["E_value"])]
         pvals = [x["p_value"] for x in [rab, rba] if x is not None and pd.notna(x["p_value"])]
 
+        ra = rab if pair[0] == a else rba
+        rb = rba if pair[1] == b else rab
+
+        any_record = rab if rab is not None else rba
+
         rows.append({
             "Motif_A": pair[0],
             "Motif_B": pair[1],
@@ -530,6 +515,10 @@ def build_reciprocal_edges(
             "best_coverage": np.nanmax(coverages) if coverages else np.nan,
             "mean_coverage": np.nanmean(coverages) if coverages else np.nan,
             "reciprocal": reciprocal,
+            "Pipeline_A": any_record.get("Query_pipeline", "") if any_record else "",
+            "Pipeline_B": any_record.get("Target_pipeline", "") if any_record else "",
+            "Original_A": pair[0],
+            "Original_B": pair[1],
         })
 
     edges = pd.DataFrame(rows)
@@ -540,6 +529,8 @@ def build_reciprocal_edges(
             "best_overlap", "mean_overlap",
             "best_coverage", "mean_coverage",
             "reciprocal",
+            "Pipeline_A", "Pipeline_B",
+            "Original_A", "Original_B"
         ])
 
     return edges.sort_values(["best_q_value", "best_E_value", "best_p_value"], ascending=[True, True, True])
@@ -550,27 +541,20 @@ def build_reciprocal_edges(
 # =====================================================
 
 def plot_family_er_by_class(family_summary: pd.DataFrame, out_dir: Path) -> None:
-    if family_summary.empty or "median_ER" not in family_summary.columns:
-        return
-
     df = family_summary.dropna(subset=["median_ER"]).copy()
     if df.empty:
         return
 
     df = df.sort_values(
         ["n_pipelines", "median_ER", "n_unique_motifs"],
-        ascending=[False, False, False],
+        ascending=[False, False, False]
     ).head(20)
-
-    if df.empty:
-        return
-
     df = df.sort_values("median_ER", ascending=True)
+
     colors = [_class_color(c) for c in df["Representative_class"]]
 
     fig, ax = plt.subplots(figsize=(10, 7))
     ax.barh(range(len(df)), df["median_ER"].values, color=colors)
-
     ax.set_yticks(range(len(df)))
     ax.set_yticklabels(df["Representative_motif"].astype(str).tolist(), fontsize=9)
     ax.set_xlabel("Median Enrichment Ratio")
@@ -609,8 +593,7 @@ def plot_pipeline_heatmap(presence: pd.DataFrame, out_dir: Path) -> None:
 
 
 def plot_er_vs_hit_freq(family_summary: pd.DataFrame, out_dir: Path) -> None:
-    needed = {"median_ER", "mean_AMP_hit_frequency_pct", "Representative_class", "n_unique_motifs"}
-    if family_summary.empty or not needed.issubset(family_summary.columns):
+    if "mean_AMP_hit_frequency_pct" not in family_summary.columns:
         return
 
     df = family_summary.dropna(subset=["median_ER", "mean_AMP_hit_frequency_pct"]).copy()
@@ -631,7 +614,7 @@ def plot_er_vs_hit_freq(family_summary: pd.DataFrame, out_dir: Path) -> None:
         linewidths=0.5,
     )
 
-    top = df.nlargest(min(8, len(df)), "median_ER")
+    top = df.nlargest(8, "median_ER")
     for _, row in top.iterrows():
         ax.annotate(
             str(row["Representative_motif"]),
@@ -657,7 +640,7 @@ def plot_er_vs_hit_freq(family_summary: pd.DataFrame, out_dir: Path) -> None:
 
 
 def plot_bubble_fdr_er_hits(df: pd.DataFrame, out_dir: Path) -> None:
-    if df.empty or "Total_hits" not in df.columns or "FDR_corrected" not in df.columns:
+    if "Total_hits" not in df.columns or "FDR_corrected" not in df.columns:
         return
 
     plot_df = df.dropna(subset=["Enrichment_ratio", "FDR_corrected"]).copy()
@@ -670,12 +653,10 @@ def plot_bubble_fdr_er_hits(df: pd.DataFrame, out_dir: Path) -> None:
         return
 
     plot_df["log10_ER"] = np.log10(plot_df["ER_for_plot"].clip(lower=1e-12))
-    plot_df["minus_log10_FDR"] = -np.log10(
-        pd.to_numeric(plot_df["FDR_corrected"], errors="coerce").clip(lower=1e-300)
-    )
+    plot_df["minus_log10_FDR"] = -np.log10(pd.to_numeric(plot_df["FDR_corrected"], errors="coerce").clip(lower=1e-300))
 
     sizes = (plot_df["Total_hits"].fillna(1).clip(lower=1) * 2).clip(upper=300)
-    colors = [_class_color(c) for c in plot_df.get("Motif_class", pd.Series(["Other"] * len(plot_df)))]
+    colors = [_class_color(c) for c in plot_df.get("Motif_class", ["Other"] * len(plot_df))]
 
     fig, ax = plt.subplots(figsize=(10, 7))
     ax.scatter(
@@ -719,10 +700,10 @@ def main() -> None:
     if missing_motif_files:
         die("Missing motif discovery files:\n" + "\n".join(missing_motif_files))
 
-    try:
-        df = pd.read_csv(IN_FILE)
-    except Exception as e:
-        die(f"Could not read input file: {e}")
+    # --------------------------------------------------
+    # Load FIMO reporting table
+    # --------------------------------------------------
+    df = pd.read_csv(IN_FILE)
 
     needed = [
         "Clustering", "Tool", "Motif",
@@ -758,7 +739,7 @@ def main() -> None:
     for col in numeric_cols:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    unique_motifs_in_fimo = sorted(set(df["Motif"].dropna().astype(str)))
+    unique_motifs_in_fimo = sorted(df["Motif"].dropna().unique().tolist())
     print("Unique significant motifs in FIMO table:", len(unique_motifs_in_fimo))
 
     # --------------------------------------------------
@@ -793,24 +774,25 @@ def main() -> None:
     print("Directional Tomtom hits kept after filtering:", len(directional_pairs))
 
     # --------------------------------------------------
-    # Restrict to motifs present in significant FIMO table
+    # Keep only motifs present in FIMO significant table
     # --------------------------------------------------
     valid_clean_motifs = set(unique_motifs_in_fimo)
     motif_map = motif_meta[
         ["tomtom_id", "source_pipeline", "original_motif_id", "clean_original_motif_id", "motif_width"]
     ].copy()
     motif_map = motif_map[motif_map["clean_original_motif_id"].isin(valid_clean_motifs)].copy()
-
     tomtom_ids_for_fimo = set(motif_map["tomtom_id"])
 
-    if not directional_pairs.empty:
+    if directional_pairs.empty:
+        print("Warning: no directional Tomtom hits passed the filters.")
+    else:
         directional_pairs = directional_pairs[
             directional_pairs["Query_ID"].isin(tomtom_ids_for_fimo) &
             directional_pairs["Target_ID"].isin(tomtom_ids_for_fimo)
         ].copy()
 
     # --------------------------------------------------
-    # Reciprocal edges
+    # Build reciprocal / undirected edges
     # --------------------------------------------------
     reciprocal_edges = build_reciprocal_edges(
         directional_df=directional_pairs,
@@ -820,12 +802,12 @@ def main() -> None:
     print("Undirected Tomtom edges kept:", len(reciprocal_edges))
 
     # --------------------------------------------------
-    # Convert Tomtom IDs to cleaned motif names
+    # Convert Tomtom IDs to cleaned motif names for family assignment
     # --------------------------------------------------
     id_to_clean = dict(zip(motif_map["tomtom_id"], motif_map["clean_original_motif_id"]))
 
-    converted_edges: list[dict[str, object]] = []
-    seen_clean_pairs: set[tuple[str, str]] = set()
+    converted_edges = []
+    seen_clean_pairs = set()
 
     for _, row in reciprocal_edges.iterrows():
         a_clean = id_to_clean.get(row["Motif_A"])
@@ -865,13 +847,13 @@ def main() -> None:
             "best_q_value", "best_E_value", "best_p_value",
             "best_overlap", "mean_overlap",
             "best_coverage", "mean_coverage",
-            "reciprocal", "Rule",
+            "reciprocal", "Rule"
         ])
 
     # --------------------------------------------------
-    # Union-find families
+    # Similarity graph + union-find families
     # --------------------------------------------------
-    unique_motifs = sorted(set(df["Motif"].dropna().astype(str)))
+    unique_motifs = sorted(df["Motif"].dropna().unique().tolist())
     uf = UnionFind(unique_motifs)
 
     for _, row in clean_edges_df.iterrows():
@@ -884,7 +866,7 @@ def main() -> None:
     # Assign family IDs
     # --------------------------------------------------
     root_to_family: dict[str, str] = {}
-    family_ids: list[tuple[str, str]] = []
+    family_ids = []
     counter = 1
 
     for motif in unique_motifs:
@@ -898,7 +880,7 @@ def main() -> None:
     df = df.merge(fam_df, on="Motif", how="left")
 
     # --------------------------------------------------
-    # Diagnostics: large families
+    # Component size diagnostics
     # --------------------------------------------------
     family_sizes = (
         df.groupby("Family_ID")["Motif"]
@@ -907,7 +889,10 @@ def main() -> None:
         .sort_values("n_unique_motifs", ascending=False)
     )
 
-    suspicious_families = family_sizes[family_sizes["n_unique_motifs"] >= SUSPICIOUS_FAMILY_SIZE].copy()
+    suspicious_families = (
+        family_sizes[family_sizes["n_unique_motifs"] >= SUSPICIOUS_FAMILY_SIZE]
+        .copy()
+    )
     if not suspicious_families.empty:
         suspicious_families = suspicious_families.merge(
             df.groupby("Family_ID")["Motif"].apply(join_unique_sorted).reset_index(name="Family_members"),
@@ -916,7 +901,7 @@ def main() -> None:
         )
 
     # --------------------------------------------------
-    # Representative motif
+    # Representative motif per family
     # --------------------------------------------------
     rep_cols = [
         "Family_ID", "Motif", "Motif_class", "Clustering", "Tool",
@@ -972,16 +957,16 @@ def main() -> None:
         .reset_index(name="Pipelines_present")
     )
 
-    agg_dict: dict[str, tuple[str, object]] = {
-        "n_rows": ("Motif", "size"),
-        "n_unique_motifs": ("Motif", "nunique"),
-        "n_pipelines": ("Pipeline", "nunique"),
-        "mean_ER": ("Enrichment_ratio", finite_mean),
-        "median_ER": ("Enrichment_ratio", finite_median),
-        "min_FDR": ("FDR_corrected", "min"),
-        "max_AMP_hits": ("AMP_sequences_with_hit", "max"),
-        "min_nonAMP_hits": ("nonAMP_sequences_with_hit", "min"),
-    }
+    agg_dict = dict(
+        n_rows=("Motif", "size"),
+        n_unique_motifs=("Motif", "nunique"),
+        n_pipelines=("Pipeline", "nunique"),
+        mean_ER=("Enrichment_ratio", finite_mean),
+        median_ER=("Enrichment_ratio", finite_median),
+        min_FDR=("FDR_corrected", "min"),
+        max_AMP_hits=("AMP_sequences_with_hit", "max"),
+        min_nonAMP_hits=("nonAMP_sequences_with_hit", "min"),
+    )
 
     if has_inf_flag:
         agg_dict["n_infinite_ER"] = ("ER_is_infinite", "sum")
@@ -1005,7 +990,7 @@ def main() -> None:
         .merge(family_pipelines, on="Family_ID", how="left")
         .sort_values(
             ["n_pipelines", "n_unique_motifs", "min_FDR", "median_ER"],
-            ascending=[False, False, True, False],
+            ascending=[False, False, True, False]
         )
     )
 
@@ -1065,11 +1050,8 @@ def main() -> None:
     print("\nSaved:")
     for name, table in outputs.items():
         csv_path = OUT_DIR / f"{name}.csv"
-        xlsx_path = OUT_DIR / f"{name}.xlsx"
         save_csv(table, csv_path)
-        save_xlsx(table, xlsx_path)
         print("-", csv_path)
-        print("-", xlsx_path)
 
     # --------------------------------------------------
     # Plots
@@ -1112,8 +1094,7 @@ def main() -> None:
 
     if not suspicious_families.empty:
         print("\nWarning: suspiciously large families detected:")
-        cols = [c for c in ["Family_ID", "n_unique_motifs", "Family_members"] if c in suspicious_families.columns]
-        print(suspicious_families[cols].head(10).to_string(index=False))
+        print(suspicious_families.head(10).to_string(index=False))
 
     print("\nDone.\n")
 

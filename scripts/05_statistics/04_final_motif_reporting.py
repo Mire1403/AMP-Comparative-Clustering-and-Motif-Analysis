@@ -48,11 +48,11 @@ def find_repo_root(start: Path) -> Path:
 
 PROJECT_ROOT = find_repo_root(Path(__file__).parent)
 
-IN_FILE = PROJECT_ROOT / "results" / "statistics" / "05_motif_family_analysis" / "motif_family_summary_for_memory.csv"
-IN_FULL = PROJECT_ROOT / "results" / "statistics" / "05_motif_family_analysis" / "motif_family_summary.csv"
-IN_PRES = PROJECT_ROOT / "results" / "statistics" / "05_motif_family_analysis" / "motif_family_pipeline_presence.csv"
+IN_FILE = PROJECT_ROOT / "results" / "statistics" / "05b_motif_family_analysis_tomtom" / "motif_family_summary_for_memory_tomtom.csv"
+IN_FULL = PROJECT_ROOT / "results" / "statistics" / "05b_motif_family_analysis_tomtom" / "motif_family_summary_tomtom.csv"
+IN_PRES = PROJECT_ROOT / "results" / "statistics" / "05b_motif_family_analysis_tomtom" / "motif_family_pipeline_presence_tomtom.csv"
 
-OUT_DIR = PROJECT_ROOT / "results" / "statistics" / "06_final_reporting"
+OUT_DIR = PROJECT_ROOT / "results" / "statistics" / "06b_final_reporting"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # =====================================================
