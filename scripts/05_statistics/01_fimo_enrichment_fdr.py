@@ -17,7 +17,7 @@ print("\nFIMO ENRICHMENT + FDR PIPELINE\n")
 # =====================================================
 
 def find_repo_root(start: Path) -> Path:
-    markers = [".git", "README.md", "requirements.txt", "pyproject.toml", "environment.yml"]
+    markers = [".git", "README.md"]
     start = start.resolve()
     for parent in [start] + list(start.parents):
         if any((parent / m).exists() for m in markers):
@@ -165,7 +165,7 @@ def save_excel(df: pd.DataFrame, path: Path, sheet_name: str = "Results") -> Non
         df.to_excel(writer, index=False, sheet_name=sheet_name)
 
 def save_pair(df: pd.DataFrame, stem: Path, sheet_name: str = "Results") -> None:
-    df.to_csv(str(stem) + ".csv", index=False)
+    df.to_csv(str(stem) + ".csv", index=False, sep=";", encoding="utf-8-sig")
     save_excel(df, Path(str(stem) + ".xlsx"), sheet_name=sheet_name)
 
 # =====================================================
@@ -199,7 +199,6 @@ for (clustering, tool), files in STRUCTURE.items():
     print("AMP rows     :", len(df_amp))
     print("nonAMP rows  :", len(df_non))
 
-    # AMP is mandatory
     if df_amp.empty:
         print(f"  Skipping {clustering}-{tool}: AMP FIMO missing/invalid/empty.")
         diagnostic_rows.append({
@@ -358,6 +357,8 @@ for (clustering, tool), files in STRUCTURE.items():
     sig_pipe_df = pipe_df[pipe_df["Significant_FDR"]].copy()
     save_pair(sig_pipe_df, OUT_DIR / f"fimo_enrichment_{tag}_significant", sheet_name=f"{tag}_sig")
 
+    all_results.append(pipe_df.copy())
+
     print(
         f"  {clustering}-{tool}: {len(pipe_df)} motifs, "
         f"{int(pipe_df['Significant_FDR'].sum())} significant, "
@@ -374,26 +375,9 @@ save_pair(diagnostic_df, OUT_DIR / "fimo_enrichment_diagnostics", sheet_name="Di
 # 2) GLOBAL TABLE — FDR across all pipelines combined
 # =====================================================
 
-if not all_results and "pipe_df" in locals():
+if not all_results:
     die("No enrichment tables were produced.")
-elif not all_results:
-    # collect saved per-loop tables if any_loaded but nothing appended
-    produced = list(OUT_DIR.glob("fimo_enrichment_*_*.csv"))
-    if not produced:
-        die("No enrichment tables were produced.")
-else:
-    pass
 
-# rebuild from newly produced pipe_dfs in memory
-per_pipeline_csvs = sorted([
-    p for p in OUT_DIR.glob("fimo_enrichment_*_*.csv")
-    if "significant" not in p.name and "all" not in p.name and "diagnostics" not in p.name
-])
-
-if not per_pipeline_csvs:
-    die("No per-pipeline enrichment CSVs found to build global table.")
-
-all_results = [pd.read_csv(p) for p in per_pipeline_csvs]
 results_df = pd.concat(all_results, ignore_index=True)
 
 valid_p = results_df["Fisher_pvalue"].notna()
@@ -410,18 +394,18 @@ results_df["Significant_FDR_global"] = (
 )
 
 results_df = results_df.sort_values(
-    ["Significant_FDR", "ER_is_infinite", "Enrichment_ratio", "FDR_corrected", "AMP_sequences_with_hit"],
+    ["Significant_FDR_global", "ER_is_infinite", "Enrichment_ratio", "FDR_corrected_global", "AMP_sequences_with_hit"],
     ascending=[False, False, False, True, False],
 )
 
 save_pair(results_df, OUT_DIR / "fimo_enrichment_all", sheet_name="All")
 
-df_sig = results_df[results_df["Significant_FDR"]].copy()
-save_pair(df_sig, OUT_DIR / "fimo_enrichment_significant_fdr", sheet_name="Significant_FDR")
+df_sig = results_df[results_df["Significant_FDR_global"]].copy()
+save_pair(df_sig, OUT_DIR / "fimo_enrichment_significant_fdr_global", sheet_name="Significant_FDR_global")
 
 print(
     f"\nGlobal table: {len(results_df)} motifs total, "
-    f"{int(results_df['Significant_FDR'].sum())} significant (per-pipeline FDR), "
+    f"{int(results_df['Significant_FDR_global'].sum())} significant (global FDR), "
     f"{int(results_df['ER_is_infinite'].sum())} with infinite ER."
 )
 
@@ -434,6 +418,7 @@ summary_combo = (
     .agg(
         Total_motifs=("Motif", "count"),
         Significant_FDR_n=("Significant_FDR", "sum"),
+        Significant_FDR_global_n=("Significant_FDR_global", "sum"),
         Mean_ER=("Enrichment_ratio", lambda x: x.replace(np.inf, np.nan).mean()),
         Median_ER=("Enrichment_ratio", lambda x: x.replace(np.inf, np.nan).median()),
         N_infinite_ER=("ER_is_infinite", "sum"),
@@ -445,6 +430,10 @@ summary_combo = (
 
 summary_combo["Significant_FDR_%"] = (
     100 * summary_combo["Significant_FDR_n"] / summary_combo["Total_motifs"]
+).round(1)
+
+summary_combo["Significant_FDR_global_%"] = (
+    100 * summary_combo["Significant_FDR_global_n"] / summary_combo["Total_motifs"]
 ).round(1)
 
 save_pair(summary_combo, OUT_DIR / "summary_by_clustering_tool", sheet_name="Summary")
@@ -477,9 +466,9 @@ if not df_top.empty:
     plt.bar(range(len(df_top)), df_top["ER_plot"].values)
     plt.xticks(range(len(df_top)), labels, rotation=90, fontsize=7)
     plt.ylabel("Enrichment Ratio")
-    plt.title(f"Top {top_n} enriched motifs (finite ER only)")
+    plt.title(f"Top {top_n} enriched motifs (finite ER only, global FDR)")
     plt.tight_layout()
-    plt.savefig(OUT_DIR / "top_enriched_motifs_fdr.png", dpi=200)
+    plt.savefig(OUT_DIR / "top_enriched_motifs_fdr_global.png", dpi=200)
     plt.close()
 
 if not df_sig.empty:
@@ -492,9 +481,9 @@ if not df_sig.empty:
         plt.figure(figsize=(7, 5))
         plt.boxplot(list(groups.values()), labels=list(groups.keys()), showfliers=False)
         plt.ylabel("AMP hit rate")
-        plt.title("AMP hit-rate distribution — significant motifs by clustering")
+        plt.title("AMP hit-rate distribution — globally significant motifs by clustering")
         plt.tight_layout()
-        plt.savefig(OUT_DIR / "boxplot_amp_hit_rate_significant_by_clustering.png", dpi=200)
+        plt.savefig(OUT_DIR / "boxplot_amp_hit_rate_significant_global_by_clustering.png", dpi=200)
         plt.close()
 
 if not df_sig.empty:
@@ -507,9 +496,9 @@ if not df_sig.empty:
         plt.figure(figsize=(7, 5))
         plt.boxplot(list(groups.values()), labels=list(groups.keys()), showfliers=False)
         plt.ylabel("AMP hit rate")
-        plt.title("AMP hit-rate distribution — significant motifs by tool")
+        plt.title("AMP hit-rate distribution — globally significant motifs by tool")
         plt.tight_layout()
-        plt.savefig(OUT_DIR / "boxplot_amp_hit_rate_significant_by_tool.png", dpi=200)
+        plt.savefig(OUT_DIR / "boxplot_amp_hit_rate_significant_global_by_tool.png", dpi=200)
         plt.close()
 
 # =====================================================
@@ -529,11 +518,11 @@ print("""
    → sanity checks for each pipeline
 
 2. fimo_enrichment_all.csv
-   → complete enrichment table
+   → complete enrichment table with per-pipeline and global FDR
 
-3. fimo_enrichment_significant_fdr.csv
-   → significant motifs only
+3. fimo_enrichment_significant_fdr_global.csv
+   → motifs significant after global FDR correction
 
 4. summary_by_clustering_tool.csv
-   → quick overview of suspicious infinite-ER patterns
+   → quick comparison of per-pipeline vs global significance
 """)

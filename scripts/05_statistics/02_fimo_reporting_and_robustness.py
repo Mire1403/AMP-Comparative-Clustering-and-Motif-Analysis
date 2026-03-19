@@ -29,7 +29,7 @@ plt.rcParams["font.size"] = 12
 # =====================================================
 
 def find_repo_root(start: Path) -> Path:
-    markers = [".git", "README.md", "requirements.txt", "pyproject.toml", "environment.yml"]
+    markers = [".git", "README.md"]
     start = start.resolve()
     for parent in [start] + list(start.parents):
         if any((parent / m).exists() for m in markers):
@@ -42,7 +42,7 @@ ENRICH_DIR = PROJECT_ROOT / "results" / "statistics" / "03_fimo_enrichment"
 OUT_DIR = PROJECT_ROOT / "results" / "statistics" / "04_fimo_reporting"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-MOTIF_DIR = PROJECT_ROOT / "results" / "motif_discovery"
+MOTIF_DIR = PROJECT_ROOT / "results" / "04_motif_discovery"
 MOTIF_FILES = {
     ("cdhit", "meme"):   MOTIF_DIR / "meme_cdhit" / "meme.txt",
     ("mmseq", "meme"):   MOTIF_DIR / "meme_mmseq" / "meme.txt",
@@ -80,7 +80,7 @@ def load_enrichment_table(enrich_dir: Path) -> pd.DataFrame:
 
     if csv_path.exists():
         print(f"Using enrichment table: {csv_path}")
-        return pd.read_csv(csv_path)
+        return pd.read_csv(csv_path, sep=";", encoding="utf-8-sig")
 
     if xlsx_path.exists():
         print(f"Using enrichment table: {xlsx_path}")
@@ -92,7 +92,7 @@ def load_enrichment_table(enrich_dir: Path) -> pd.DataFrame:
 
     if csv_candidates:
         print(f"Using fallback enrichment CSV: {csv_candidates[0]}")
-        return pd.read_csv(csv_candidates[0])
+        return pd.read_csv(csv_candidates[0], sep=";", encoding="utf-8-sig")
 
     if xlsx_candidates:
         print(f"Using fallback enrichment XLSX: {xlsx_candidates[0]}")
@@ -105,7 +105,7 @@ def load_diagnostics(enrich_dir: Path) -> pd.DataFrame:
     path = enrich_dir / "fimo_enrichment_diagnostics.csv"
     if path.exists():
         try:
-            return pd.read_csv(path)
+            return pd.read_csv(path, sep=";", encoding="utf-8-sig")
         except Exception as e:
             print(f"Warning: could not read diagnostics file {path}: {e}")
     return pd.DataFrame()
@@ -209,12 +209,15 @@ def normalize_columns(df: pd.DataFrame, hit_counts: pd.DataFrame) -> pd.DataFram
     required = [
         "Clustering", "Tool", "Motif",
         "AMP_sequences_with_hit", "nonAMP_sequences_with_hit",
-        "Enrichment_ratio", "Fisher_pvalue", "FDR_corrected",
+        "Enrichment_ratio", "Fisher_pvalue",
     ]
     missing = [c for c in required if c not in df.columns]
     if missing:
         die(f"Missing required columns in enrichment table: {missing}")
-
+    
+    if "FDR_corrected" not in df.columns and "FDR_corrected_global" not in df.columns:
+        die("Missing FDR columns: expected 'FDR_corrected' and/or 'FDR_corrected_global'.")
+    
     for col in ["Clustering", "Tool", "Motif"]:
         df[col] = df[col].astype(str).str.strip()
 
@@ -229,8 +232,12 @@ def normalize_columns(df: pd.DataFrame, hit_counts: pd.DataFrame) -> pd.DataFram
         "nonAMP_sequences_with_hit",
         "Enrichment_ratio",
         "Fisher_pvalue",
-        "FDR_corrected",
     ]
+    if "FDR_corrected" in df.columns:
+        numeric_cols.append("FDR_corrected")
+    if "FDR_corrected_global" in df.columns:
+        numeric_cols.append("FDR_corrected_global")
+
     if "Fisher_oddsratio" in df.columns:
         numeric_cols.append("Fisher_oddsratio")
     if "Total_AMP_sequences" in df.columns:
@@ -263,8 +270,13 @@ def normalize_columns(df: pd.DataFrame, hit_counts: pd.DataFrame) -> pd.DataFram
         df["OddsRatio_is_infinite"] = False
         df["Fisher_oddsratio_plot"] = np.nan
 
-    df["Significant_FDR"] = (df["FDR_corrected"] < ALPHA_FDR) & (df["Enrichment_ratio"] > ER_MIN)
-    df["MinusLog10_FDR"] = -np.log10(df["FDR_corrected"].clip(lower=1e-300))
+    if "FDR_corrected_global" in df.columns:
+        df["FDR_for_reporting"] = pd.to_numeric(df["FDR_corrected_global"], errors="coerce")
+    else:
+        df["FDR_for_reporting"] = pd.to_numeric(df["FDR_corrected"], errors="coerce")
+
+    df["Significant_FDR"] = (df["FDR_for_reporting"] < ALPHA_FDR) & (df["Enrichment_ratio"] > ER_MIN)
+    df["MinusLog10_FDR"] = -np.log10(df["FDR_for_reporting"].clip(lower=1e-300))
     df["AMP_nonAMP_hit_diff"] = df["AMP_sequences_with_hit"] - df["nonAMP_sequences_with_hit"]
 
     if USE_LOG10_ER_FOR_PLOTS:
@@ -273,7 +285,7 @@ def normalize_columns(df: pd.DataFrame, hit_counts: pd.DataFrame) -> pd.DataFram
     else:
         df["log10_ER"] = df["Enrichment_ratio"].replace([np.inf, -np.inf], np.nan)
 
-    df = df.dropna(subset=["Clustering", "Tool", "Motif", "FDR_corrected"])
+    df = df.dropna(subset=["Clustering", "Tool", "Motif", "FDR_for_reporting"])
 
     if not hit_counts.empty:
         hc = hit_counts.copy()
@@ -395,13 +407,13 @@ def build_top_tables(df_sig: pd.DataFrame):
         "Clustering", "Tool", "Motif", "Motif_raw", "Motif_class",
         "AMP_sequences_with_hit", "nonAMP_sequences_with_hit",
         "Enrichment_ratio", "ER_corrected", "ER_is_infinite",
-        "FDR_corrected", "MinusLog10_FDR",
+        "FDR_for_reporting", "MinusLog10_FDR",
         "OddsRatio_is_infinite",
         "Total_hits", "AMP_total_sequences", "AMP_hit_frequency_pct",
     ]
     cols = [c for c in cols if c in df_sig.columns]
 
-    sort_cols = ["ER_is_infinite", "AMP_sequences_with_hit", "Enrichment_ratio", "FDR_corrected"]
+    sort_cols = ["ER_is_infinite", "AMP_sequences_with_hit", "Enrichment_ratio", "FDR_for_reporting"]
     sort_asc = [False, False, False, True]
 
     top_global = (
@@ -532,7 +544,7 @@ def build_overlap_tables(df_sig: pd.DataFrame, out_dir: Path):
         })
 
     exact_df = pd.DataFrame(exact_rows)
-    exact_df.to_csv(out_dir / "motif_overlap_exact.csv", index=False)
+    exact_df.to_csv(out_dir / "motif_overlap_exact.csv", index=False, sep=";", encoding="utf-8-sig")
 
     cons_maps = {k: extract_consensus(p) for k, p in MOTIF_FILES.items()}
     sim_rows = []
@@ -560,7 +572,7 @@ def build_overlap_tables(df_sig: pd.DataFrame, out_dir: Path):
         })
 
     sim_df = pd.DataFrame(sim_rows)
-    sim_df.to_csv(out_dir / "motif_overlap_consensus_similarity.csv", index=False)
+    sim_df.to_csv(out_dir / "motif_overlap_consensus_similarity.csv", index=False, sep=";", encoding="utf-8-sig")
 
     return exact_df, sim_df
 
@@ -621,7 +633,7 @@ def plot_top_motifs(df_sig: pd.DataFrame, out_dir: Path) -> None:
     top.loc[top["ER_is_infinite"], "plot_height"] = infinite_display_height
 
     top = top.sort_values(
-        by=["ER_is_infinite", "AMP_sequences_with_hit", "Enrichment_ratio", "FDR_corrected"],
+        by=["ER_is_infinite", "AMP_sequences_with_hit", "Enrichment_ratio", "FDR_for_reporting"],
         ascending=[False, False, False, True]
     ).head(TOP_N).copy()
 
@@ -779,7 +791,7 @@ def main():
     print("\nLoaded rows:", df.shape[0])
 
     cleaned_all_path = OUT_DIR / "fimo_enrichment_all_cleaned.csv"
-    df.to_csv(cleaned_all_path, index=False)
+    df.to_csv(cleaned_all_path, index=False, sep=";", encoding="utf-8-sig")
 
     summary_all, df_sig, summary_sig, class_summary = build_summaries(df)
     top_global, top_per_combo = build_top_tables(df_sig)
@@ -793,12 +805,12 @@ def main():
         "top_significant_motifs_by_pipeline": OUT_DIR / "top_significant_motifs_by_pipeline.csv",
     }
 
-    summary_all.to_csv(paths["summary_all_motifs"], index=False)
-    summary_sig.to_csv(paths["summary_significant_only"], index=False)
-    df_sig.to_csv(paths["fimo_significant_only_cleaned"], index=False)
-    class_summary.to_csv(paths["significant_motif_class_summary"], index=False)
-    top_global.to_csv(paths["top_global_significant_motifs"], index=False)
-    top_per_combo.to_csv(paths["top_significant_motifs_by_pipeline"], index=False)
+    summary_all.to_csv(paths["summary_all_motifs"], index=False, sep=";", encoding="utf-8-sig")
+    summary_sig.to_csv(paths["summary_significant_only"], index=False, sep=";", encoding="utf-8-sig")
+    df_sig.to_csv(paths["fimo_significant_only_cleaned"], index=False, sep=";", encoding="utf-8-sig")
+    class_summary.to_csv(paths["significant_motif_class_summary"], index=False, sep=";", encoding="utf-8-sig")
+    top_global.to_csv(paths["top_global_significant_motifs"], index=False, sep=";", encoding="utf-8-sig")
+    top_per_combo.to_csv(paths["top_significant_motifs_by_pipeline"], index=False, sep=";", encoding="utf-8-sig")
 
     print("\nSaved reporting tables:")
     for p in [cleaned_all_path] + list(paths.values()):
@@ -832,7 +844,7 @@ def main():
         print("\nTop significant motifs preview:")
         preview_cols = [
             "Clustering", "Tool", "Motif",
-            "Enrichment_ratio", "ER_corrected", "ER_is_infinite", "FDR_corrected",
+            "Enrichment_ratio", "ER_corrected", "ER_is_infinite", "FDR_for_reporting",
             "AMP_sequences_with_hit", "nonAMP_sequences_with_hit",
             "Total_hits", "AMP_hit_frequency_pct",
         ]

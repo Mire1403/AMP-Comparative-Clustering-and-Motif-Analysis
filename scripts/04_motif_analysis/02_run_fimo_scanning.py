@@ -12,10 +12,10 @@ print("\nRUNNING FULL FIMO PIPELINE \n")
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
-RESULTS_MOTIF_DIR   = PROJECT_ROOT / "results" / "motif_discovery"
-RESULTS_BG_DIR      = PROJECT_ROOT / "results" / "background_generation"   # ✅ NEW
-RESULTS_FIMO_DIR    = PROJECT_ROOT / "results" / "motif_scanning"
+RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "02_clustering"
+RESULTS_MOTIF_DIR   = PROJECT_ROOT / "results" / "04_motif_discovery"
+RESULTS_BG_DIR      = PROJECT_ROOT / "results" / "03_background" 
+RESULTS_FIMO_DIR    = PROJECT_ROOT / "results" / "05_motif_scanning"
 RESULTS_FIMO_DIR.mkdir(parents=True, exist_ok=True)
 
 THRESH = "1e-4"

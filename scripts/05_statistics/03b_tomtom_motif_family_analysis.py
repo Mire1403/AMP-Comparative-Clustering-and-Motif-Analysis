@@ -20,20 +20,16 @@ import matplotlib.pyplot as plt
 # CONFIG
 # =====================================================
 
-# Tomtom
-TOMTOM_BIN = "/home/mireia14/miniconda3/envs/amp-analysis/bin/tomtom"
-TOMTOM_QVALUE_THRESHOLD = 0.0001
+TOMTOM_QVALUE_THRESHOLD = 0.00001
 TOMTOM_MIN_OVERLAP = 6
-MIN_COVERAGE = 0.75
+MIN_COVERAGE = 0.8
 REQUIRE_RECIPROCAL_HIT = True
 TOMTOM_DIST = "pearson"
 TOMTOM_MINIMAL = True
 
-# Family filtering / diagnostics
 MIN_PIPELINES_ROBUST = 2
 SUSPICIOUS_FAMILY_SIZE = 8
 
-# Plot colors
 CLASS_COLORS = {
     "Cys-rich": "#e07b54",
     "Gly-rich": "#6ab187",
@@ -48,7 +44,7 @@ CLASS_COLORS = {
 # =====================================================
 
 def find_repo_root(start: Path) -> Path:
-    markers = [".git", "README.md", "requirements.txt", "pyproject.toml", "environment.yml"]
+    markers = [".git", "README.md"]
     start = start.resolve()
     for parent in [start] + list(start.parents):
         if any((parent / m).exists() for m in markers):
@@ -82,6 +78,18 @@ TOMTOM_TSV = TOMTOM_OUT_DIR / "tomtom.tsv"
 def die(msg: str) -> None:
     print(msg)
     sys.exit(1)
+
+
+def get_binary(name: str) -> str:
+    path = shutil.which(name)
+    if path is None:
+        die(
+            f"Required executable '{name}' not found in PATH.\n"
+            f"Activate the correct environment and check:\n"
+            f"  which {name}\n"
+            f"  {name} --version"
+        )
+    return path
 
 
 def sanitize_token(x: str) -> str:
@@ -285,26 +293,24 @@ def build_combined_meme_file(motif_files: dict[str, Path], output_path: Path) ->
 # TOMTOM
 # =====================================================
 
-def check_tomtom() -> None:
-    if not Path(TOMTOM_BIN).exists():
-        die(f"Tomtom binary not found: {TOMTOM_BIN}")
-
-    result = subprocess.run([TOMTOM_BIN, "--version"], capture_output=True, text=True)
+def check_tomtom() -> str:
+    tomtom_bin = get_binary("tomtom")
+    result = subprocess.run([tomtom_bin, "--version"], capture_output=True, text=True)
     version = result.stdout.strip() or result.stderr.strip()
-    print(f"TOMTOM found: {TOMTOM_BIN}")
+    print(f"TOMTOM found: {tomtom_bin}")
     print(f"Version     : {version}\n")
+    return tomtom_bin
 
 
 def run_tomtom(query_file: Path, target_file: Path, out_dir: Path) -> None:
-    if not Path(TOMTOM_BIN).exists():
-        die(f"Tomtom binary not found: {TOMTOM_BIN}")
+    tomtom_bin = get_binary("tomtom")
 
     if out_dir.exists():
         shutil.rmtree(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     cmd = [
-        TOMTOM_BIN,
+        tomtom_bin,
         "-dist", TOMTOM_DIST,
         "-min-overlap", str(TOMTOM_MIN_OVERLAP),
         "-text",
@@ -371,12 +377,6 @@ def build_tomtom_pairs_detailed(
     min_overlap: int,
     min_coverage: float,
 ) -> pd.DataFrame:
-    """
-    Builds a directional table A->B after applying:
-    - q-value threshold
-    - min overlap
-    - minimum relative coverage
-    """
     if tomtom_df.empty:
         return pd.DataFrame(columns=[
             "Query_ID", "Target_ID",
@@ -460,19 +460,13 @@ def build_reciprocal_edges(
     directional_df: pd.DataFrame,
     require_reciprocal: bool,
 ) -> pd.DataFrame:
-    """
-    Converts directional hits into undirected edges.
-    If require_reciprocal=True, keeps only A->B and B->A confirmed pairs.
-    """
     if directional_df.empty:
         return pd.DataFrame(columns=[
             "Motif_A", "Motif_B",
             "best_q_value", "best_E_value", "best_p_value",
             "best_overlap", "mean_overlap",
             "best_coverage", "mean_coverage",
-            "reciprocal",
-            "Pipeline_A", "Pipeline_B",
-            "Original_A", "Original_B"
+            "reciprocal"
         ])
 
     records = directional_df.to_dict(orient="records")
@@ -499,11 +493,6 @@ def build_reciprocal_edges(
         evals = [x["E_value"] for x in [rab, rba] if x is not None and pd.notna(x["E_value"])]
         pvals = [x["p_value"] for x in [rab, rba] if x is not None and pd.notna(x["p_value"])]
 
-        ra = rab if pair[0] == a else rba
-        rb = rba if pair[1] == b else rab
-
-        any_record = rab if rab is not None else rba
-
         rows.append({
             "Motif_A": pair[0],
             "Motif_B": pair[1],
@@ -515,10 +504,6 @@ def build_reciprocal_edges(
             "best_coverage": np.nanmax(coverages) if coverages else np.nan,
             "mean_coverage": np.nanmean(coverages) if coverages else np.nan,
             "reciprocal": reciprocal,
-            "Pipeline_A": any_record.get("Query_pipeline", "") if any_record else "",
-            "Pipeline_B": any_record.get("Target_pipeline", "") if any_record else "",
-            "Original_A": pair[0],
-            "Original_B": pair[1],
         })
 
     edges = pd.DataFrame(rows)
@@ -528,9 +513,7 @@ def build_reciprocal_edges(
             "best_q_value", "best_E_value", "best_p_value",
             "best_overlap", "mean_overlap",
             "best_coverage", "mean_coverage",
-            "reciprocal",
-            "Pipeline_A", "Pipeline_B",
-            "Original_A", "Original_B"
+            "reciprocal"
         ])
 
     return edges.sort_values(["best_q_value", "best_E_value", "best_p_value"], ascending=[True, True, True])
@@ -640,10 +623,12 @@ def plot_er_vs_hit_freq(family_summary: pd.DataFrame, out_dir: Path) -> None:
 
 
 def plot_bubble_fdr_er_hits(df: pd.DataFrame, out_dir: Path) -> None:
-    if "Total_hits" not in df.columns or "FDR_corrected" not in df.columns:
+    fdr_col = "FDR_for_reporting" if "FDR_for_reporting" in df.columns else "FDR_corrected"
+
+    if "Total_hits" not in df.columns or fdr_col not in df.columns:
         return
 
-    plot_df = df.dropna(subset=["Enrichment_ratio", "FDR_corrected"]).copy()
+    plot_df = df.dropna(subset=["Enrichment_ratio", fdr_col]).copy()
     if plot_df.empty:
         return
 
@@ -653,7 +638,7 @@ def plot_bubble_fdr_er_hits(df: pd.DataFrame, out_dir: Path) -> None:
         return
 
     plot_df["log10_ER"] = np.log10(plot_df["ER_for_plot"].clip(lower=1e-12))
-    plot_df["minus_log10_FDR"] = -np.log10(pd.to_numeric(plot_df["FDR_corrected"], errors="coerce").clip(lower=1e-300))
+    plot_df["minus_log10_FDR"] = -np.log10(pd.to_numeric(plot_df[fdr_col], errors="coerce").clip(lower=1e-300))
 
     sizes = (plot_df["Total_hits"].fillna(1).clip(lower=1) * 2).clip(upper=300)
     colors = [_class_color(c) for c in plot_df.get("Motif_class", ["Other"] * len(plot_df))]
@@ -703,7 +688,10 @@ def main() -> None:
     # --------------------------------------------------
     # Load FIMO reporting table
     # --------------------------------------------------
-    df = pd.read_csv(IN_FILE)
+    df = pd.read_csv(IN_FILE, sep=";", encoding="utf-8-sig")
+
+    if "FDR_for_reporting" in df.columns and "FDR_corrected" not in df.columns:
+        df["FDR_corrected"] = pd.to_numeric(df["FDR_for_reporting"], errors="coerce")
 
     needed = [
         "Clustering", "Tool", "Motif",
@@ -735,6 +723,8 @@ def main() -> None:
         numeric_cols.append("AMP_hit_frequency_pct")
     if has_inf_flag:
         numeric_cols.append("ER_is_infinite")
+    if "FDR_for_reporting" in df.columns:
+        numeric_cols.append("FDR_for_reporting")
 
     for col in numeric_cols:
         df[col] = pd.to_numeric(df[col], errors="coerce")

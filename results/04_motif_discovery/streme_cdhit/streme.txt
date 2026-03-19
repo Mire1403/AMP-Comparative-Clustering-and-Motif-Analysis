@@ -599,9 +599,9 @@ letter-probability matrix: alength= 20 w= 7 nsites= 43 E= 5.7e+001
 ********************************************************************************
 Stopped because 3 consecutive motifs exceeded the p-value threshold (0.01).
 ********************************************************************************
-COMMAND:	streme --p /mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/clustering/AMP_MASTER_cdhit.fasta --n /mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/background_generation/nonamp_cdhit_10x_len_kr_matched_progressive_random.fasta --protein --minw 6 --maxw 20 --nmotifs 25 --pvt 0.01 --oc /mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/motif_discovery/streme_cdhit
+COMMAND:	streme --p /mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/02_clustering/AMP_MASTER_cdhit.fasta --n /mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/03_background/nonamp_cdhit_10x_len_kr_matched_progressive_random.fasta --protein --minw 6 --maxw 20 --nmotifs 45 --pvt 0.01 --oc /mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/04_motif_discovery/streme_cdhit
 ********************************************************************************
 CPU:		Mireia
 ********************************************************************************
-FINALTIME:	2273.65 seconds
+FINALTIME:	2206.39 seconds
 ********************************************************************************

@@ -57,7 +57,7 @@ def aa_color(aa: str) -> str:
 # =====================================================
 
 def find_repo_root(start: Path) -> Path:
-    markers = [".git", "README.md", "requirements.txt", "pyproject.toml", "environment.yml"]
+    markers = [".git", "README.md"]
     start = start.resolve()
     for parent in [start] + list(start.parents):
         if any((parent / m).exists() for m in markers):
@@ -363,7 +363,7 @@ def main() -> None:
     if not IN_FAMILY.exists():
         die(f"Family assignments file not found: {IN_FAMILY}")
 
-    sig = pd.read_csv(IN_SIG)
+    sig = pd.read_csv(IN_SIG, sep=";", encoding="utf-8-sig")
     fam = pd.read_csv(IN_FAMILY, sep=";", encoding="utf-8-sig")
 
     for df_ref in [sig, fam]:

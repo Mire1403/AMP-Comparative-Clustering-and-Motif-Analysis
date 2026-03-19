@@ -1,7 +1,7 @@
-Comparison_A,Comparison_B,SetA_n,SetB_n,Similar_A_to_B_n,Similar_B_to_A_n,Max_mismatch
-cdhit_meme,cdhit_streme,0,0,,,2
-cdhit_meme,mmseq_meme,0,0,,,2
-cdhit_meme,mmseq_streme,0,0,,,2
-cdhit_streme,mmseq_meme,0,0,,,2
-cdhit_streme,mmseq_streme,0,0,,,2
-mmseq_meme,mmseq_streme,0,0,,,2
+﻿Comparison_A;Comparison_B;SetA_n;SetB_n;Similar_A_to_B_n;Similar_B_to_A_n;Max_mismatch
+cdhit_meme;cdhit_streme;42;57;0;0;2
+cdhit_meme;mmseq_meme;42;43;2;2;2
+cdhit_meme;mmseq_streme;42;66;0;0;2
+cdhit_streme;mmseq_meme;57;43;1;1;2
+cdhit_streme;mmseq_streme;57;66;2;2;2
+mmseq_meme;mmseq_streme;43;66;1;1;2
