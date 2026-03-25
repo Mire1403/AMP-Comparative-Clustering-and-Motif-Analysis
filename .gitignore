@@ -110,21 +110,21 @@ results/05_motif_scanning/
 ############################
 results/statistics/*
 
-# Clustering stats
-!results/statistics/clustering/
-results/statistics/clustering/*
-!results/statistics/clustering/*.csv
-!results/statistics/clustering/*.png
-!results/statistics/clustering/*.txt
-!results/statistics/clustering/*.parquet
+# 01_clustering
+!results/statistics/01_clustering/
+results/statistics/01_clustering/*
+!results/statistics/01_clustering/*.csv
+!results/statistics/01_clustering/*.png
+!results/statistics/01_clustering/*.txt
+!results/statistics/01_clustering/*.parquet
 
-# Background sampling stats
-!results/statistics/background_sampling/
-results/statistics/background_sampling/*
-!results/statistics/background_sampling/*.csv
-!results/statistics/background_sampling/*.png
-!results/statistics/background_sampling/*.txt
-!results/statistics/background_sampling/*.parquet
+# 02_background_sampling
+!results/statistics/02_background_sampling/
+results/statistics/02_background_sampling/*
+!results/statistics/02_background_sampling/*.csv
+!results/statistics/02_background_sampling/*.png
+!results/statistics/02_background_sampling/*.txt
+!results/statistics/02_background_sampling/*.parquet
 
 # 03_fimo_enrichment
 !results/statistics/03_fimo_enrichment/
@@ -150,6 +150,14 @@ results/statistics/05_motif_family_analysis/*
 !results/statistics/05_motif_family_analysis/*.txt
 !results/statistics/05_motif_family_analysis/*.parquet
 
+# 05b_motif_family_analysis_tomtom
+!results/statistics/05b_motif_family_analysis_tomtom/
+results/statistics/05b_motif_family_analysis_tomtom/*
+!results/statistics/05b_motif_family_analysis_tomtom/*.csv
+!results/statistics/05b_motif_family_analysis_tomtom/*.png
+!results/statistics/05b_motif_family_analysis_tomtom/*.txt
+!results/statistics/05b_motif_family_analysis_tomtom/*.parquet
+
 # 06_final_reporting
 !results/statistics/06_final_reporting/
 results/statistics/06_final_reporting/*
@@ -157,6 +165,41 @@ results/statistics/06_final_reporting/*
 !results/statistics/06_final_reporting/*.png
 !results/statistics/06_final_reporting/*.txt
 !results/statistics/06_final_reporting/*.parquet
+
+# 06b_final_reporting_tomtom
+!results/statistics/06b_final_reporting_tomtom/
+results/statistics/06b_final_reporting_tomtom/*
+!results/statistics/06b_final_reporting_tomtom/*.csv
+!results/statistics/06b_final_reporting_tomtom/*.png
+!results/statistics/06b_final_reporting_tomtom/*.txt
+!results/statistics/06b_final_reporting_tomtom/*.parquet
+
+# 07_motif_logos
+!results/statistics/07_motif_logos/
+results/statistics/07_motif_logos/*
+!results/statistics/07_motif_logos/**/*.png
+!results/statistics/07_motif_logos/**/*.csv
+!results/statistics/07_motif_logos/**/*.txt
+
+# 07b_motif_logos_tomtom
+!results/statistics/07b_motif_logos_tomtom/
+results/statistics/07b_motif_logos_tomtom/*
+!results/statistics/07b_motif_logos_tomtom/**/*.png
+!results/statistics/07b_motif_logos_tomtom/**/*.csv
+!results/statistics/07b_motif_logos_tomtom/**/*.txt
+
+# 08_colabfold_input
+# Keep lightweight input preparation files
+!results/statistics/08_colabfold_input/
+results/statistics/08_colabfold_input/*
+!results/statistics/08_colabfold_input/*.csv
+!results/statistics/08_colabfold_input/*.txt
+!results/statistics/08_colabfold_input/*.fasta
+
+# 09_colabfold_output
+# Ignore heavy structure-prediction outputs by default
+results/statistics/09_colabfold_output/*
+!results/statistics/09_colabfold_output/best_pdb_summary.csv
 
 ############################
 # Local exploration / spreadsheets
@@ -178,6 +221,15 @@ sequences.tsv
 *.fa
 *.fna
 *.clstr
+
+# Keep selected small FASTA files explicitly allowed above
+!results/statistics/08_colabfold_input/*.fasta
+
+############################
+# PDB / structure outputs
+############################
+*.pdb
+*.cif
 
 ############################
 # MMseqs2 temporary databases / temp dirs

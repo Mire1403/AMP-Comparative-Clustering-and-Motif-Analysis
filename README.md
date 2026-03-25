@@ -28,6 +28,8 @@ Starting from a curated AMP collection and a matched non-AMP background, the pip
 The final output is a ranked set of **robust AMP motif families** reproducible across multiple pipeline configurations.
 This design enables direct comparison of motif discovery consistency and robustness across independent computational pipelines.
 
+Optional downstream structural exploration was added for selected motif-associated peptides.
+
 ---
 
 ## Main outputs
@@ -39,6 +41,8 @@ The most relevant outputs for interpretation are located in:
 - `results/statistics/05b_motif_family_analysis_tomtom/` — Tomtom-based motif family assignments and robustness analysis
 - `results/statistics/06b_final_reporting_tomtom/` — final ranked motif families
 - `results/statistics/07b_motif_logos_tomtom/` — family-organised motif logos
+- `results/statistics/08_colabfold_input/` — selected peptide subsets for ColabFold
+- `results/statistics/09_colabfold_output/` — ColabFold output files, best-model PDB selection, and summary tables
 
 ---
 
@@ -84,11 +88,14 @@ The most relevant outputs for interpretation are located in:
 │       ├── 06_final_reporting/
 │       ├── 06b_final_reporting_tomtom/
 │       ├── 07_motif_logos/
-│       └── 07b_motif_logos_tomtom/
+│       ├── 07b_motif_logos_tomtom/
+│       ├── 08_colabfold_input/
+│       └── 09_colabfold_output/
 │
 ├── envs/
-│   ├── environment.yml  # Core analysis environment
-│   └── environment_meme.yml  # MEME Suite environment
+│   ├── environment.yml              # Core analysis environment
+│   ├── environment_meme.yml         # MEME Suite environment
+│   └── environment_colabfold.yml    # ColabFold environment
 │   
 ├── .gitignore
 └── README.md
@@ -101,7 +108,7 @@ The most relevant outputs for interpretation are located in:
 ### Stage 1 — Dataset construction
 
 #### **AMP database.**
-Scripts in ``scripts/01_dataset_construction/amp/`` integrate four public AMP databases (**CAMP**, **DBAASP**, **dbAMP3**, **DRAMP**) into a standardised master dataset.
+Scripts in `scripts/01_dataset_construction/amp/` integrate four public AMP databases (**CAMP**, **DBAASP**, **dbAMP3**, **DRAMP**) into a standardised master dataset.
 
 Main processing steps:
 - harmonisation of heterogeneous source formats and column names,
@@ -113,11 +120,11 @@ Main processing steps:
 - final deduplication with metadata merging across sources.
 
 Final outputs:
-- ``data/final/DB_MASTER_CLEAN.parquet``
-- ``data/final/AMP_MASTER.fasta``
+- `data/final/DB_MASTER_CLEAN.parquet`
+- `data/final/AMP_MASTER.fasta`
 
 #### **Non-AMP background.** 
-``scripts/01_dataset_construction/non_amp/01_dataset_construction_nonamp.py`` filters a UniProt-derived non-AMP FASTA by:
+`scripts/01_dataset_construction/non_amp/01_dataset_construction_nonamp.py` filters a UniProt-derived non-AMP FASTA by:
 - minimum peptide length,
 - valid amino acid alphabet,
 - sequence uniqueness.
@@ -126,7 +133,7 @@ This produces the cleaned non-AMP pool used for background sampling.
 
 
 ### Stage 2 — Redundancy reduction 
-Scripts in ``scripts/02_redundancy_reduction/`` cluster AMP and non-AMP sequence sets independently at 80% sequence identity using:
+Scripts in `scripts/02_redundancy_reduction/` cluster AMP and non-AMP sequence sets independently at 80% sequence identity using:
 - **CD-HIT**
 - **MMseqs2**
 
@@ -144,10 +151,10 @@ Post-generation validation is performed using two-sample Kolmogorov–Smirnov te
 
 
 ### Stage 4 — Motif analysis 
-Scripts in ``scripts/04_motif_analysis/`` perform motif discovery and scanning.
+Scripts in `scripts/04_motif_analysis/` perform motif discovery and scanning.
 
 #### **Motif discovery**
-``01_run_meme_streme_pipeline.py`` runs:
+`01_run_meme_streme_pipeline.py` runs:
 - **STREME** (discriminative motif discovery),
 - **MEME** (ZOOPS model, discriminative setting),
 using the matched non-AMP background as the negative set.
@@ -155,7 +162,7 @@ using the matched non-AMP background as the negative set.
 This step must be run within the MEME environment (`amp_meme`).
 
 #### **Motif scanning**
-``02_run_fimo_scanning.py`` scans the discovered motif models with **FIMO** across:
+`02_run_fimo_scanning.py` scans the discovered motif models with **FIMO** across:
 - AMP representatives,
 - non-AMP background representatives.
 
@@ -166,35 +173,35 @@ This covers all combinations of:
 
 
 ### Stage 5 — Statistics and motif-family analysis
-Scripts in ``scripts/05_statistics/`` perform enrichment analysis, reporting, family-level robustness analysis, and logo generation.
+Scripts in `scripts/05_statistics/` perform enrichment analysis, reporting, and family-level robustness analysis.
 
 #### **01 — FIMO enrichment**
-``01_fimo_enrichment_fdr.py``
+`01_fimo_enrichment_fdr.py`
 - counts motif-positive sequences,
 - computes enrichment using Fisher’s exact test,
 - applies Benjamini–Hochberg FDR correction,
 - exports full and significant motif tables.
 
 #### **02 — FIMO reporting and robustness**
-``02_fimo_reporting_and_robustness.py``
+`02_fimo_reporting_and_robustness.py`
 - cleans and standardises enrichment outputs,
 - classifies motifs by amino acid composition,
 - compares significant motifs across pipelines,
 - produces summary plots and overlap analyses.
 
 #### **03 — Motif family analysis**
-``03_motif_family_analysis.py``
+`03_motif_family_analysis.py`
 - groups significant motifs into families using sequence-similarity criteria,
 - identifies families reproduced across multiple pipelines,
 - summarises robust motif families.
 
 #### **04 — Final motif reporting**
-``04_final_motif_reporting.py``
+`04_final_motif_reporting.py`
 - creates final ranked tables and summary figures,
 - exports the main robust-family deliverables.
 
 #### **05 — Motif logo generation**
-``01_generate_family_motif_logos.py``
+`01_generate_family_motif_logos.py`
 - extracts motif probability matrices from MEME/STREME outputs,
 - generates Logomaker sequence logos for motifs belonging to robust families,
 - exports family-organised logo panels and summary tables.
@@ -202,9 +209,17 @@ Scripts in ``scripts/05_statistics/`` perform enrichment analysis, reporting, fa
 Sequence logos are generated for all motifs belonging to robust motif families using Logomaker.
 Each family receives its own directory containing motif logos and summary tables.
 
+#### **Optional downstream peptide selection / structural exploration**
+Additional scripts in `scripts/05_statistics/` prepare selected motif-associated peptide subsets for exploratory downstream analysis, including:
+- DeepTMHMM input preparation,
+- FMAP input preparation,
+- ColabFold input preparation,
+- ColabFold execution and best-model PDB collection.
+
+These steps are exploratory and are not required to reproduce the core clustering/motif benchmark.
+
 
 ---
-
 
 ## Execution order
 
@@ -236,7 +251,13 @@ python scripts/05_statistics/01_fimo_enrichment_fdr.py
 python scripts/05_statistics/02_fimo_reporting_and_robustness.py
 python scripts/05_statistics/03_motif_family_analysis.py
 python scripts/05_statistics/04_final_motif_reporting.py
+
+# Stage 6 — Motif logos
 python scripts/06_generate_logos/01_generate_family_motif_logos.py
+
+# Optional exploratory downstream peptide selection / structure-related steps
+python scripts/05_statistics/05_build_colabfold_fasta.py
+python scripts/05_statistics/06_colabfold_pdb.py
 ```
 
 All scripts resolve paths relative to the repository root and can therefore be run from any working directory.
@@ -275,8 +296,26 @@ Check installation:
 ```bash
 meme --version
 streme --version
+fimo --version
 tomtom --version
 ```
+
+### 3. Optional structural modelling environment (ColabFold)
+
+Selected motif-associated peptides can be modelled with ColabFold in a separate optional environment.
+
+```bash
+conda env create -f envs/environment_colabfold.yml
+conda activate colabfold
+```
+Check installation:
+
+```bash
+which colabfold_search
+which colabfold_batch
+colabfold_batch --help
+```
+This environment is optional and is only required for exploratory downstream peptide structure prediction.
 
 ### External tools required
 
@@ -285,6 +324,13 @@ The following tools must be installed and available in the corresponding environ
 - CD-HIT
 - MMseqs2
 - MEME Suite (`meme`, `streme`, `fimo`, `tomtom`)
+
+#### Optional downstream tools:
+
+- DeepTMHMM (web server)
+- HELIQUEST (web server)
+- ColabFold
+- PPM 3.0 (web server or local installation, if available)
 
 ---
 
@@ -307,6 +353,10 @@ The full pipeline is reproducible from raw data when the source files are availa
 
 From Stage 2 onward, tracked intermediate parquet files and lightweight result files allow partial reproduction without redistributing raw datasets or heavy temporary outputs.
 
+Optional downstream structural exploration steps depend on external web tools and/or separate structure-prediction environments and should be considered exploratory rather than part of the core benchmark.
+
+The ColabFold-based structure prediction step is not required to reproduce the main clustering/motif benchmarking results.
+
 ---
 
 ## What is tracked in git
@@ -317,6 +367,7 @@ Tracked:
 - lightweight statistical outputs (csv, png, parquet)
 - MEME/STREME report files (meme.txt, streme.txt, .html)
 - validation plots
+- environment files in `envs/`
 
 Not tracked:
 - raw source datasets
@@ -324,6 +375,7 @@ Not tracked:
 - full FIMO scan outputs
 - temporary MMseqs2 databases
 - local Excel exports and verbose auxiliary files
+- large ColabFold outputs and generated structure files unless explicitly selected
 
 See .gitignore for the exact tracking policy.
 

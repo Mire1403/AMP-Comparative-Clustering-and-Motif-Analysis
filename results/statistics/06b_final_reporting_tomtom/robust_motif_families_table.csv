@@ -1,0 +1,15 @@
+﻿Family_ID;Representative_motif;Representative_class;n_unique_motifs;n_pipelines;Pipelines_present;median_ER;min_FDR;Family_members;mean_Total_hits;mean_AMP_hit_frequency_pct;n_infinite_ER
+FAM_034;LILLLLLFLVLILLS;Hydrophobic/signal-like;4;4;"cdhit_meme;cdhit_streme;mmseq_meme;mmseq_streme";2138.5;0.0;"FLSLFL;FVYVLIJFLSLF;IJFLSLFLVV;LILLLLLFLVLILLS";1093.25;10.9825;2
+FAM_013;CDADCP;Cys-rich;4;4;"cdhit_meme;cdhit_streme;mmseq_meme;mmseq_streme";1155.3009630818617;0.0;"CDADCP;CETDCDCPE;CGCCCGAGECRKXCC;CXTDEDCPKVC";1627.75;19.375;2
+FAM_010;FLGAJLKLAAKVLPKIICKI;Hydrophobic/signal-like;12;4;"cdhit_meme;cdhit_streme;mmseq_meme;mmseq_streme";216.95392113424896;0.0;"ALKAIAKAAKKLL;FLGAJLKLAAKVLPKIICKI;FLGALLKLA;FLGLLLKLIK;FLPLLAGL;FLPMLAG;KKJEELAKK;KKJKDFLKK;KKLEKLAKKI;LGLLGKLL;LKKLLKKLKK;WKKJLKKILK";966.1666666666666;10.956666666666663;2
+FAM_060;MAKILKFVY;Hydrophobic/signal-like;4;3;"cdhit_streme;mmseq_meme;mmseq_streme";94.6875;0.0;"ILKFVYA;MAKILK;MAKILKFVY;MAQISK";319.0;4.78;3
+FAM_011;CIYGTCR;Cys-rich;2;2;"cdhit_streme;mmseq_streme";1569.4444444444443;0.0;"ARNIYNVCR;CIYGTCR";555.0;8.67;0
+FAM_119;VVAATYVL;Hydrophobic/signal-like;2;2;"cdhit_streme;mmseq_streme";410.0;0.0;"VVAATY;VVAATYVL";216.5;2.725;1
+FAM_109;WKKWKKKW;Cationic-rich;3;2;"cdhit_meme;mmseq_meme";102.48062015503876;0.0;"RWRWRW;WKKWKKKW;WWRRWW";2624.6666666666665;17.39;0
+FAM_095;PRPRPPPR;Cationic-rich;2;2;"mmseq_meme;mmseq_streme";61.90744920993228;0.0;"PRPRPPPR;PRPXPPPPRPPRPPP";1140.0;5.085;0
+FAM_014;CINGKCKC;Cys-rich;2;2;"cdhit_meme;mmseq_meme";;0.0;"CINGKCKC;KCINGVCC";1543.0;21.145;2
+FAM_028;RIGQRIRD;Cationic-rich;2;2;"cdhit_streme;mmseq_streme";8.9;7.957575551969927e-287;"EKIGQNIRDG;RIGQRIRD";514.0;5.71;1
+FAM_053;GTCDLLS;Other;2;2;"cdhit_streme;mmseq_streme";29.36936936936937;1.5967253855160148e-239;"GTCDLLS;TCDLLS";253.0;3.42;1
+FAM_104;RIRVAVIR;Cationic-rich;2;2;"mmseq_meme;mmseq_streme";9.851084856924668;1.7360125738156778e-237;"RIRVAVIR;RVAVIRA";354.0;3.975;0
+FAM_122;VYRNGVR;Other;2;2;"cdhit_streme;mmseq_streme";13.59375;1.5917077158538727e-145;"VYRNGVR;YGNGVY";158.0;2.285;1
+FAM_003;AGGSRQ;Gly-rich;2;2;"cdhit_streme;mmseq_streme";11.25;1.0037477668756456e-50;"AGGSRPQ;AGGSRQ";43.0;0.645;1
