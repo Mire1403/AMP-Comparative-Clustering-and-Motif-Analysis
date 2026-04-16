@@ -1,5 +1,0 @@
-﻿Clustering;Tool;Total_motifs;Significant_FDR_n;Significant_FDR_global_n;Mean_ER;Median_ER;N_infinite_ER;Median_AMP_hit_rate;Median_nonAMP_hit_rate;Significant_FDR_%;Significant_FDR_global_%
-cdhit;meme;45;44;44;390.1362686409977;54.68531468531469;16;0.031905;0.000127;97.8;97.8
-cdhit;streme;57;57;57;490.24113409474694;82.85714285714286;40;0.014167;0.0;100.0;100.0
-mmseq;meme;45;43;43;408.1850627298708;46.84049079754601;10;0.032405;0.000342;95.6;95.6
-mmseq;streme;73;69;69;153.61320925956667;53.678955453149;7;0.009889;0.00019;94.5;94.5

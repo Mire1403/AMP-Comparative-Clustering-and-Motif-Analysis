@@ -1,5 +1,0 @@
-condition,fasta,count,min,max,mean,std,p50,p90
-cdhit_amp,/mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/clustering/AMP_MASTER_cdhit.fasta,8682,11,80,32.60976733471551,19.756680136416435,25.0,65.0
-cdhit_nonamp,/mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/clustering/NONAMP_cdhit.fasta,202734,11,35213,385.0350656525299,374.32732850751313,309.0,703.0
-mmseq_amp,/mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/clustering/AMP_MASTER_mmseq_rep_seq.fasta,13146,6,80,23.921573102084285,19.368872277104785,15.0,59.0
-mmseq_nonamp,/mnt/c/Users/mirei/Desktop/AMP-Comparative-Clustering-and-Motif-Analysis/results/clustering/NONAMP_mmseq_rep_seq.fasta,197885,6,35213,383.56491901862194,373.08996053374875,308.0,701.0

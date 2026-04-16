@@ -30,13 +30,21 @@ ENV/
 conda-meta/
 
 ############################
+# 🔥 ColabFold (AÑADIDO)
+############################
+colabfold_output/
+colabfold_output/**
+
+*_env/
+*_env/**
+
+############################
 # Raw data (large / licensed)
 ############################
 data/raw/
 
 ############################
 # Intermediate data
-# Keep parquet only; ignore local exports
 ############################
 data/intermediate/*.csv
 data/intermediate/*.tsv
@@ -45,13 +53,12 @@ data/intermediate/*.fa
 data/intermediate/*.fna
 
 ############################
-# Background generation (heavy, reproducible)
+# Background generation
 ############################
 results/background_generation/
 
 ############################
 # AMP DB build
-# Keep selected lightweight summary outputs only
 ############################
 results/01_amp_db_build/*
 !results/01_amp_db_build/final_preview.csv
@@ -59,7 +66,6 @@ results/01_amp_db_build/*
 
 ############################
 # Clustering outputs
-# Keep only validation pngs
 ############################
 !results/02_clustering/
 results/02_clustering/*
@@ -74,7 +80,6 @@ results/02_clustering/validation_mmseq/*
 
 ############################
 # Motif discovery
-# Keep only html and txt reports
 ############################
 results/04_motif_discovery/*
 
@@ -100,114 +105,38 @@ results/04_motif_discovery/streme_mmseq/*
 
 ############################
 # FIMO scanning
-# Full scan outputs are reproducible and not tracked
 ############################
 results/05_motif_scanning/
 
 ############################
 # Statistics
-# Ignore by default, then selectively keep lightweight outputs
 ############################
 results/statistics/*
 
-# 01_clustering
-!results/statistics/01_clustering/
-results/statistics/01_clustering/*
-!results/statistics/01_clustering/*.csv
-!results/statistics/01_clustering/*.png
-!results/statistics/01_clustering/*.txt
-!results/statistics/01_clustering/*.parquet
+# 🔥 AQUÍ ESTÁ LO IMPORTANTE (tu análisis final)
+!results/statistics/11_motif_activity_analysis/
+results/statistics/11_motif_activity_analysis/*
+!results/statistics/11_motif_activity_analysis/**/*.csv
+!results/statistics/11_motif_activity_analysis/**/*.xlsx
+!results/statistics/11_motif_activity_analysis/**/*.png
 
-# 02_background_sampling
-!results/statistics/02_background_sampling/
-results/statistics/02_background_sampling/*
-!results/statistics/02_background_sampling/*.csv
-!results/statistics/02_background_sampling/*.png
-!results/statistics/02_background_sampling/*.txt
-!results/statistics/02_background_sampling/*.parquet
+# Mantener figuras finales
+!results/statistics/12_final_datasets/
+!results/statistics/12_final_datasets/**/*.png
 
-# 03_fimo_enrichment
-!results/statistics/03_fimo_enrichment/
-results/statistics/03_fimo_enrichment/*
-!results/statistics/03_fimo_enrichment/*.csv
-!results/statistics/03_fimo_enrichment/*.png
-!results/statistics/03_fimo_enrichment/*.txt
-!results/statistics/03_fimo_enrichment/*.parquet
-
-# 04_fimo_reporting
-!results/statistics/04_fimo_reporting/
-results/statistics/04_fimo_reporting/*
-!results/statistics/04_fimo_reporting/*.csv
-!results/statistics/04_fimo_reporting/*.png
-!results/statistics/04_fimo_reporting/*.txt
-!results/statistics/04_fimo_reporting/*.parquet
-
-# 05_motif_family_analysis
-!results/statistics/05_motif_family_analysis/
-results/statistics/05_motif_family_analysis/*
-!results/statistics/05_motif_family_analysis/*.csv
-!results/statistics/05_motif_family_analysis/*.png
-!results/statistics/05_motif_family_analysis/*.txt
-!results/statistics/05_motif_family_analysis/*.parquet
-
-# 05b_motif_family_analysis_tomtom
-!results/statistics/05b_motif_family_analysis_tomtom/
-results/statistics/05b_motif_family_analysis_tomtom/*
-!results/statistics/05b_motif_family_analysis_tomtom/*.csv
-!results/statistics/05b_motif_family_analysis_tomtom/*.png
-!results/statistics/05b_motif_family_analysis_tomtom/*.txt
-!results/statistics/05b_motif_family_analysis_tomtom/*.parquet
-
-# 06_final_reporting
-!results/statistics/06_final_reporting/
-results/statistics/06_final_reporting/*
-!results/statistics/06_final_reporting/*.csv
-!results/statistics/06_final_reporting/*.png
-!results/statistics/06_final_reporting/*.txt
-!results/statistics/06_final_reporting/*.parquet
-
-# 06b_final_reporting_tomtom
-!results/statistics/06b_final_reporting_tomtom/
-results/statistics/06b_final_reporting_tomtom/*
-!results/statistics/06b_final_reporting_tomtom/*.csv
-!results/statistics/06b_final_reporting_tomtom/*.png
-!results/statistics/06b_final_reporting_tomtom/*.txt
-!results/statistics/06b_final_reporting_tomtom/*.parquet
-
-# 07_motif_logos
-!results/statistics/07_motif_logos/
-results/statistics/07_motif_logos/*
-!results/statistics/07_motif_logos/**/*.png
-!results/statistics/07_motif_logos/**/*.csv
-!results/statistics/07_motif_logos/**/*.txt
-
-# 07b_motif_logos_tomtom
-!results/statistics/07b_motif_logos_tomtom/
-results/statistics/07b_motif_logos_tomtom/*
-!results/statistics/07b_motif_logos_tomtom/**/*.png
-!results/statistics/07b_motif_logos_tomtom/**/*.csv
-!results/statistics/07b_motif_logos_tomtom/**/*.txt
-
-# 08_colabfold_input
-# Keep lightweight input preparation files
-!results/statistics/08_colabfold_input/
-results/statistics/08_colabfold_input/*
-!results/statistics/08_colabfold_input/*.csv
-!results/statistics/08_colabfold_input/*.txt
-!results/statistics/08_colabfold_input/*.fasta
-
-# 09_colabfold_output
-# Ignore heavy structure-prediction outputs by default
+############################
+# ColabFold results internos
+############################
 results/statistics/09_colabfold_output/*
 !results/statistics/09_colabfold_output/best_pdb_summary.csv
 
 ############################
-# Local exploration / spreadsheets
+# Local exploration
 ############################
 *.xlsx
 
 ############################
-# MEME Suite verbose outputs
+# MEME outputs
 ############################
 *.eps
 *.xml
@@ -215,24 +144,21 @@ sites.tsv
 sequences.tsv
 
 ############################
-# Large sequence / clustering artifacts
+# Large sequence files
 ############################
 *.fasta
 *.fa
 *.fna
 *.clstr
 
-# Keep selected small FASTA files explicitly allowed above
-!results/statistics/08_colabfold_input/*.fasta
-
 ############################
-# PDB / structure outputs
+# PDB / structures
 ############################
 *.pdb
 *.cif
 
 ############################
-# MMseqs2 temporary databases / temp dirs
+# MMseqs temp
 ############################
 **/mmseq_tmp*/
 **/tmp*/
@@ -244,7 +170,7 @@ sequences.tsv
 *.clu*
 
 ############################
-# Logs / temporary files
+# Logs
 ############################
 *.tmp
 *.temp
