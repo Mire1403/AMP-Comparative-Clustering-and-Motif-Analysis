@@ -1,6 +1,6 @@
 # AMP Comparative Clustering & Motif Analysis
 
-Reproducible bioinformatics pipeline to benchmark two redundancy-reduction strategies (**CD-HIT** vs **MMseqs2**) for antimicrobial peptide (**AMP**) motif discovery, enrichment analysis, motif-family robustness and membrane interaction mechanisms (**FMAP,PPM3**)
+Reproducible bioinformatics pipeline to benchmark two redundancy-reduction strategies (**CD-HIT** vs **MMseqs2**) for antimicrobial peptide (**AMP**) motif discovery, enrichment analysis, motif-family robustness and membrane interaction mechanisms (**FMAP, PPM3**)
 
 The project evaluates whether the choice of clustering strategy systematically affects motif discovery outcomes, and explores how identified motifs relate to membrane interaction mechanisms.
 
