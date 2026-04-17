@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-INPUT_FILE = PROJECT_ROOT / "results" / "statistics" / "10_ppm_output" / "ppm_results_clean.csv"
-OUTPUT_DIR = PROJECT_ROOT / "results" / "statistics" / "11_motif_activity_analysis" / "ppm"
+INPUT_FILE = PROJECT_ROOT / "results" / "10_motif_mechanism_output" / "02_ppm_output" / "ppm_results_clean.csv"
+OUTPUT_DIR = PROJECT_ROOT / "results" / "11_mechanism_analysis" / "1_motif_activity_analysis" / "ppm"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 df = pd.read_csv(INPUT_FILE)

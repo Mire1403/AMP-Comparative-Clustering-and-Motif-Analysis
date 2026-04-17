@@ -5,11 +5,12 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 INPUT_FILE = PROJECT_ROOT / "results" / "statistics" / "11_motif_activity_analysis" / "comparison" / "fmap_ppm_comparison.xlsx"
 OUTPUT_FILE = PROJECT_ROOT / "results" / "statistics" / "11_motif_activity_analysis" / "comparison" / "motif_like_analysis.xlsx"
+OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 df = pd.read_excel(INPUT_FILE, sheet_name="Merged")
 
 # =========================
-# 🔥 CHECK MOTIF COLUMN
+# CHECK MOTIF COLUMN
 # =========================
 if "Motif" not in df.columns:
     raise ValueError("❌ No 'Motif' column found in merged data")
@@ -40,7 +41,7 @@ cross_mech_norm = pd.crosstab(
 )
 
 # =========================
-# 🔥🔥 3. MOTIF ANALYSIS (CLAVE)
+# 3. MOTIF ANALYSIS (CLAVE)
 # =========================
 
 # Conteo absoluto
@@ -53,37 +54,31 @@ motif_ppm = pd.crosstab(
     df["Motif"],
     df["Mechanism_PPM"]
 )
-
-# Normalizado (MUY IMPORTANTE 🔥)
 motif_fmap_norm = pd.crosstab(
     df["Motif"],
     df["Mechanism_FMAP"],
     normalize="index"
 )
-
 motif_ppm_norm = pd.crosstab(
     df["Motif"],
     df["Mechanism_PPM"],
     normalize="index"
 )
 
-# Tamaño del motif
 motif_size = df["Motif"].value_counts()
 
-# Añadir tamaño
 motif_fmap["Total"] = motif_size
 motif_ppm["Total"] = motif_size
 motif_fmap_norm["Total"] = motif_size
 motif_ppm_norm["Total"] = motif_size
 
-# Ordenar por tamaño
 motif_fmap = motif_fmap.sort_values("Total", ascending=False)
 motif_ppm = motif_ppm.loc[motif_fmap.index]
 motif_fmap_norm = motif_fmap_norm.loc[motif_fmap.index]
 motif_ppm_norm = motif_ppm_norm.loc[motif_fmap.index]
 
 # =========================
-# 🔥 4. HIGH CONFIDENCE POR MOTIF
+# 4. HIGH CONFIDENCE POR MOTIF
 # =========================
 high = df[df["Activity_Agreement"] == "Exact"]
 
@@ -94,7 +89,7 @@ motif_high = pd.crosstab(
 )
 
 # =========================
-# 🔥 5. CONFLICTOS POR MOTIF
+# CONFLICTS
 # =========================
 conflicts = df[df["Mechanism_Agreement"] == "Different"]
 

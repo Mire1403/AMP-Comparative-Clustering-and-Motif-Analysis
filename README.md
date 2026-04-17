@@ -1,14 +1,13 @@
 # AMP Comparative Clustering & Motif Analysis
 
-Reproducible bioinformatics pipeline to benchmark two redundancy-reduction strategies (**CD-HIT** vs **MMseqs2**) for antimicrobial peptide (**AMP**) motif discovery, enrichment analysis, and motif-family robustness.
+Reproducible bioinformatics pipeline to benchmark two redundancy-reduction strategies (**CD-HIT** vs **MMseqs2**) for antimicrobial peptide (**AMP**) motif discovery, enrichment analysis, motif-family robustness and membrane interaction mechanisms (**FMAP,PPM3**)
 
-The project evaluates whether the choice of clustering strategy systematically affects the motifs recovered downstream and their statistical support.
-
+The project evaluates whether the choice of clustering strategy systematically affects motif discovery outcomes, and explores how identified motifs relate to membrane interaction mechanisms.
 ---
 
 ## Research question
 
-Does the choice of redundancy-reduction strategy (CD-HIT vs MMseqs2) systematically influence the identity, enrichment, and robustness of antimicrobial peptide motifs discovered downstream?
+How do redundancy-reduction strategies (CD-HIT vs MMseqs2) impact motif discovery in antimicrobial peptides, and can the resulting motifs be linked to specific membrane interaction mechanisms?
 
 ---
 
@@ -24,25 +23,28 @@ Starting from a curated AMP collection and a matched non-AMP background, the pip
 6. scans AMP and non-AMP sequence sets with **FIMO**,
 7. computes motif enrichment using Fisher’s exact test with Benjamini–Hochberg FDR correction,
 8. groups significant motifs into families using sequence similarity and identifies robust families reproduced across multiple pipelines.
+9. links motifs to membrane interaction mechanisms using structural modelling and membrane insertion analysis (FMAP + PPM).
 
-The final output is a ranked set of **robust AMP motif families** reproducible across multiple pipeline configurations.
-This design enables direct comparison of motif discovery consistency and robustness across independent computational pipelines.
 
-Optional downstream structural exploration was added for selected motif-associated peptides.
+### Conceptual output
+The pipeline produces a multi-layer mapping:
+
+motif → enrichment → family → structure → membrane interaction → mechanism
+
+This enables moving from purely statistical motif discovery to **functional interpretation of AMP mechanisms**.
 
 ---
 
 ## Main outputs
 
-The most relevant outputs for interpretation are located in:
+Key results are located in:
 
-- `results/statistics/03_fimo_enrichment/` — motif enrichment tables
-- `results/statistics/04_fimo_reporting/` — cleaned significant motif summaries and plots
-- `results/statistics/05b_motif_family_analysis_tomtom/` — Tomtom-based motif family assignments and robustness analysis
-- `results/statistics/06b_final_reporting_tomtom/` — final ranked motif families
-- `results/statistics/07b_motif_logos_tomtom/` — family-organised motif logos
-- `results/statistics/08_colabfold_input/` — selected peptide subsets for ColabFold
-- `results/statistics/09_colabfold_output/` — ColabFold output files, best-model PDB selection, and summary tables
+- `results/07_motif_families/` — motif family assignments and robustness (Tomtom-based)
+- `results/08_motif_logos/` — motif logos and consensus representations
+- `results/09_motif_mechanism_input/` — selected peptide subsets (FMAP / ColabFold input)
+- `results/10_motif_mechanism_output/` — FMAP + PPM parsed outputs
+- `results/11_mechanism_analysis/` — FMAP vs PPM comparison and motif–mechanism analysis
+- `results/statistics/11_motif_activity_analysis/` — final comparison tables and motif-level analysis
 
 ---
 
@@ -51,52 +53,33 @@ The most relevant outputs for interpretation are located in:
 ```text
 .
 ├── data/
-│   ├── raw/                              # Original source files (not tracked)
-│   │   ├── CAMP/
-│   │   ├── DBAASP/
-│   │   ├── DRAMP/
-│   │   ├── dbAMP3/
-│   │   └── non_AMPs/
-│   ├── intermediate/                     # Processed per-step files (parquet tracked)
+│   ├── raw/                        # Not tracked
+│   ├── intermediate/                     
 │   └── final/
 │       ├── AMP_MASTER.fasta              # Final curated AMP FASTA
 │       └── DB_MASTER_CLEAN.parquet       # Final curated AMP metadata table
 │
 ├── scripts/
 │   ├── 01_dataset_construction/
-│   │   ├── amp/
-│   │   └── non_amp/
 │   ├── 02_redundancy_reduction/
 │   ├── 03_background_sampling/
 │   ├── 04_motif_analysis/
 │   ├── 05_statistics/
-│   └── 06_generate_logos/
+│   ├── 06_generate_logos/
+│   └── 07_motif_mechanism/
 │
 ├── results/
 │   ├── 01_amp_db_build/
 │   ├── 02_clustering/
-│   ├── 03_background/            # Not tracked
-│   ├── 04_motif_discovery/               # MEME/STREME reports
-│   ├── 05_motif_scanning/                # FIMO outputs (not tracked)
-│   └── statistics/
-│       ├── 01_clustering/
-│       ├── 02_background_sampling/
-│       ├── 03_fimo_enrichment/
-│       ├── 04_fimo_reporting/
-│       ├── 05_motif_family_analysis/
-│       ├── 05b_motif_family_analysis_tomtom/
-│       ├── 06_final_reporting/
-│       ├── 06b_final_reporting_tomtom/
-│       ├── 07_motif_logos/
-│       ├── 07b_motif_logos_tomtom/
-│       ├── 08_colabfold_input/
-│       └── 09_colabfold_output/
+│   ├── 04_motif_discovery/
+│   ├── 05_motif_scanning/
+│   ├── 07_motif_families/
+│   ├── 08_motif_logos/
+│   ├── 09_motif_mechanism_input/
+│   ├── 10_motif_mechanism_output/
+│   ├── 11_mechanism_analysis/
 │
-├── envs/
-│   ├── environment.yml              # Core analysis environment
-│   ├── environment_meme.yml         # MEME Suite environment
-│   └── environment_colabfold.yml    # ColabFold environment
-│   
+├── envs/│   
 ├── .gitignore
 └── README.md
 ```
@@ -200,7 +183,8 @@ Scripts in `scripts/05_statistics/` perform enrichment analysis, reporting, and 
 - creates final ranked tables and summary figures,
 - exports the main robust-family deliverables.
 
-#### **05 — Motif logo generation**
+### Stage 6 — Motif logos
+
 `01_generate_family_motif_logos.py`
 - extracts motif probability matrices from MEME/STREME outputs,
 - generates Logomaker sequence logos for motifs belonging to robust families,
@@ -209,15 +193,48 @@ Scripts in `scripts/05_statistics/` perform enrichment analysis, reporting, and 
 Sequence logos are generated for all motifs belonging to robust motif families using Logomaker.
 Each family receives its own directory containing motif logos and summary tables.
 
-#### **Optional downstream peptide selection / structural exploration**
-Additional scripts in `scripts/05_statistics/` prepare selected motif-associated peptide subsets for exploratory downstream analysis, including:
-- DeepTMHMM input preparation,
-- FMAP input preparation,
-- ColabFold input preparation,
-- ColabFold execution and best-model PDB collection.
 
-These steps are exploratory and are not required to reproduce the core clustering/motif benchmark.
+### Stage 7 — Motif–Mechanism analysis
 
+Scripts in `scripts/07_motif_mechanism/` link motif-containing peptides to membrane interaction behaviour.
+
+#### 7.1 Peptide selection
+
+- motif-associated peptides are extracted from AMP dataset
+- diversity filtering applied (sequence identity threshold)
+- subsets generated for structural analysis
+
+#### 7.2 Structure prediction
+- Peptides associated with selected motifs are modelled using **ESMFold / ColabFold**
+- FASTA inputs are generated
+
+#### 7.3 Membrane interaction modelling
+Two complementary approaches are used:
+
+- **FMAP**
+  - predicts membrane binding energetics
+  - helix detection
+  - estimates depth, and tilt
+
+- **PPM**
+  - calculates positioning of peptides in membranes
+  - provides independent estimates of depth, tilt, and ΔG
+
+#### 7.4 Comparative analysis
+- FMAP and PPM outputs are harmonised
+- activity classes are defined (interaction → insertion scale)
+- agreement between models is evaluated
+
+#### 7.5 Motif-level analysis 
+- mechanisms are aggregated **per motif**
+- frequency of mechanisms per motif is computed
+- motif → mechanism relationships are identified
+
+Outputs include:
+- FMAP vs PPM comparison tables
+- agreement metrics
+- motif-level mechanism distributions
+- high-confidence motif–mechanism associations
 
 ---
 
@@ -255,11 +272,16 @@ python scripts/05_statistics/04_final_motif_reporting.py
 # Stage 6 — Motif logos
 python scripts/06_generate_logos/01_generate_family_motif_logos.py
 
-# Optional exploratory downstream peptide selection / structure-related steps
-python scripts/05_statistics/05_build_colabfold_fasta.py
-python scripts/05_statistics/06_colabfold_pdb.py
-```
+# Stage 7 — Mechanism analysis
+python scripts/07_motif_mechanism/01_prepare_fmap_input.py
+python scripts/07_motif_mechanism/02_parse_fmap_output.py
+python scripts/07_motif_mechanism/03_parse_ppm_output.py
+python scripts/07_motif_mechanism/04_fmap_analysis.py
+python scripts/07_motif_mechanism/05_ppm_analysis.py
+python scripts/07_motif_mechanism/06_compare_fmap_ppm.py
+python scripts/07_motif_mechanism/07_motif_level_analysis.py
 
+```
 All scripts resolve paths relative to the repository root and can therefore be run from any working directory.
 
 ---
@@ -324,14 +346,9 @@ The following tools must be installed and available in the corresponding environ
 - CD-HIT
 - MMseqs2
 - MEME Suite (`meme`, `streme`, `fimo`, `tomtom`)
-
-#### Optional downstream tools:
-
-- DeepTMHMM (web server)
-- HELIQUEST (web server)
+- FMAP
+- PPM 3.0
 - ColabFold
-- PPM 3.0 (web server or local installation, if available)
-
 ---
 
 ## Data sources
@@ -349,13 +366,11 @@ Raw source files are excluded from version control because of size and/or licens
 ---
 
 ## Reproducibility scope
-The full pipeline is reproducible from raw data when the source files are available locally.
+The full pipeline is reproducible from raw data when the source files and external tools are available locally.
 
 From Stage 2 onward, tracked intermediate parquet files and lightweight result files allow partial reproduction without redistributing raw datasets or heavy temporary outputs.
 
-Optional downstream structural exploration steps depend on external web tools and/or separate structure-prediction environments and should be considered exploratory rather than part of the core benchmark.
-
-The ColabFold-based structure prediction step is not required to reproduce the main clustering/motif benchmarking results.
+The motif–mechanism analysis (Stage 7) is reproducible given access to external tools such as FMAP, PPM, and ColabFold. These steps may require additional setup or web-based execution and should be considered semi-reproducible depending on the computational environment.
 
 ---
 
@@ -367,6 +382,8 @@ Tracked:
 - lightweight statistical outputs (csv, png, parquet)
 - MEME/STREME report files (meme.txt, streme.txt, .html)
 - validation plots
+- final CSV/XLSX/PNG outputs from mechanism analysis
+- motif-level comparison tables
 - environment files in `envs/`
 
 Not tracked:
@@ -375,7 +392,9 @@ Not tracked:
 - full FIMO scan outputs
 - temporary MMseqs2 databases
 - local Excel exports and verbose auxiliary files
-- large ColabFold outputs and generated structure files unless explicitly selected
+- FMAP raw outputs
+- PPM raw outputs
+- ColabFold structures
 
 See .gitignore for the exact tracking policy.
 

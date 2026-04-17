@@ -24,6 +24,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "02_clustering"
 RESULTS_BG_DIR = PROJECT_ROOT / "results" / "03_background"
 RESULTS_MOTIF_DIR = PROJECT_ROOT / "results" / "04_motif_discovery"
+
 RESULTS_MOTIF_DIR.mkdir(parents=True, exist_ok=True)
 
 # Inputs

@@ -11,8 +11,7 @@ import numpy as np
 from scipy.stats import ks_2samp
 
 import matplotlib
-matplotlib.use("Agg")  # ✅ avoid Qt/Wayland issues in WSL
-import matplotlib.pyplot as plt
+matplotlib.use("Agg")
 
 print("\nBACKGROUND SAMPLING PIPELINE — progressive random (len + KR-matched)\n")
 
@@ -22,14 +21,14 @@ print("\nBACKGROUND SAMPLING PIPELINE — progressive random (len + KR-matched)\
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
+RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "02_clustering"
 
 # Big outputs (FASTA)
-RESULTS_BG_DIR = PROJECT_ROOT / "results" / "background_generation"
+RESULTS_BG_DIR = PROJECT_ROOT / "results" / "03_background"
 RESULTS_BG_DIR.mkdir(parents=True, exist_ok=True)
 
 # Lightweight outputs (plots, reports, manifests, csv summary)
-STATS_DIR = PROJECT_ROOT / "results" / "statistics" / "background_sampling"
+STATS_DIR = PROJECT_ROOT / "results" / "03_background" / "statistics"
 STATS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Inputs produced by clustering scripts

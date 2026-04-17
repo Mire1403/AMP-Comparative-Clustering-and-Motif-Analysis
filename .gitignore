@@ -30,10 +30,13 @@ ENV/
 conda-meta/
 
 ############################
-# 🔥 ColabFold (AÑADIDO)
+# 🔥 ColabFold
 ############################
 colabfold_output/
 colabfold_output/**
+
+results/09_motif_mechanism_input/02_colabfold_input/
+results/09_motif_mechanism_input/02_colabfold_input/**
 
 *_env/
 *_env/**
@@ -109,18 +112,41 @@ results/04_motif_discovery/streme_mmseq/*
 results/05_motif_scanning/
 
 ############################
+# 🔥 Motif logos (NUEVO)
+############################
+results/08_motif_logos/
+
+############################
+# 🔥 Mechanism input/output (FMAP / PPM)
+############################
+results/09_motif_mechanism_input/*
+results/09_motif_mechanism_output/*
+
+# Mantener tablas clave
+!results/09_motif_mechanism_input/**/*.csv
+!results/09_motif_mechanism_output/**/*.csv
+
+############################
+# 🔥 Mechanism analysis (clave)
+############################
+results/11_mechanism_analysis/*
+
+# Mantener outputs finales
+!results/11_mechanism_analysis/**/*.csv
+!results/11_mechanism_analysis/**/*.xlsx
+!results/11_mechanism_analysis/**/*.png
+
+############################
 # Statistics
 ############################
 results/statistics/*
 
-# 🔥 AQUÍ ESTÁ LO IMPORTANTE (tu análisis final)
 !results/statistics/11_motif_activity_analysis/
 results/statistics/11_motif_activity_analysis/*
 !results/statistics/11_motif_activity_analysis/**/*.csv
 !results/statistics/11_motif_activity_analysis/**/*.xlsx
 !results/statistics/11_motif_activity_analysis/**/*.png
 
-# Mantener figuras finales
 !results/statistics/12_final_datasets/
 !results/statistics/12_final_datasets/**/*.png
 

@@ -5,8 +5,8 @@ import os
 # CONFIGURATION
 # ==============================
 
-INPUT_TABLE = "results/statistics/08_fmap_input/motif_selected_sequences.csv"
-OUTPUT_FASTA = "results/statistics/09_esmfold_input/esm_input.fasta"
+INPUT_TABLE = "results/09_motif_mechanism_input/01_fmap_input/motif_selected_sequences.csv"
+OUTPUT_FASTA = "results/09_motif_mechanism_input/02_colabfold_input/colabfold_input.fasta"
 
 VALID_AA = set("ACDEFGHIKLMNPQRSTVWY")
 
@@ -15,10 +15,7 @@ VALID_AA = set("ACDEFGHIKLMNPQRSTVWY")
 # ==============================
 
 def clean_sequence(seq):
-    """
-    Replace non-standard amino acids with 'L' to avoid ESMFold errors.
-    """
-    return "".join([aa if aa in VALID_AA else "L" for aa in seq])
+    return "".join([aa if aa in VALID_AA else "A" for aa in seq])
 
 # ==============================
 # MAIN
@@ -31,7 +28,7 @@ def main():
 
     os.makedirs(os.path.dirname(OUTPUT_FASTA), exist_ok=True)
 
-    print("Writing FASTA file for ESMFold...")
+    print("Writing FASTA file for ColabFold...")
 
     with open(OUTPUT_FASTA, "w") as f:
         for _, row in df.iterrows():

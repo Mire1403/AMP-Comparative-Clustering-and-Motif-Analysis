@@ -6,7 +6,7 @@ import subprocess
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 DATA_INTERMEDIATE_DIR = PROJECT_ROOT / "data" / "intermediate"
-RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
+RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "02_clustering"
 RESULTS_CLUSTER_DIR.mkdir(parents=True, exist_ok=True)
 
 INPUT_FASTA = DATA_INTERMEDIATE_DIR / "nonamp_clean_min5.fasta"

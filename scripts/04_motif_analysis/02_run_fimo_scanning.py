@@ -37,7 +37,6 @@ seqs = {
     "cdhit_amps":  RESULTS_CLUSTER_DIR / "AMP_MASTER_cdhit.fasta",
     "mmseq_amps":  RESULTS_CLUSTER_DIR / "AMP_MASTER_mmseq_rep_seq.fasta",
 
-    # ✅ FIX: background FASTAs live in results/background_generation/
     "cdhit_nonamp": RESULTS_BG_DIR / "nonamp_cdhit_10x_len_kr_matched_progressive_random.fasta",
     "mmseq_nonamp": RESULTS_BG_DIR / "nonamp_mmseq_10x_len_kr_matched_progressive_random.fasta",
 }

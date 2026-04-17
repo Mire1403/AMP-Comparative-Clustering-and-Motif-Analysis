@@ -3,10 +3,10 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-FMAP_FILE = PROJECT_ROOT / "results" / "statistics" / "11_motif_activity_analysis" / "fmap" / "fmap_best_peptides.csv"
-PPM_FILE = PROJECT_ROOT / "results" / "statistics" / "11_motif_activity_analysis" / "ppm" / "ppm_processed.csv"
+FMAP_FILE = PROJECT_ROOT / "results" / "11_mechanism_analysis" / "1_motif_activity_analysis" / "fmap" / "fmap_best_peptides.csv"
+PPM_FILE = PROJECT_ROOT / "results" / "11_mechanism_analysis" / "1_motif_activity_analysis" / "ppm" / "ppm_processed.csv"
 
-OUTPUT_FILE = PROJECT_ROOT / "results" / "statistics" / "11_motif_activity_analysis" / "comparison" / "fmap_ppm_comparison.xlsx"
+OUTPUT_FILE = PROJECT_ROOT / "results" / "11_mechanism_analysis" / "1_motif_activity_analysis" / "comparison" / "fmap_ppm_comparison.xlsx"
 OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 # =========================
@@ -16,7 +16,7 @@ fmap = pd.read_csv(FMAP_FILE)
 ppm = pd.read_csv(PPM_FILE)
 
 # =========================
-# 🔥 DETECT MOTIF COLUMN
+# DETECT MOTIF COLUMN
 # =========================
 if "Motif_ID" in fmap.columns:
     motif_col = "Motif_ID"

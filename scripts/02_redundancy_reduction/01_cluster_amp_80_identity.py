@@ -11,7 +11,7 @@ import pandas as pd
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 DATA_FINAL_DIR = PROJECT_ROOT / "data" / "final"
-RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
+RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "02_clustering"
 RESULTS_CLUSTER_DIR.mkdir(parents=True, exist_ok=True)
 
 MASTER_PARQUET = DATA_FINAL_DIR / "DB_MASTER_CLEAN.parquet"

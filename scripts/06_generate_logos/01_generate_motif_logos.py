@@ -66,10 +66,10 @@ def find_repo_root(start: Path) -> Path:
 
 PROJECT_ROOT = find_repo_root(Path(__file__).parent)
 
-IN_SIG    = PROJECT_ROOT / "results" / "statistics" / "04_fimo_reporting" / "fimo_significant_only_cleaned.csv"
-IN_FAMILY = PROJECT_ROOT / "results" / "statistics" / "05b_motif_family_analysis_tomtom" / "motif_family_assignments_tomtom.csv"
+IN_SIG    = PROJECT_ROOT / "results" / "06_motif_statistics" / "02_fimo_reporting" / "fimo_significant_only_cleaned.csv"
+IN_FAMILY = PROJECT_ROOT / "results" / "07_motif_families" / "1_motif_family_analysis_tomtom" / "motif_family_assignments_tomtom.csv"
 
-OUT_DIR        = PROJECT_ROOT / "results" / "statistics" / "07b_motif_logos"
+OUT_DIR        = PROJECT_ROOT / "results" / "08_motif_logos" / "01_motif_logos"
 OUT_DIR_ALL    = OUT_DIR / "all"
 OUT_DIR_ROBUST = OUT_DIR / "robust"
 for _d in [OUT_DIR, OUT_DIR_ALL, OUT_DIR_ROBUST]:

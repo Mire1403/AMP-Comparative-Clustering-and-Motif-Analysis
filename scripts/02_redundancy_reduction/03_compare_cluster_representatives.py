@@ -14,8 +14,8 @@ print("\n=== CLUSTER REPRESENTATIVE ANALYSIS (4 CONDITIONS) ===\n")
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "clustering"
-OUT_DIR = PROJECT_ROOT / "results" / "statistics" / "clustering"
+RESULTS_CLUSTER_DIR = PROJECT_ROOT / "results" / "02_clustering"
+OUT_DIR = PROJECT_ROOT / "results" / "02_clustering" / "statistics"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 STATS_CSV = OUT_DIR / "cluster_representatives_length_stats.csv"

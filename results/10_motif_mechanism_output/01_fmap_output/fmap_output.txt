@@ -1,0 +1,2923 @@
+Peptide in membrane model
+comparison of helix boundaries
+ 
+300 7.0 bact P0001 
+FLPLLAGLAAKWF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  11, Stability relative to coil in water and bound coil: -3.9 and  -2.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.1 kcal/mol
+Helix    3 -  11, Stability relative to coil in water and bound coil: -3.9 and  -2.4 kcal/mol
+Solution NMR detectable helix  1:    3 -  11, Stability relative to coil in water and bound coil: -3.9 and  -2.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.4 kcal/mol, tilt angle:   89., depth/thickness:   2.8 A
+fpen=  9.0
+ 
+300 7.0 bact P0002 
+GLLSGILGAGKNIVCGLSGLC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   4, Stability relative to coil in water and bound coil: -0.7 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.0 kcal/mol
+Helix    2 -  11, Stability relative to coil in water and bound coil: -0.1 and   1.6 kcal/mol
+Helix   13 -  17, Stability relative to coil in water and bound coil: -0.1 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  11, Stability relative to coil in water and bound coil: -0.1 and   1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.3 kcal/mol, tilt angle:   57., depth/thickness:   2.3 A
+Solution NMR detectable helix  2:   13 -  17, Stability relative to coil in water and bound coil: -0.1 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.9 kcal/mol, tilt angle:   87., depth/thickness:   1.9 A
+fpen=  7.5
+ 
+300 7.0 bact P0003 
+ADLKVVAATYVLVA
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.7 kcal/mol
+Helix    4 -  12, Stability relative to coil in water and bound coil: -0.3 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    4 -  12, Stability relative to coil in water and bound coil: -0.3 and   0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.9 kcal/mol, tilt angle:   84., depth/thickness:   3.8 A
+fpen=  9.0
+ 
+300 7.0 bact P0004 
+KKKKVVAATYFFFA
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  11, Stability relative to coil in water and bound coil: -1.2 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.0 kcal/mol
+Helix    5 -  12, Stability relative to coil in water and bound coil: -1.9 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    5 -  12, Stability relative to coil in water and bound coil: -1.9 and   0.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.2 kcal/mol, tilt angle:   89., depth/thickness:   3.5 A
+fpen=  8.0
+ 
+300 7.0 bact P0005 
+ADLKVVAATYVLVA
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.7 kcal/mol
+Helix    4 -  12, Stability relative to coil in water and bound coil: -0.3 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    4 -  12, Stability relative to coil in water and bound coil: -0.3 and   0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.9 kcal/mol, tilt angle:   84., depth/thickness:   3.8 A
+fpen=  9.0
+ 
+300 7.0 bact P0006 
+ADKEVVAATYVKKK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.1 kcal/mol
+Helix 2:   10 -  12, Stability relative to coil in water and bound coil: -0.7 and  -0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -0.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.9 kcal/mol
+Helix    5 -  13, Stability relative to coil in water and bound coil: -0.2 and   0.4 kcal/mol
+Solution NMR detectable helix  1:    5 -  13, Stability relative to coil in water and bound coil: -0.2 and   0.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.5 kcal/mol, tilt angle:   70., depth/thickness:   1.3 A
+fpen=  9.0
+ 
+300 7.0 bact P0007 
+DLEVVAATYV
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   7, Stability relative to coil in water and bound coil: -1.5 and  -1.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.9 kcal/mol
+Helix    3 -   8, Stability relative to coil in water and bound coil: -1.2 and  -1.0 kcal/mol
+Solution NMR detectable helix  1:    3 -   8, Stability relative to coil in water and bound coil: -1.2 and  -1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.5 kcal/mol, tilt angle:   51., depth/thickness:   3.7 A
+fpen=  6.0
+ 
+300 7.0 bact P0008 
+KKKKVVAATYALV
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.1 kcal/mol
+Helix    5 -  12, Stability relative to coil in water and bound coil: -0.8 and   0.2 kcal/mol
+Solution NMR detectable helix  1:    5 -  12, Stability relative to coil in water and bound coil: -0.8 and   0.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.1 kcal/mol, tilt angle:   84., depth/thickness:   3.9 A
+fpen=  8.0
+ 
+300 7.0 bact P0009 
+FALALKALKKLLKKLKKLAKKAL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  21, Stability relative to coil in water and bound coil: -9.2 and  -5.7 kcal/mol
+Membrane or micelle binding energy of peptide: -10.8 kcal/mol
+Membrane/micelle binding energy of peptide: -10.8 kcal/mol
+Helix    3 -  22, Stability relative to coil in water and bound coil: -9.2 and  -5.7 kcal/mol
+Solution NMR detectable helix  1:    3 -  22, Stability relative to coil in water and bound coil: -9.2 and  -5.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.4 kcal/mol, tilt angle:   81., depth/thickness:   6.4 A
+fpen= 20.0
+ 
+300 7.0 bact P0010 
+KLKKLLKKLKKLLK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  12, Stability relative to coil in water and bound coil: -4.0 and  -1.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.5 kcal/mol
+Helix    2 -  13, Stability relative to coil in water and bound coil: -4.4 and  -1.4 kcal/mol
+Solution NMR detectable helix  1:    2 -  13, Stability relative to coil in water and bound coil: -4.4 and  -1.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.6 kcal/mol, tilt angle:   90., depth/thickness:   2.4 A
+fpen= 12.0
+ 
+300 7.0 bact P0011 
+LKKLKKLLKKLKKKL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  13, Stability relative to coil in water and bound coil: -1.6 and   0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.0 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil: -2.6 and  -0.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil: -2.6 and  -0.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.1 kcal/mol, tilt angle:   88., depth/thickness:   2.4 A
+fpen= 13.0
+ 
+300 7.0 bact P0012 
+ARLRIRVAVIRA
+Membrane or micelle binding energy of peptide:  -1.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.1 kcal/mol
+Helix    4 -   6, Stability relative to coil in water and bound coil: -0.7 and  -0.5 kcal/mol
+Helix    8 -  11, Stability relative to coil in water and bound coil:  0.1 and   0.4 kcal/mol
+Solution NMR detectable helix  1:    4 -   6, Stability relative to coil in water and bound coil: -0.7 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.5 kcal/mol, tilt angle:   73., depth/thickness:   1.3 A
+Solution NMR detectable helix  2:    8 -  11, Stability relative to coil in water and bound coil:  0.1 and   0.4 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.1 kcal/mol, tilt angle:   90., depth/thickness:   3.7 A
+fpen=  3.5
+ 
+300 7.0 bact P0013 
+ARLRIRVAVIRA
+Membrane or micelle binding energy of peptide:  -1.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.1 kcal/mol
+Helix    4 -   6, Stability relative to coil in water and bound coil: -0.7 and  -0.5 kcal/mol
+Helix    8 -  11, Stability relative to coil in water and bound coil:  0.1 and   0.4 kcal/mol
+Solution NMR detectable helix  1:    4 -   6, Stability relative to coil in water and bound coil: -0.7 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.5 kcal/mol, tilt angle:   73., depth/thickness:   1.3 A
+Solution NMR detectable helix  2:    8 -  11, Stability relative to coil in water and bound coil:  0.1 and   0.4 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.1 kcal/mol, tilt angle:   90., depth/thickness:   3.7 A
+fpen=  3.5
+ 
+300 7.0 bact P0014 
+ALWKKLLKKLLKSAKKLG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  15, Stability relative to coil in water and bound coil: -7.2 and  -3.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.7 kcal/mol
+Helix    2 -  16, Stability relative to coil in water and bound coil: -6.8 and  -2.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  16, Stability relative to coil in water and bound coil: -6.8 and  -2.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.4 kcal/mol, tilt angle:   83., depth/thickness:   5.9 A
+fpen= 15.0
+ 
+300 7.0 bact P0015 
+APKAMKLLKKLLKLQKKGI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  11, Stability relative to coil in water and bound coil: -4.0 and  -2.4 kcal/mol
+Helix 2:   13 -  16, Stability relative to coil in water and bound coil: -1.0 and  -0.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.2 kcal/mol
+Helix    3 -  17, Stability relative to coil in water and bound coil: -4.5 and  -1.9 kcal/mol
+Solution NMR detectable helix  1:    3 -  17, Stability relative to coil in water and bound coil: -4.5 and  -1.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.5 kcal/mol, tilt angle:   65., depth/thickness:   4.7 A
+fpen= 15.0
+ 
+300 7.0 bact P0016 
+CLKKGLKLLKKLLKLC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  12, Stability relative to coil in water and bound coil: -1.9 and  -0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.5 kcal/mol
+Helix    2 -  15, Stability relative to coil in water and bound coil: -3.0 and   0.5 kcal/mol
+Solution NMR detectable helix  1:    2 -  15, Stability relative to coil in water and bound coil: -3.0 and   0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.5 kcal/mol, tilt angle:   88., depth/thickness:   1.1 A
+fpen= 14.0
+ 
+300 7.0 bact P0017 
+DDALKKLLKKLLKKL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  14, Stability relative to coil in water and bound coil: -4.5 and  -2.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.0 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil: -4.2 and  -1.7 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil: -4.2 and  -1.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.2 kcal/mol, tilt angle:   87., depth/thickness:   2.4 A
+fpen= 13.0
+ 
+300 7.0 bact P0018 
+KCKKCLLKLLKKLLKLKL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -  13, Stability relative to coil in water and bound coil: -4.2 and  -1.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.7 kcal/mol
+Helix    5 -  17, Stability relative to coil in water and bound coil: -4.8 and  -1.3 kcal/mol
+Solution NMR detectable helix  1:    5 -  17, Stability relative to coil in water and bound coil: -4.8 and  -1.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.7 kcal/mol, tilt angle:   80., depth/thickness:   3.4 A
+fpen= 13.0
+ 
+300 7.0 bact P0019 
+KLLKLLKKLLKALG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  12, Stability relative to coil in water and bound coil: -5.1 and  -2.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.7 kcal/mol
+Helix    2 -  13, Stability relative to coil in water and bound coil: -5.7 and  -2.2 kcal/mol
+Solution NMR detectable helix  1:    2 -  13, Stability relative to coil in water and bound coil: -5.7 and  -2.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.1 kcal/mol, tilt angle:   73., depth/thickness:   7.1 A
+fpen= 12.0
+ 
+300 7.0 bact P0020 
+LKKLLKKLLK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   7, Stability relative to coil in water and bound coil: -1.1 and  -0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.6 kcal/mol
+Helix    4 -   9, Stability relative to coil in water and bound coil: -2.2 and  -0.2 kcal/mol
+Solution NMR detectable helix  1:    4 -   9, Stability relative to coil in water and bound coil: -2.2 and  -0.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.7 kcal/mol, tilt angle:   85., depth/thickness:   3.6 A
+fpen=  6.0
+ 
+300 7.0 bact P0021 
+LKLLKKLLKLLKKF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  13, Stability relative to coil in water and bound coil: -7.1 and  -4.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.7 kcal/mol
+Helix    2 -  13, Stability relative to coil in water and bound coil: -7.5 and  -4.5 kcal/mol
+Solution NMR detectable helix  1:    2 -  13, Stability relative to coil in water and bound coil: -7.5 and  -4.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.2 kcal/mol, tilt angle:   88., depth/thickness:   4.2 A
+fpen= 12.0
+ 
+300 7.0 bact P0022 
+RAGLQFPVGKLLKKLLKRLKR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  20, Stability relative to coil in water and bound coil: -8.1 and  -5.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.6 kcal/mol
+Helix    7 -  20, Stability relative to coil in water and bound coil: -8.1 and  -5.5 kcal/mol
+Solution NMR detectable helix  1:    7 -  20, Stability relative to coil in water and bound coil: -8.1 and  -5.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.6 kcal/mol, tilt angle:   81., depth/thickness:   4.8 A
+fpen= 14.0
+ 
+300 7.0 bact P0023 
+RPRENRGRERGLGGGLKLLKKLLKLLKKL
+Alpha-helices that are more stable than bound coil:
+Helix 1:   17 -  28, Stability relative to coil in water and bound coil: -6.5 and  -3.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.5 kcal/mol
+Helix    3 -   9, Stability relative to coil in water and bound coil:  1.7 and   1.7 kcal/mol
+Helix   14 -  28, Stability relative to coil in water and bound coil: -4.6 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    3 -   9, Stability relative to coil in water and bound coil:  1.7 and   1.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -1.6 kcal/mol, tilt angle:   53., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:   14 -  28, Stability relative to coil in water and bound coil: -4.6 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.7 kcal/mol, tilt angle:   84., depth/thickness:   2.4 A
+fpen= 11.0
+ 
+300 7.0 bact P0024 
+GLFKLLKKLLKLLK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  13, Stability relative to coil in water and bound coil: -8.5 and  -3.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.5 kcal/mol
+Helix    2 -  13, Stability relative to coil in water and bound coil: -8.5 and  -3.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  13, Stability relative to coil in water and bound coil: -8.5 and  -3.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.5 kcal/mol, tilt angle:   76., depth/thickness:   4.9 A
+fpen= 12.0
+ 
+300 7.0 bact P0025 
+KLLKKLLKLL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   7, Stability relative to coil in water and bound coil: -2.3 and  -0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.7 kcal/mol
+Helix    2 -   9, Stability relative to coil in water and bound coil: -3.7 and  -1.2 kcal/mol
+Solution NMR detectable helix  1:    2 -   9, Stability relative to coil in water and bound coil: -3.7 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.6 kcal/mol, tilt angle:   90., depth/thickness:   5.7 A
+fpen=  8.0
+ 
+300 7.0 bact P0026 
+LKLLKKLLKKLLKLL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  14, Stability relative to coil in water and bound coil: -5.9 and  -2.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.4 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil: -5.9 and  -2.4 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil: -5.9 and  -2.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.7 kcal/mol, tilt angle:   87., depth/thickness:   3.7 A
+fpen= 13.0
+ 
+300 7.0 bact P0027 
+RPRENRGRERGLGGGLKLLKKLLKLLKKL
+Alpha-helices that are more stable than bound coil:
+Helix 1:   17 -  28, Stability relative to coil in water and bound coil: -6.5 and  -3.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.5 kcal/mol
+Helix    3 -   9, Stability relative to coil in water and bound coil:  1.7 and   1.7 kcal/mol
+Helix   14 -  28, Stability relative to coil in water and bound coil: -4.6 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    3 -   9, Stability relative to coil in water and bound coil:  1.7 and   1.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -1.6 kcal/mol, tilt angle:   53., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:   14 -  28, Stability relative to coil in water and bound coil: -4.6 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.7 kcal/mol, tilt angle:   84., depth/thickness:   2.4 A
+fpen= 11.0
+ 
+300 7.0 bact P0028 
+RPRENRGRERGLGSGGGLKLLKKLLKLLKKL
+Alpha-helices that are more stable than bound coil:
+Helix 1:   19 -  30, Stability relative to coil in water and bound coil: -6.5 and  -3.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.5 kcal/mol
+Helix    3 -   9, Stability relative to coil in water and bound coil:  1.7 and   1.7 kcal/mol
+Helix   17 -  30, Stability relative to coil in water and bound coil: -5.3 and  -1.8 kcal/mol
+Solution NMR detectable helix  1:    3 -   9, Stability relative to coil in water and bound coil:  1.7 and   1.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -1.6 kcal/mol, tilt angle:   53., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:   17 -  30, Stability relative to coil in water and bound coil: -5.3 and  -1.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -6.4 kcal/mol, tilt angle:   87., depth/thickness:   2.6 A
+fpen= 10.5
+ 
+300 7.0 bact P0029 
+CFWQRNIRKVCR
+Membrane or micelle binding energy of peptide:  -2.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.8 kcal/mol
+Helix    2 -  10, Stability relative to coil in water and bound coil: -0.9 and   1.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  10, Stability relative to coil in water and bound coil: -0.9 and   1.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   60., depth/thickness:   2.6 A
+fpen=  9.0
+ 
+300 7.0 bact P0030 
+FWQRNIRKVKK
+Membrane or micelle binding energy of peptide:  -2.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.8 kcal/mol
+Helix    5 -  10, Stability relative to coil in water and bound coil:  0.8 and   1.0 kcal/mol
+Solution NMR detectable helix  1:    5 -  10, Stability relative to coil in water and bound coil:  0.8 and   1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -2.7 kcal/mol, tilt angle:   80., depth/thickness:   0.2 A
+fpen=  6.0
+ 
+300 7.0 bact P0031 
+CFWQRNIRKVCR
+Membrane or micelle binding energy of peptide:  -2.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.8 kcal/mol
+Helix    2 -  10, Stability relative to coil in water and bound coil: -0.9 and   1.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  10, Stability relative to coil in water and bound coil: -0.9 and   1.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   60., depth/thickness:   2.6 A
+fpen=  9.0
+ 
+300 7.0 bact P0032 
+FWQRNIRKVKK
+Membrane or micelle binding energy of peptide:  -2.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.8 kcal/mol
+Helix    5 -  10, Stability relative to coil in water and bound coil:  0.8 and   1.0 kcal/mol
+Solution NMR detectable helix  1:    5 -  10, Stability relative to coil in water and bound coil:  0.8 and   1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -2.7 kcal/mol, tilt angle:   80., depth/thickness:   0.2 A
+fpen=  6.0
+ 
+300 7.0 bact P0033 
+EEYTKKIEEYTKKIEEYTKKIEEYTKKIEEYTKKI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  34, Stability relative to coil in water and bound coil: -9.2 and  -7.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.4 kcal/mol
+Membrane/micelle binding energy of peptide: -11.6 kcal/mol
+Helix    2 -  34, Stability relative to coil in water and bound coil:-11.6 and  -9.4 kcal/mol
+Solution NMR detectable helix  1:    2 -  34, Stability relative to coil in water and bound coil:-11.6 and  -9.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.9 kcal/mol, tilt angle:   90., depth/thickness:   3.6 A
+fpen= 33.0
+ 
+300 7.0 bact P0034 
+EMTWEEWEKKIEEYTKKIEEILKKSQNQQIDL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  25, Stability relative to coil in water and bound coil:-12.8 and  -8.6 kcal/mol
+Membrane or micelle binding energy of peptide: -13.5 kcal/mol
+Membrane/micelle binding energy of peptide: -13.5 kcal/mol
+Helix    4 -  26, Stability relative to coil in water and bound coil:-13.0 and  -8.9 kcal/mol
+Solution NMR detectable helix  1:    4 -  26, Stability relative to coil in water and bound coil:-13.0 and  -8.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.0 kcal/mol, tilt angle:   87., depth/thickness:   3.2 A
+fpen= 23.0
+ 
+300 7.0 bact P0035 
+MTWEEWDKKIEEYTKKIEEL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  17, Stability relative to coil in water and bound coil: -7.0 and  -3.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.6 kcal/mol
+Helix    3 -  19, Stability relative to coil in water and bound coil: -7.0 and  -3.6 kcal/mol
+Solution NMR detectable helix  1:    3 -  19, Stability relative to coil in water and bound coil: -7.0 and  -3.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   87., depth/thickness:   3.1 A
+fpen= 17.0
+ 
+300 7.0 bact P0036 
+WEEWDKKIEEYTKKIEEL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  16, Stability relative to coil in water and bound coil: -4.9 and  -2.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.8 kcal/mol
+Helix    2 -  17, Stability relative to coil in water and bound coil: -6.1 and  -4.1 kcal/mol
+Solution NMR detectable helix  1:    2 -  17, Stability relative to coil in water and bound coil: -6.1 and  -4.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.8 kcal/mol, tilt angle:   89., depth/thickness:   4.2 A
+fpen= 16.0
+ 
+300 7.0 bact P0037 
+EEYTKKIEEYTKKIEEYTKKIEEYTKKIEEYTKKI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  34, Stability relative to coil in water and bound coil: -9.2 and  -7.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.4 kcal/mol
+Membrane/micelle binding energy of peptide: -11.6 kcal/mol
+Helix    2 -  34, Stability relative to coil in water and bound coil:-11.6 and  -9.4 kcal/mol
+Solution NMR detectable helix  1:    2 -  34, Stability relative to coil in water and bound coil:-11.6 and  -9.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.9 kcal/mol, tilt angle:   90., depth/thickness:   3.6 A
+fpen= 33.0
+ 
+300 7.0 bact P0038 
+EMTWEEWEKKIEEYTKKIEEILKKSQNQQIDL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  25, Stability relative to coil in water and bound coil:-12.8 and  -8.6 kcal/mol
+Membrane or micelle binding energy of peptide: -13.5 kcal/mol
+Membrane/micelle binding energy of peptide: -13.5 kcal/mol
+Helix    4 -  26, Stability relative to coil in water and bound coil:-13.0 and  -8.9 kcal/mol
+Solution NMR detectable helix  1:    4 -  26, Stability relative to coil in water and bound coil:-13.0 and  -8.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.0 kcal/mol, tilt angle:   87., depth/thickness:   3.2 A
+fpen= 23.0
+ 
+300 7.0 bact P0039 
+MTWEEWDKKIEEYTKKIEEL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  17, Stability relative to coil in water and bound coil: -7.0 and  -3.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.6 kcal/mol
+Helix    3 -  19, Stability relative to coil in water and bound coil: -7.0 and  -3.6 kcal/mol
+Solution NMR detectable helix  1:    3 -  19, Stability relative to coil in water and bound coil: -7.0 and  -3.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   87., depth/thickness:   3.1 A
+fpen= 17.0
+ 
+300 7.0 bact P0040 
+WEEWDKKIEEYTKKIEEL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  16, Stability relative to coil in water and bound coil: -4.9 and  -2.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.8 kcal/mol
+Helix    2 -  17, Stability relative to coil in water and bound coil: -6.1 and  -4.1 kcal/mol
+Solution NMR detectable helix  1:    2 -  17, Stability relative to coil in water and bound coil: -6.1 and  -4.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.8 kcal/mol, tilt angle:   89., depth/thickness:   4.2 A
+fpen= 16.0
+ 
+300 7.0 bact P0041 
+FHFHLHFASASAFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:   14 -  20, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.8 kcal/mol
+Helix    6 -  20, Stability relative to coil in water and bound coil: -5.1 and  -1.3 kcal/mol
+Solution NMR detectable helix  1:    6 -  20, Stability relative to coil in water and bound coil: -5.1 and  -1.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -10.8 kcal/mol, tilt angle:   83., depth/thickness:   5.8 A
+fpen= 15.0
+ 
+300 7.0 bact P0042 
+FHFHLHFGGGFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:   12 -  18, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.8 kcal/mol
+Helix    2 -   6, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Helix   11 -  18, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Solution NMR detectable helix  1:    2 -   6, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.7 kcal/mol, tilt angle:   85., depth/thickness:   3.7 A
+Solution NMR detectable helix  2:   11 -  18, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.1 kcal/mol, tilt angle:   87., depth/thickness:   4.6 A
+fpen=  6.5
+ 
+300 7.0 bact P0043 
+FIKHFIHRFGGGFKKFWKWFRRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Helix 2:   20 -  22, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide: -12.0 kcal/mol
+Membrane/micelle binding energy of peptide: -12.0 kcal/mol
+Helix    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Helix   13 -  15, Stability relative to coil in water and bound coil: -0.9 and   0.2 kcal/mol
+Helix   20 -  22, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.0 kcal/mol, tilt angle:   84., depth/thickness:   3.5 A
+Solution NMR detectable helix  2:   13 -  15, Stability relative to coil in water and bound coil: -0.9 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.7 kcal/mol, tilt angle:   69., depth/thickness:   2.2 A
+Solution NMR detectable helix  3:   20 -  22, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  3 to membrane:    -4.9 kcal/mol, tilt angle:   74., depth/thickness:   2.4 A
+fpen=  3.3
+ 
+300 7.0 bact P0044 
+FIKHFIHRFSATLQLLKQLLKLLKQF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  25, Stability relative to coil in water and bound coil:-10.0 and  -4.0 kcal/mol
+Membrane or micelle binding energy of peptide: -12.5 kcal/mol
+Membrane/micelle binding energy of peptide: -12.5 kcal/mol
+Helix    5 -  25, Stability relative to coil in water and bound coil:-10.0 and  -4.0 kcal/mol
+Solution NMR detectable helix  1:    5 -  25, Stability relative to coil in water and bound coil:-10.0 and  -4.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -12.7 kcal/mol, tilt angle:   81., depth/thickness:   8.0 A
+fpen= 21.0
+ 
+300 7.0 bact P0045 
+FIKHFIHRFSATRWRRLLKKLHHLLH
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Helix 2:   13 -  25, Stability relative to coil in water and bound coil: -6.4 and  -2.5 kcal/mol
+Membrane or micelle binding energy of peptide: -11.4 kcal/mol
+Membrane/micelle binding energy of peptide: -11.4 kcal/mol
+Helix    2 -   8, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Helix   10 -  25, Stability relative to coil in water and bound coil: -8.0 and  -4.1 kcal/mol
+Solution NMR detectable helix  1:    2 -   8, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.1 kcal/mol, tilt angle:   76., depth/thickness:   4.8 A
+Solution NMR detectable helix  2:   10 -  25, Stability relative to coil in water and bound coil: -8.0 and  -4.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.6 kcal/mol, tilt angle:   89., depth/thickness:   5.4 A
+fpen= 11.5
+ 
+300 7.0 bact P0046 
+FKKFWKWFRRFGGGFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    8 -  10, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Helix 2:   16 -  22, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide: -11.3 kcal/mol
+Membrane/micelle binding energy of peptide: -11.3 kcal/mol
+Helix    3 -  11, Stability relative to coil in water and bound coil: -4.5 and   1.8 kcal/mol
+Helix   15 -  22, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Solution NMR detectable helix  1:    3 -  11, Stability relative to coil in water and bound coil: -4.5 and   1.8 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.1 kcal/mol, tilt angle:   85., depth/thickness:   3.5 A
+Solution NMR detectable helix  2:   15 -  22, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.1 kcal/mol, tilt angle:   87., depth/thickness:   4.6 A
+fpen=  8.5
+ 
+300 7.0 bact P0047 
+LQLLKQLLKLLKQFSATFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  17, Stability relative to coil in water and bound coil: -9.7 and  -5.5 kcal/mol
+Helix 2:   22 -  25, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide: -14.6 kcal/mol
+Membrane/micelle binding energy of peptide: -14.6 kcal/mol
+Helix    2 -  25, Stability relative to coil in water and bound coil: -6.3 and   0.5 kcal/mol
+Solution NMR detectable helix  1:    2 -  25, Stability relative to coil in water and bound coil: -6.3 and   0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -11.1 kcal/mol, tilt angle:   89., depth/thickness:   3.8 A
+fpen= 24.0
+ 
+300 7.0 bact P0048 
+RWRRLLKKLHHLLHSATFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  12, Stability relative to coil in water and bound coil: -5.8 and  -2.4 kcal/mol
+Helix 2:   18 -  25, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Membrane or micelle binding energy of peptide: -11.7 kcal/mol
+Membrane/micelle binding energy of peptide: -11.7 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil: -5.5 and  -1.6 kcal/mol
+Helix   18 -  25, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil: -5.5 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.0 kcal/mol, tilt angle:   88., depth/thickness:   5.4 A
+Solution NMR detectable helix  2:   18 -  25, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -9.1 kcal/mol, tilt angle:   81., depth/thickness:   5.1 A
+fpen= 10.5
+ 
+300 7.0 bact P0049 
+RWRWRWFSATFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:   11 -  18, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Membrane or micelle binding energy of peptide: -10.8 kcal/mol
+Membrane/micelle binding energy of peptide: -10.8 kcal/mol
+Helix    6 -   9, Stability relative to coil in water and bound coil: -1.9 and   0.7 kcal/mol
+Helix   11 -  18, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    6 -   9, Stability relative to coil in water and bound coil: -1.9 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -5.1 kcal/mol, tilt angle:   68., depth/thickness:   2.2 A
+Solution NMR detectable helix  2:   11 -  18, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -9.1 kcal/mol, tilt angle:   81., depth/thickness:   5.1 A
+fpen=  6.0
+ 
+300 7.0 bact P0050 
+FHFHLHFASASAFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:   14 -  20, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.8 kcal/mol
+Helix    6 -  20, Stability relative to coil in water and bound coil: -5.1 and  -1.3 kcal/mol
+Solution NMR detectable helix  1:    6 -  20, Stability relative to coil in water and bound coil: -5.1 and  -1.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -10.8 kcal/mol, tilt angle:   83., depth/thickness:   5.8 A
+fpen= 15.0
+ 
+300 7.0 bact P0051 
+FHFHLHFGGGFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:   12 -  18, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.8 kcal/mol
+Helix    2 -   6, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Helix   11 -  18, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Solution NMR detectable helix  1:    2 -   6, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.7 kcal/mol, tilt angle:   85., depth/thickness:   3.7 A
+Solution NMR detectable helix  2:   11 -  18, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.1 kcal/mol, tilt angle:   87., depth/thickness:   4.6 A
+fpen=  6.5
+ 
+300 7.0 bact P0052 
+FIKHFIHRFGGGFKKFWKWFRRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Helix 2:   20 -  22, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide: -12.0 kcal/mol
+Membrane/micelle binding energy of peptide: -12.0 kcal/mol
+Helix    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Helix   13 -  15, Stability relative to coil in water and bound coil: -0.9 and   0.2 kcal/mol
+Helix   20 -  22, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.0 kcal/mol, tilt angle:   84., depth/thickness:   3.5 A
+Solution NMR detectable helix  2:   13 -  15, Stability relative to coil in water and bound coil: -0.9 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.7 kcal/mol, tilt angle:   69., depth/thickness:   2.2 A
+Solution NMR detectable helix  3:   20 -  22, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  3 to membrane:    -4.9 kcal/mol, tilt angle:   74., depth/thickness:   2.4 A
+fpen=  3.3
+ 
+300 7.0 bact P0053 
+FIKHFIHRFSATLQLLKQLLKLLKQF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  25, Stability relative to coil in water and bound coil:-10.0 and  -4.0 kcal/mol
+Membrane or micelle binding energy of peptide: -12.5 kcal/mol
+Membrane/micelle binding energy of peptide: -12.5 kcal/mol
+Helix    5 -  25, Stability relative to coil in water and bound coil:-10.0 and  -4.0 kcal/mol
+Solution NMR detectable helix  1:    5 -  25, Stability relative to coil in water and bound coil:-10.0 and  -4.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -12.7 kcal/mol, tilt angle:   81., depth/thickness:   8.0 A
+fpen= 21.0
+ 
+300 7.0 bact P0054 
+FIKHFIHRFSATRWRRLLKKLHHLLH
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Helix 2:   13 -  25, Stability relative to coil in water and bound coil: -6.4 and  -2.5 kcal/mol
+Membrane or micelle binding energy of peptide: -11.4 kcal/mol
+Membrane/micelle binding energy of peptide: -11.4 kcal/mol
+Helix    2 -   8, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Helix   10 -  25, Stability relative to coil in water and bound coil: -8.0 and  -4.1 kcal/mol
+Solution NMR detectable helix  1:    2 -   8, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.1 kcal/mol, tilt angle:   76., depth/thickness:   4.8 A
+Solution NMR detectable helix  2:   10 -  25, Stability relative to coil in water and bound coil: -8.0 and  -4.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.6 kcal/mol, tilt angle:   89., depth/thickness:   5.4 A
+fpen= 11.5
+ 
+300 7.0 bact P0055 
+FKKFWKWFRRFGGGFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    8 -  10, Stability relative to coil in water and bound coil: -2.3 and  -1.1 kcal/mol
+Helix 2:   16 -  22, Stability relative to coil in water and bound coil: -2.7 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide: -11.3 kcal/mol
+Membrane/micelle binding energy of peptide: -11.3 kcal/mol
+Helix    3 -  11, Stability relative to coil in water and bound coil: -4.5 and   1.8 kcal/mol
+Helix   15 -  22, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Solution NMR detectable helix  1:    3 -  11, Stability relative to coil in water and bound coil: -4.5 and   1.8 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.1 kcal/mol, tilt angle:   85., depth/thickness:   3.5 A
+Solution NMR detectable helix  2:   15 -  22, Stability relative to coil in water and bound coil: -3.4 and  -0.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.1 kcal/mol, tilt angle:   87., depth/thickness:   4.6 A
+fpen=  8.5
+ 
+300 7.0 bact P0056 
+LQLLKQLLKLLKQFSATFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  17, Stability relative to coil in water and bound coil: -9.7 and  -5.5 kcal/mol
+Helix 2:   22 -  25, Stability relative to coil in water and bound coil: -2.5 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide: -14.6 kcal/mol
+Membrane/micelle binding energy of peptide: -14.6 kcal/mol
+Helix    2 -  25, Stability relative to coil in water and bound coil: -6.3 and   0.5 kcal/mol
+Solution NMR detectable helix  1:    2 -  25, Stability relative to coil in water and bound coil: -6.3 and   0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -11.1 kcal/mol, tilt angle:   89., depth/thickness:   3.8 A
+fpen= 24.0
+ 
+300 7.0 bact P0057 
+RWRRLLKKLHHLLHSATFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  12, Stability relative to coil in water and bound coil: -5.8 and  -2.4 kcal/mol
+Helix 2:   18 -  25, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Membrane or micelle binding energy of peptide: -11.7 kcal/mol
+Membrane/micelle binding energy of peptide: -11.7 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil: -5.5 and  -1.6 kcal/mol
+Helix   18 -  25, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil: -5.5 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.0 kcal/mol, tilt angle:   88., depth/thickness:   5.4 A
+Solution NMR detectable helix  2:   18 -  25, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -9.1 kcal/mol, tilt angle:   81., depth/thickness:   5.1 A
+fpen= 10.5
+ 
+300 7.0 bact P0058 
+RWRWRWFSATFIKHFIHRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:   11 -  18, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Membrane or micelle binding energy of peptide: -10.8 kcal/mol
+Membrane/micelle binding energy of peptide: -10.8 kcal/mol
+Helix    6 -   9, Stability relative to coil in water and bound coil: -1.9 and   0.7 kcal/mol
+Helix   11 -  18, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    6 -   9, Stability relative to coil in water and bound coil: -1.9 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -5.1 kcal/mol, tilt angle:   68., depth/thickness:   2.2 A
+Solution NMR detectable helix  2:   11 -  18, Stability relative to coil in water and bound coil: -4.3 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -9.1 kcal/mol, tilt angle:   81., depth/thickness:   5.1 A
+fpen=  6.0
+ 
+300 7.0 bact P0059 
+HMLQLTVWGIKQLQA
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   5, Stability relative to coil in water and bound coil: -0.7 and   0.4 kcal/mol
+Helix 2:    9 -  12, Stability relative to coil in water and bound coil: -0.5 and  -0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.0 kcal/mol
+Helix    2 -  13, Stability relative to coil in water and bound coil: -3.0 and   0.3 kcal/mol
+Solution NMR detectable helix  1:    2 -  13, Stability relative to coil in water and bound coil: -3.0 and   0.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.6 kcal/mol, tilt angle:   70., depth/thickness:   8.2 A
+fpen= 12.0
+ 
+300 7.0 bact P0060 
+IEAQQHLLQLTVWGIKQLQARIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  10, Stability relative to coil in water and bound coil: -0.1 and   1.4 kcal/mol
+Helix 2:   14 -  21, Stability relative to coil in water and bound coil: -0.4 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.6 kcal/mol
+Helix    2 -  21, Stability relative to coil in water and bound coil: -3.6 and   0.0 kcal/mol
+Solution NMR detectable helix  1:    2 -  21, Stability relative to coil in water and bound coil: -3.6 and   0.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.6 kcal/mol, tilt angle:   88., depth/thickness:   4.1 A
+fpen= 20.0
+ 
+300 7.0 bact P0061 
+KIKKIENEIARIKKLLQLTVWGIKQLQARIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  16, Stability relative to coil in water and bound coil: -2.6 and  -1.3 kcal/mol
+Helix 2:   22 -  25, Stability relative to coil in water and bound coil: -0.5 and  -0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.2 kcal/mol
+Helix    5 -  29, Stability relative to coil in water and bound coil: -6.2 and  -2.0 kcal/mol
+Solution NMR detectable helix  1:    5 -  29, Stability relative to coil in water and bound coil: -6.2 and  -2.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.3 kcal/mol, tilt angle:   90., depth/thickness:   1.4 A
+fpen= 25.0
+ 
+300 7.0 bact P0062 
+LLQLTVWGIKQLQARIL
+Membrane or micelle binding energy of peptide:  -4.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.4 kcal/mol
+Helix    6 -  15, Stability relative to coil in water and bound coil: -1.0 and   1.2 kcal/mol
+Solution NMR detectable helix  1:    6 -  15, Stability relative to coil in water and bound coil: -1.0 and   1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.3 kcal/mol, tilt angle:   25., depth/thickness:   0.9 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -4.3 kcal/mol, tilt angle:   38., depth/thickness:   0.9 A
+fpen= 10.0
+ 
+300 7.0 bact P0063 
+QHLLQLTVWGIKQLQARILAVERYLKDQ
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  17, Stability relative to coil in water and bound coil: -5.1 and  -1.4 kcal/mol
+Helix 2:   20 -  25, Stability relative to coil in water and bound coil: -1.6 and  -0.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.9 kcal/mol
+Helix    3 -  18, Stability relative to coil in water and bound coil: -4.9 and  -1.1 kcal/mol
+Helix   20 -  27, Stability relative to coil in water and bound coil: -2.0 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    3 -  18, Stability relative to coil in water and bound coil: -4.9 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.9 kcal/mol, tilt angle:   73., depth/thickness:   7.3 A
+Solution NMR detectable helix  2:   20 -  27, Stability relative to coil in water and bound coil: -2.0 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.6 kcal/mol, tilt angle:   68., depth/thickness:   3.7 A
+fpen= 12.0
+ 
+300 7.0 bact P0064 
+VQQQNNLLRAIEAQQHLLQLTVWGIKQL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  10, Stability relative to coil in water and bound coil: -1.9 and  -0.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.9 kcal/mol
+Helix    7 -  21, Stability relative to coil in water and bound coil: -1.9 and   0.7 kcal/mol
+Helix   24 -  27, Stability relative to coil in water and bound coil: -0.5 and  -0.3 kcal/mol
+Solution NMR detectable helix  1:    7 -  21, Stability relative to coil in water and bound coil: -1.9 and   0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.8 kcal/mol, tilt angle:   87., depth/thickness:   2.1 A
+Solution NMR detectable helix  2:   24 -  27, Stability relative to coil in water and bound coil: -0.5 and  -0.3 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.0 kcal/mol, tilt angle:   81., depth/thickness:   1.6 A
+fpen=  9.5
+ 
+300 7.0 bact P0065 
+IEAQQHLLQLTVWGIKQLQARIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  10, Stability relative to coil in water and bound coil: -0.1 and   1.4 kcal/mol
+Helix 2:   14 -  21, Stability relative to coil in water and bound coil: -0.4 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.6 kcal/mol
+Helix    2 -  21, Stability relative to coil in water and bound coil: -3.6 and   0.0 kcal/mol
+Solution NMR detectable helix  1:    2 -  21, Stability relative to coil in water and bound coil: -3.6 and   0.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.6 kcal/mol, tilt angle:   88., depth/thickness:   4.1 A
+fpen= 20.0
+ 
+300 7.0 bact P0066 
+AAGRWWRWWRRWWRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  12, Stability relative to coil in water and bound coil: -6.3 and   0.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.4 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil: -7.1 and   1.3 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil: -7.1 and   1.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.6 kcal/mol, tilt angle:   88., depth/thickness:   4.2 A
+fpen= 13.0
+ 
+300 7.0 bact P0067 
+EEEEAAAGRWWRWWRRWWRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   9, Stability relative to coil in water and bound coil:  0.3 and   0.3 kcal/mol
+Helix 2:   12 -  17, Stability relative to coil in water and bound coil: -1.6 and   2.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.3 kcal/mol
+Helix    3 -  19, Stability relative to coil in water and bound coil: -8.3 and   0.1 kcal/mol
+Solution NMR detectable helix  1:    3 -  19, Stability relative to coil in water and bound coil: -8.3 and   0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   4.2 A
+fpen= 17.0
+ 
+300 7.0 bact P0068 
+NGVQPKYRWWRWWRRWW
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.8 kcal/mol
+Helix    4 -   8, Stability relative to coil in water and bound coil:  0.4 and   0.7 kcal/mol
+Helix   11 -  16, Stability relative to coil in water and bound coil: -1.6 and   2.6 kcal/mol
+Solution NMR detectable helix  1:    4 -   8, Stability relative to coil in water and bound coil:  0.4 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -4.2 kcal/mol, tilt angle:   85., depth/thickness:   2.2 A
+Solution NMR detectable helix  2:   11 -  16, Stability relative to coil in water and bound coil: -1.6 and   2.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.8 kcal/mol, tilt angle:   76., depth/thickness:   2.4 A
+fpen=  5.5
+ 
+300 7.0 bact P0069 
+RWWRRWWRWWRRWWRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  14, Stability relative to coil in water and bound coil:-13.1 and  -1.9 kcal/mol
+Membrane or micelle binding energy of peptide: -13.1 kcal/mol
+Membrane/micelle binding energy of peptide: -13.1 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil:-13.1 and  -1.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil:-13.1 and  -1.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.9 kcal/mol, tilt angle:   85., depth/thickness:   5.9 A
+fpen= 13.0
+ 
+300 7.0 bact P0070 
+WRRWWRRWWRWWRRWWRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  15, Stability relative to coil in water and bound coil:-10.3 and  -0.5 kcal/mol
+Membrane or micelle binding energy of peptide: -13.1 kcal/mol
+Membrane/micelle binding energy of peptide: -13.1 kcal/mol
+Helix    1 -  16, Stability relative to coil in water and bound coil:-12.7 and  -0.1 kcal/mol
+Solution NMR detectable helix  1:    1 -  16, Stability relative to coil in water and bound coil:-12.7 and  -0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.0 kcal/mol, tilt angle:   89., depth/thickness:   5.8 A
+fpen= 16.0
+ 
+300 7.0 bact P0071 
+WRWWRRW
+Membrane or micelle binding energy of peptide:  -5.6 kcal/mol
+Energy of micelle/membrane binding:   -5.6 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0072 
+AWRWWWRWA
+Membrane or micelle binding energy of peptide:  -7.0 kcal/mol
+Energy of micelle/membrane binding:   -7.0 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0073 
+GRWRWWWRWR
+Membrane or micelle binding energy of peptide:  -7.0 kcal/mol
+Energy of micelle/membrane binding:   -7.0 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0074 
+WRWWWR
+Membrane or micelle binding energy of peptide:  -5.6 kcal/mol
+Energy of micelle/membrane binding:   -5.6 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0075 
+AGETCVGGTCNTPGATCSWPVCTRNGLPV
+Membrane or micelle binding energy of peptide:  -2.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.2 kcal/mol
+Helix   13 -  18, Stability relative to coil in water and bound coil:  1.6 and   1.6 kcal/mol
+Helix   20 -  24, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+Solution NMR detectable helix  1:   13 -  18, Stability relative to coil in water and bound coil:  1.6 and   1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.0 kcal/mol, tilt angle:   82., depth/thickness:   1.9 A
+Solution NMR detectable helix  2:   20 -  24, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.6 kcal/mol, tilt angle:   52., depth/thickness:   4.6 A
+fpen=  5.5
+ 
+300 7.0 bact P0076 
+CTCSWPVCTRNGLPVCGETCVGGTCNTPG
+Membrane or micelle binding energy of peptide:  -2.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.2 kcal/mol
+Helix    6 -   9, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+Helix   14 -  17, Stability relative to coil in water and bound coil:  0.8 and   0.9 kcal/mol
+Solution NMR detectable helix  1:    6 -   9, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.3 kcal/mol, tilt angle:   39., depth/thickness:   4.4 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -3.8 kcal/mol, tilt angle:   63., depth/thickness:   4.7 A
+Solution NMR detectable helix  2:   14 -  17, Stability relative to coil in water and bound coil:  0.8 and   0.9 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.2 kcal/mol, tilt angle:   60., depth/thickness:   1.2 A
+fpen=  4.0
+ 
+300 7.0 bact P0077 
+GAPICGESCFTGKCYTVQCSCSWPVCTRN
+Membrane or micelle binding energy of peptide:  -3.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.2 kcal/mol
+Helix    3 -   5, Stability relative to coil in water and bound coil:  0.6 and   0.8 kcal/mol
+Helix   24 -  27, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+Solution NMR detectable helix  1:    3 -   5, Stability relative to coil in water and bound coil:  0.6 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.6 kcal/mol, tilt angle:   63., depth/thickness:   2.6 A
+Solution NMR detectable helix  2:   24 -  27, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.3 kcal/mol, tilt angle:   39., depth/thickness:   4.4 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  2 to membrane:    -3.8 kcal/mol, tilt angle:   63., depth/thickness:   4.7 A
+fpen=  3.5
+ 
+300 7.0 bact P0078 
+ICGETCVGGTCNTPGCSCSWPVCTRNGLP
+Membrane or micelle binding energy of peptide:  -2.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.3 kcal/mol
+Helix   14 -  16, Stability relative to coil in water and bound coil:  1.1 and   1.1 kcal/mol
+Helix   21 -  25, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+Solution NMR detectable helix  1:   14 -  16, Stability relative to coil in water and bound coil:  1.1 and   1.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.2 kcal/mol, tilt angle:   45., depth/thickness:   1.1 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -1.6 kcal/mol, tilt angle:   83., depth/thickness:   0.8 A
+Solution NMR detectable helix  2:   21 -  25, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.6 kcal/mol, tilt angle:   52., depth/thickness:   4.6 A
+fpen=  4.0
+ 
+300 7.0 bact P0079 
+NGLPVCGETCVGGTCNTPGCTCSWPVCTR
+Membrane or micelle binding energy of peptide:  -2.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.2 kcal/mol
+Helix    4 -   6, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+Helix   25 -  28, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+Solution NMR detectable helix  1:    4 -   6, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.3 kcal/mol, tilt angle:   59., depth/thickness:   1.4 A
+Solution NMR detectable helix  2:   25 -  28, Stability relative to coil in water and bound coil: -0.1 and   0.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.3 kcal/mol, tilt angle:   39., depth/thickness:   4.4 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  2 to membrane:    -3.8 kcal/mol, tilt angle:   63., depth/thickness:   4.7 A
+fpen=  3.5
+ 
+300 7.0 bact P0080 
+TCTLGTCYTAGCSCSWPVCTRNGVPICGE
+Membrane or micelle binding energy of peptide:  -2.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.6 kcal/mol
+Helix    7 -  10, Stability relative to coil in water and bound coil:  0.4 and   0.7 kcal/mol
+Helix   17 -  21, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+Solution NMR detectable helix  1:    7 -  10, Stability relative to coil in water and bound coil:  0.4 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.2 kcal/mol, tilt angle:   84., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:   17 -  21, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.6 kcal/mol, tilt angle:   52., depth/thickness:   4.6 A
+fpen=  4.5
+ 
+300 7.0 bact P0081 
+AIIRILQQLLFIHFRIGRRRRRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   9, Stability relative to coil in water and bound coil: -3.5 and  -2.0 kcal/mol
+Helix 2:   12 -  20, Stability relative to coil in water and bound coil: -1.7 and  -0.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.8 kcal/mol
+Helix    2 -  23, Stability relative to coil in water and bound coil: -4.8 and  -0.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  23, Stability relative to coil in water and bound coil: -4.8 and  -0.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.3 kcal/mol, tilt angle:   73., depth/thickness:   5.5 A
+fpen= 22.0
+ 
+300 7.0 bact P0082 
+AQQLLFIHFRIGRRRRRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  15, Stability relative to coil in water and bound coil: -5.0 and  -2.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.0 kcal/mol
+Helix    5 -  18, Stability relative to coil in water and bound coil: -4.6 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    5 -  18, Stability relative to coil in water and bound coil: -4.6 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.8 kcal/mol, tilt angle:   43., depth/thickness:   7.9 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -6.9 kcal/mol, tilt angle:   49., depth/thickness:   4.0 A
+fpen= 14.0
+ 
+300 7.0 bact P0083 
+CTLISWIKNKRKQRPRVSRRRRRRGGRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  12, Stability relative to coil in water and bound coil: -4.2 and  -2.0 kcal/mol
+Helix 2:   17 -  21, Stability relative to coil in water and bound coil: -0.0 and   0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.3 kcal/mol
+Helix    3 -  14, Stability relative to coil in water and bound coil: -4.5 and  -2.2 kcal/mol
+Helix   16 -  23, Stability relative to coil in water and bound coil:  0.2 and   0.3 kcal/mol
+Solution NMR detectable helix  1:    3 -  14, Stability relative to coil in water and bound coil: -4.5 and  -2.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.7 kcal/mol, tilt angle:   49., depth/thickness:   4.8 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -5.8 kcal/mol, tilt angle:   54., depth/thickness:   6.0 A
+Solution NMR detectable helix  2:   16 -  23, Stability relative to coil in water and bound coil:  0.2 and   0.3 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -3.5 kcal/mol, tilt angle:   67., depth/thickness:   0.0 A
+fpen= 10.0
+ 
+300 7.0 bact P0084 
+DILIIVGGRRRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil:  0.2 and   0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.1 kcal/mol
+Helix    3 -  13, Stability relative to coil in water and bound coil: -0.3 and   0.5 kcal/mol
+Solution NMR detectable helix  1:    3 -  13, Stability relative to coil in water and bound coil: -0.3 and   0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.2 kcal/mol, tilt angle:   47., depth/thickness:   4.5 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -5.5 kcal/mol, tilt angle:   57., depth/thickness:   5.3 A
+fpen= 11.0
+ 
+300 7.0 bact P0085 
+EAEIRIKQQLLFIHFRIGRRRRRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   7, Stability relative to coil in water and bound coil: -0.1 and   0.1 kcal/mol
+Helix 2:   11 -  21, Stability relative to coil in water and bound coil: -5.0 and  -2.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.4 kcal/mol
+Helix    3 -   8, Stability relative to coil in water and bound coil:  0.6 and   1.0 kcal/mol
+Helix   11 -  24, Stability relative to coil in water and bound coil: -4.6 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    3 -   8, Stability relative to coil in water and bound coil:  0.6 and   1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -2.6 kcal/mol, tilt angle:   55., depth/thickness:   3.6 A
+Solution NMR detectable helix  2:   11 -  24, Stability relative to coil in water and bound coil: -4.6 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -7.8 kcal/mol, tilt angle:   43., depth/thickness:   7.9 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  2 to membrane:    -6.9 kcal/mol, tilt angle:   49., depth/thickness:   4.0 A
+fpen= 10.0
+ 
+300 7.0 bact P0086 
+GRKKRRRRRR
+Membrane or micelle binding energy of peptide:   0.0 kcal/mol
+Membrane/micelle binding energy of peptide:   0.0 kcal/mol
+Helix    5 -   8, Stability relative to coil in water and bound coil:  1.1 and   1.1 kcal/mol
+Solution NMR detectable helix  1:    5 -   8, Stability relative to coil in water and bound coil:  1.1 and   1.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -1.5 kcal/mol, tilt angle:   82., depth/thickness:   0.0 A
+fpen=  4.0
+ 
+300 7.0 bact P0087 
+IHFRIGRRRRRRRR
+Membrane or micelle binding energy of peptide:  -1.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.5 kcal/mol
+Helix    2 -  12, Stability relative to coil in water and bound coil: -0.7 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    2 -  12, Stability relative to coil in water and bound coil: -0.7 and   0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.1 kcal/mol, tilt angle:   55., depth/thickness:   2.8 A
+fpen= 11.0
+ 
+300 7.0 bact P0088 
+IIRILQQLLFIHFRIGRRRRRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   6, Stability relative to coil in water and bound coil: -0.1 and   0.5 kcal/mol
+Helix 2:    9 -  19, Stability relative to coil in water and bound coil: -5.0 and  -2.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.1 kcal/mol
+Helix    3 -  22, Stability relative to coil in water and bound coil: -3.9 and  -0.1 kcal/mol
+Solution NMR detectable helix  1:    3 -  22, Stability relative to coil in water and bound coil: -3.9 and  -0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.4 kcal/mol, tilt angle:   75., depth/thickness:   5.4 A
+fpen= 20.0
+ 
+300 7.0 bact P0089 
+ILQQLLFIHFRIGRRRRRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -  16, Stability relative to coil in water and bound coil: -5.0 and  -2.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.7 kcal/mol
+Helix    2 -   4, Stability relative to coil in water and bound coil:  0.6 and   1.1 kcal/mol
+Helix    6 -  19, Stability relative to coil in water and bound coil: -4.6 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    2 -   4, Stability relative to coil in water and bound coil:  0.6 and   1.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.5 kcal/mol, tilt angle:   69., depth/thickness:   0.8 A
+Solution NMR detectable helix  2:    6 -  19, Stability relative to coil in water and bound coil: -4.6 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -7.8 kcal/mol, tilt angle:   43., depth/thickness:   7.9 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  2 to membrane:    -6.9 kcal/mol, tilt angle:   49., depth/thickness:   4.0 A
+fpen=  8.5
+ 
+300 7.0 bact P0090 
+IRILQQLLFIHFRIGRRRRRRRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   5, Stability relative to coil in water and bound coil: -0.1 and   0.5 kcal/mol
+Helix 2:    8 -  18, Stability relative to coil in water and bound coil: -5.0 and  -2.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.9 kcal/mol
+Helix    2 -  21, Stability relative to coil in water and bound coil: -5.3 and  -1.4 kcal/mol
+Solution NMR detectable helix  1:    2 -  21, Stability relative to coil in water and bound coil: -5.3 and  -1.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.7 kcal/mol, tilt angle:   75., depth/thickness:   6.1 A
+fpen= 20.0
+ 
+300 7.0 bact P0091 
+FLPLLLAGLPKFLCLVFKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   7, Stability relative to coil in water and bound coil: -1.3 and  -0.3 kcal/mol
+Helix 2:   16 -  18, Stability relative to coil in water and bound coil: -2.1 and  -0.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.4 kcal/mol
+Helix    3 -  19, Stability relative to coil in water and bound coil: -6.7 and  -1.9 kcal/mol
+Solution NMR detectable helix  1:    3 -  19, Stability relative to coil in water and bound coil: -6.7 and  -1.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -11.8 kcal/mol, tilt angle:   18., depth/thickness:  24.8 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:   -16.6 kcal/mol, tilt angle:   21., depth/thickness:  28.8 A
+fpen= 17.0
+ 
+300 7.0 bact P0092 
+KKLLKLKLKLKK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  11, Stability relative to coil in water and bound coil: -1.2 and  -0.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.7 kcal/mol
+Helix    2 -  11, Stability relative to coil in water and bound coil: -1.5 and   1.0 kcal/mol
+Solution NMR detectable helix  1:    2 -  11, Stability relative to coil in water and bound coil: -1.5 and   1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   81., depth/thickness:   1.9 A
+fpen= 10.0
+ 
+300 7.0 bact P0093 
+LKLKLKINGKKLKLK
+Membrane or micelle binding energy of peptide:  -2.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.7 kcal/mol
+Helix    2 -   8, Stability relative to coil in water and bound coil:  0.4 and   1.6 kcal/mol
+Helix   10 -  12, Stability relative to coil in water and bound coil:  0.8 and   1.3 kcal/mol
+Solution NMR detectable helix  1:    2 -   8, Stability relative to coil in water and bound coil:  0.4 and   1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.4 kcal/mol, tilt angle:   66., depth/thickness:   4.6 A
+Solution NMR detectable helix  2:   10 -  12, Stability relative to coil in water and bound coil:  0.8 and   1.3 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -1.4 kcal/mol, tilt angle:   84., depth/thickness:   0.0 A
+fpen=  5.0
+ 
+300 7.0 bact P0094 
+LKLKLKLTGKLKLKL
+Membrane or micelle binding energy of peptide:  -3.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.5 kcal/mol
+Helix    2 -   8, Stability relative to coil in water and bound coil: -0.3 and   1.2 kcal/mol
+Helix   12 -  14, Stability relative to coil in water and bound coil: -0.8 and  -0.3 kcal/mol
+Solution NMR detectable helix  1:    2 -   8, Stability relative to coil in water and bound coil: -0.3 and   1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.8 kcal/mol, tilt angle:   62., depth/thickness:   4.5 A
+Solution NMR detectable helix  2:   12 -  14, Stability relative to coil in water and bound coil: -0.8 and  -0.3 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -3.5 kcal/mol, tilt angle:   71., depth/thickness:   1.6 A
+fpen=  5.0
+ 
+300 7.0 bact P0095 
+ARKKWFW
+Membrane or micelle binding energy of peptide:  -4.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.0 kcal/mol
+Helix    2 -   5, Stability relative to coil in water and bound coil:  0.5 and   1.9 kcal/mol
+Solution NMR detectable helix  1:    2 -   5, Stability relative to coil in water and bound coil:  0.5 and   1.9 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.1 kcal/mol, tilt angle:   58., depth/thickness:   1.5 A
+fpen=  4.0
+ 
+300 7.0 bact P0096 
+RRWWCL
+Membrane or micelle binding energy of peptide:  -3.3 kcal/mol
+Energy of micelle/membrane binding:   -3.3 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0097 
+GLKLLLKLGLKLL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   7, Stability relative to coil in water and bound coil: -1.6 and  -0.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.1 kcal/mol
+Helix    3 -  11, Stability relative to coil in water and bound coil: -2.8 and  -0.8 kcal/mol
+Solution NMR detectable helix  1:    3 -  11, Stability relative to coil in water and bound coil: -2.8 and  -0.8 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.0 kcal/mol, tilt angle:   85., depth/thickness:   2.5 A
+fpen=  9.0
+ 
+300 7.0 bact P0098 
+KKLLKLLLKLLK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  11, Stability relative to coil in water and bound coil: -6.0 and  -3.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.0 kcal/mol
+Helix    3 -  11, Stability relative to coil in water and bound coil: -6.0 and  -3.0 kcal/mol
+Solution NMR detectable helix  1:    3 -  11, Stability relative to coil in water and bound coil: -6.0 and  -3.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.5 kcal/mol, tilt angle:   68., depth/thickness:   5.9 A
+fpen=  9.0
+ 
+300 7.0 bact P0099 
+KLLKLLLKLLLKLLK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  14, Stability relative to coil in water and bound coil: -8.9 and  -4.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.9 kcal/mol
+Helix    2 -  14, Stability relative to coil in water and bound coil: -8.9 and  -4.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  14, Stability relative to coil in water and bound coil: -8.9 and  -4.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.9 kcal/mol, tilt angle:   81., depth/thickness:   6.5 A
+fpen= 13.0
+ 
+300 7.0 bact P0100 
+LKKKKLKLLLKLKCLC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  12, Stability relative to coil in water and bound coil: -2.0 and  -0.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.5 kcal/mol
+Helix    2 -   4, Stability relative to coil in water and bound coil:  0.1 and   0.1 kcal/mol
+Helix    7 -  14, Stability relative to coil in water and bound coil: -2.0 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:    2 -   4, Stability relative to coil in water and bound coil:  0.1 and   0.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.3 kcal/mol, tilt angle:   75., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:    7 -  14, Stability relative to coil in water and bound coil: -2.0 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.6 kcal/mol, tilt angle:   80., depth/thickness:   5.4 A
+fpen=  5.5
+ 
+300 7.0 bact P0101 
+RKKRRQRRRGGGKLLKLLLKLLLKLLK
+Alpha-helices that are more stable than bound coil:
+Helix 1:   14 -  26, Stability relative to coil in water and bound coil: -9.9 and  -5.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -9.9 kcal/mol
+Helix   14 -  26, Stability relative to coil in water and bound coil: -9.9 and  -5.9 kcal/mol
+Solution NMR detectable helix  1:   14 -  26, Stability relative to coil in water and bound coil: -9.9 and  -5.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -10.0 kcal/mol, tilt angle:   81., depth/thickness:   7.1 A
+fpen= 13.0
+ 
+300 7.0 bact P0102 
+FDVMGIIKKIAGA
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  10, Stability relative to coil in water and bound coil: -1.2 and  -0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.4 kcal/mol
+Helix    2 -  11, Stability relative to coil in water and bound coil: -2.4 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  11, Stability relative to coil in water and bound coil: -2.4 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.7 kcal/mol, tilt angle:   77., depth/thickness:   4.2 A
+fpen= 10.0
+ 
+300 7.0 bact P0103 
+GIIKGIIKKIIK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   4, Stability relative to coil in water and bound coil:  0.0 and   0.4 kcal/mol
+Helix 2:    6 -  10, Stability relative to coil in water and bound coil: -1.3 and  -0.8 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.9 kcal/mol
+Helix    2 -  11, Stability relative to coil in water and bound coil: -1.7 and  -0.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  11, Stability relative to coil in water and bound coil: -1.7 and  -0.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.9 kcal/mol, tilt angle:   74., depth/thickness:   5.4 A
+fpen= 10.0
+ 
+300 7.0 bact P0104 
+RRRRWRR
+Membrane or micelle binding energy of peptide:  -1.4 kcal/mol
+Energy of micelle/membrane binding:   -1.4 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0105 
+LKNVGKEVGMDVVRTGIDIAGCKIKGEC
+Alpha-helices that are more stable than bound coil:
+Helix 1:   11 -  13, Stability relative to coil in water and bound coil:  0.2 and   0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.5 kcal/mol
+Helix   11 -  24, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Solution NMR detectable helix  1:   11 -  24, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   73., depth/thickness:   2.8 A
+fpen= 14.0
+ 
+300 7.0 bact P0106 
+NVGKEVGMDVVRTGIDIAGCKIKGEC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  11, Stability relative to coil in water and bound coil:  0.2 and   0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.0 kcal/mol
+Helix    9 -  22, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Solution NMR detectable helix  1:    9 -  22, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   73., depth/thickness:   2.8 A
+fpen= 14.0
+ 
+300 7.0 bact P0107 
+FLGALIKGAIHGGRFIHGMIQNHH
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil:  0.5 and   1.2 kcal/mol
+Helix 2:   16 -  20, Stability relative to coil in water and bound coil: -0.8 and  -0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.3 kcal/mol
+Helix    2 -  10, Stability relative to coil in water and bound coil: -2.0 and  -0.7 kcal/mol
+Helix   16 -  22, Stability relative to coil in water and bound coil: -0.6 and  -0.1 kcal/mol
+Solution NMR detectable helix  1:    2 -  10, Stability relative to coil in water and bound coil: -2.0 and  -0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.1 kcal/mol, tilt angle:   76., depth/thickness:   4.3 A
+Solution NMR detectable helix  2:   16 -  22, Stability relative to coil in water and bound coil: -0.6 and  -0.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   73., depth/thickness:   3.5 A
+fpen=  8.0
+ 
+300 7.0 bact P0108 
+GEKLKKIGKKIKNFFQKL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   6, Stability relative to coil in water and bound coil: -1.3 and  -0.8 kcal/mol
+Helix 2:   11 -  13, Stability relative to coil in water and bound coil:  0.2 and   0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.3 kcal/mol
+Helix    2 -  17, Stability relative to coil in water and bound coil: -3.4 and  -0.2 kcal/mol
+Solution NMR detectable helix  1:    2 -  17, Stability relative to coil in water and bound coil: -3.4 and  -0.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.3 kcal/mol, tilt angle:   87., depth/thickness:   2.8 A
+fpen= 16.0
+ 
+300 7.0 bact P0109 
+AAYLLAKINLKALAALAKKIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   7, Stability relative to coil in water and bound coil: -2.0 and  -1.0 kcal/mol
+Helix 2:   12 -  19, Stability relative to coil in water and bound coil: -2.1 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.4 kcal/mol
+Helix    3 -   8, Stability relative to coil in water and bound coil: -1.9 and  -0.7 kcal/mol
+Helix   10 -  20, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    3 -   8, Stability relative to coil in water and bound coil: -1.9 and  -0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.6 kcal/mol, tilt angle:   59., depth/thickness:   5.1 A
+Solution NMR detectable helix  2:   10 -  20, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   2.2 A
+fpen=  8.5
+ 
+300 7.0 bact P0110 
+AYLLGKINLKALAALAKKIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   6, Stability relative to coil in water and bound coil: -1.2 and  -0.2 kcal/mol
+Helix 2:   11 -  18, Stability relative to coil in water and bound coil: -2.1 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.7 kcal/mol
+Helix    2 -   6, Stability relative to coil in water and bound coil: -1.2 and  -0.2 kcal/mol
+Helix    9 -  19, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    2 -   6, Stability relative to coil in water and bound coil: -1.2 and  -0.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.5 kcal/mol, tilt angle:   80., depth/thickness:   5.1 A
+Solution NMR detectable helix  2:    9 -  19, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   2.2 A
+fpen=  8.0
+ 
+300 7.0 bact P0111 
+FSGSGSGSGAGYLLGKINLKALAALAKKILGC
+Alpha-helices that are more stable than bound coil:
+Helix 1:   12 -  16, Stability relative to coil in water and bound coil: -1.1 and  -0.1 kcal/mol
+Helix 2:   21 -  28, Stability relative to coil in water and bound coil: -2.1 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.9 kcal/mol
+Helix    9 -  17, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Helix   19 -  29, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    9 -  17, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.1 kcal/mol, tilt angle:   76., depth/thickness:   3.0 A
+Solution NMR detectable helix  2:   19 -  29, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   2.2 A
+fpen= 10.0
+ 
+300 7.0 bact P0112 
+GNLKALAAVAKKIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    8 -  12, Stability relative to coil in water and bound coil:  0.4 and   0.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.8 kcal/mol
+Helix    3 -  13, Stability relative to coil in water and bound coil: -1.2 and   0.1 kcal/mol
+Solution NMR detectable helix  1:    3 -  13, Stability relative to coil in water and bound coil: -1.2 and   0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.7 kcal/mol, tilt angle:   88., depth/thickness:   2.5 A
+fpen= 11.0
+ 
+300 7.0 bact P0113 
+GWTLNSAGYLLGKINLKALAALAKKIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  13, Stability relative to coil in water and bound coil: -1.1 and  -0.1 kcal/mol
+Helix 2:   18 -  25, Stability relative to coil in water and bound coil: -2.1 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.6 kcal/mol
+Helix    6 -  14, Stability relative to coil in water and bound coil: -1.0 and   0.1 kcal/mol
+Helix   16 -  26, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    6 -  14, Stability relative to coil in water and bound coil: -1.0 and   0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.0 kcal/mol, tilt angle:   89., depth/thickness:   1.4 A
+Solution NMR detectable helix  2:   16 -  26, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   2.2 A
+fpen= 10.0
+ 
+300 7.0 bact P0114 
+INLKAIAAFAKALI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  12, Stability relative to coil in water and bound coil: -1.8 and  -0.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.3 kcal/mol
+Helix    2 -  13, Stability relative to coil in water and bound coil: -2.8 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:    2 -  13, Stability relative to coil in water and bound coil: -2.8 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.4 kcal/mol, tilt angle:   87., depth/thickness:   3.1 A
+fpen= 12.0
+ 
+300 7.0 bact P0115 
+NLKAIAALAKKLL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  12, Stability relative to coil in water and bound coil: -3.1 and  -1.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.1 kcal/mol
+Helix    3 -  12, Stability relative to coil in water and bound coil: -2.1 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    3 -  12, Stability relative to coil in water and bound coil: -2.1 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.0 kcal/mol, tilt angle:   81., depth/thickness:   2.4 A
+fpen= 10.0
+ 
+300 7.0 bact P0116 
+AFKCKFCCGCCRAGVCGLCCRF
+Alpha-helices that are more stable than bound coil:
+Helix 1:   18 -  21, Stability relative to coil in water and bound coil: -0.6 and  -0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.1 kcal/mol
+Helix    2 -   5, Stability relative to coil in water and bound coil: -0.5 and   0.6 kcal/mol
+Helix   18 -  21, Stability relative to coil in water and bound coil: -0.6 and  -0.1 kcal/mol
+Solution NMR detectable helix  1:    2 -   5, Stability relative to coil in water and bound coil: -0.5 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -4.1 kcal/mol, tilt angle:   72., depth/thickness:   2.8 A
+Solution NMR detectable helix  2:   18 -  21, Stability relative to coil in water and bound coil: -0.6 and  -0.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -3.8 kcal/mol, tilt angle:   73., depth/thickness:   1.6 A
+fpen=  4.0
+ 
+300 7.0 bact P0117 
+CRFCCGCCPDMVGCGTCCKF
+Membrane or micelle binding energy of peptide:  -2.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.5 kcal/mol
+Helix   16 -  19, Stability relative to coil in water and bound coil:  0.7 and   0.7 kcal/mol
+Solution NMR detectable helix  1:   16 -  19, Stability relative to coil in water and bound coil:  0.7 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.0 kcal/mol, tilt angle:   63., depth/thickness:   2.8 A
+fpen=  4.0
+ 
+300 7.0 bact P0118 
+DCRFCCGCCTDVSGCGVCCRF
+Membrane or micelle binding energy of peptide:  -2.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.5 kcal/mol
+Helix   11 -  13, Stability relative to coil in water and bound coil:  0.9 and   1.0 kcal/mol
+Helix   17 -  20, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+Solution NMR detectable helix  1:   11 -  13, Stability relative to coil in water and bound coil:  0.9 and   1.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.3 kcal/mol, tilt angle:   71., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:   17 -  20, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.5 kcal/mol, tilt angle:   81., depth/thickness:   0.8 A
+fpen=  3.5
+ 
+300 7.0 bact P0119 
+DTHFPICIFCCGCCHRSKCGMCCKT
+Membrane or micelle binding energy of peptide:  -2.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.8 kcal/mol
+Helix    5 -   8, Stability relative to coil in water and bound coil: -1.5 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    5 -   8, Stability relative to coil in water and bound coil: -1.5 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.3 kcal/mol, tilt angle:   90., depth/thickness:   3.1 A
+fpen=  4.0
+ 
+300 7.0 bact P0120 
+HSNAAGCRFCCGCCPNMHGCGVCCRF
+Membrane or micelle binding energy of peptide:  -2.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.5 kcal/mol
+Helix    4 -   8, Stability relative to coil in water and bound coil:  0.6 and   0.6 kcal/mol
+Helix   22 -  25, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+Solution NMR detectable helix  1:    4 -   8, Stability relative to coil in water and bound coil:  0.6 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.8 kcal/mol, tilt angle:   62., depth/thickness:   2.3 A
+Solution NMR detectable helix  2:   22 -  25, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.5 kcal/mol, tilt angle:   81., depth/thickness:   0.8 A
+fpen=  4.5
+ 
+300 7.0 bact P0121 
+ICIFCCGCCHRSKCGMCCKT
+Membrane or micelle binding energy of peptide:  -1.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.6 kcal/mol
+Helix   10 -  13, Stability relative to coil in water and bound coil:  2.3 and   2.3 kcal/mol
+Helix   16 -  19, Stability relative to coil in water and bound coil:  0.9 and   1.0 kcal/mol
+Solution NMR detectable helix  1:   10 -  13, Stability relative to coil in water and bound coil:  2.3 and   2.3 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -1.1 kcal/mol, tilt angle:   58., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:   16 -  19, Stability relative to coil in water and bound coil:  0.9 and   1.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -2.5 kcal/mol, tilt angle:   84., depth/thickness:   2.1 A
+fpen=  4.0
+ 
+300 7.0 bact P0122 
+NPAGCRFCCGCCPNMIGCGVCCRF
+Membrane or micelle binding energy of peptide:  -2.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.7 kcal/mol
+Helix    2 -   6, Stability relative to coil in water and bound coil:  0.5 and   0.5 kcal/mol
+Helix   20 -  23, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+Solution NMR detectable helix  1:    2 -   6, Stability relative to coil in water and bound coil:  0.5 and   0.5 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.9 kcal/mol, tilt angle:   80., depth/thickness:   1.6 A
+Solution NMR detectable helix  2:   20 -  23, Stability relative to coil in water and bound coil:  0.1 and   0.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.5 kcal/mol, tilt angle:   81., depth/thickness:   0.8 A
+fpen=  4.5
+ 
+300 7.0 bact P0123 
+SPAGRNSRRRRCRFCCGCCPDMVGCGTCCKF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   4, Stability relative to coil in water and bound coil:  0.2 and   0.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.5 kcal/mol
+Helix    2 -  11, Stability relative to coil in water and bound coil:  0.4 and   0.4 kcal/mol
+Solution NMR detectable helix  1:    2 -  11, Stability relative to coil in water and bound coil:  0.4 and   0.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.6 kcal/mol, tilt angle:   62., depth/thickness:   0.0 A
+fpen= 10.0
+ 
+300 7.0 bact P0124 
+AEDWVRWI
+Membrane or micelle binding energy of peptide:  -3.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.1 kcal/mol
+Helix    3 -   6, Stability relative to coil in water and bound coil:  0.5 and   2.0 kcal/mol
+Solution NMR detectable helix  1:    3 -   6, Stability relative to coil in water and bound coil:  0.5 and   2.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.3 kcal/mol, tilt angle:   53., depth/thickness:   0.0 A
+fpen=  4.0
+ 
+300 7.0 bact P0125 
+DWVRWI
+Membrane or micelle binding energy of peptide:  -3.1 kcal/mol
+Energy of micelle/membrane binding:   -3.1 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0126 
+LQKWEDWVRWIGNIPQYLKG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  14, Stability relative to coil in water and bound coil: -7.0 and  -2.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.3 kcal/mol
+Helix    4 -  18, Stability relative to coil in water and bound coil: -6.6 and  -1.2 kcal/mol
+Solution NMR detectable helix  1:    4 -  18, Stability relative to coil in water and bound coil: -6.6 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.4 kcal/mol, tilt angle:   86., depth/thickness:   4.2 A
+fpen= 15.0
+ 
+300 7.0 bact P0127 
+QKWEDWVRWIGN
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  10, Stability relative to coil in water and bound coil: -5.7 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.7 kcal/mol
+Helix    3 -  10, Stability relative to coil in water and bound coil: -5.7 and  -1.2 kcal/mol
+Solution NMR detectable helix  1:    3 -  10, Stability relative to coil in water and bound coil: -5.7 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.7 kcal/mol, tilt angle:   81., depth/thickness:   4.6 A
+fpen=  8.0
+ 
+300 7.0 bact P0128 
+QLQKWEDWVRWI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    8 -  10, Stability relative to coil in water and bound coil:  0.2 and   1.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.0 kcal/mol
+Helix    2 -   4, Stability relative to coil in water and bound coil:  0.3 and   0.8 kcal/mol
+Helix    6 -  10, Stability relative to coil in water and bound coil: -2.9 and  -1.4 kcal/mol
+Solution NMR detectable helix  1:    2 -   4, Stability relative to coil in water and bound coil:  0.3 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.9 kcal/mol, tilt angle:   58., depth/thickness:   1.7 A
+Solution NMR detectable helix  2:    6 -  10, Stability relative to coil in water and bound coil: -2.9 and  -1.4 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.0 kcal/mol, tilt angle:   86., depth/thickness:   1.8 A
+fpen=  4.0
+ 
+300 7.0 bact P0129 
+ALDPIDISIELNKAKSDLEESKEWIRRSNQKLDS
+Alpha-helices that are more stable than bound coil:
+Helix 1:    8 -  15, Stability relative to coil in water and bound coil: -1.5 and  -0.8 kcal/mol
+Helix 2:   18 -  27, Stability relative to coil in water and bound coil: -2.2 and  -0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.8 kcal/mol
+Helix    6 -  31, Stability relative to coil in water and bound coil: -4.0 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    6 -  31, Stability relative to coil in water and bound coil: -4.0 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.0 kcal/mol, tilt angle:   89., depth/thickness:   1.6 A
+fpen= 26.0
+ 
+300 7.0 bact P0130 
+DISIELNKAKSDLEESKEWIRRSNQKLDSIGNWH
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  10, Stability relative to coil in water and bound coil: -0.3 and   0.4 kcal/mol
+Helix 2:   12 -  22, Stability relative to coil in water and bound coil: -3.6 and  -1.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.6 kcal/mol
+Helix    2 -  26, Stability relative to coil in water and bound coil: -3.8 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  26, Stability relative to coil in water and bound coil: -3.8 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.9 kcal/mol, tilt angle:   90., depth/thickness:   1.8 A
+fpen= 25.0
+ 
+300 7.0 bact P0131 
+DITLNNSVALDPIDISIELNKAKSDLEESKEWIRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:   16 -  23, Stability relative to coil in water and bound coil: -1.5 and  -0.8 kcal/mol
+Helix 2:   26 -  32, Stability relative to coil in water and bound coil: -2.3 and  -0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.4 kcal/mol
+Helix   14 -  34, Stability relative to coil in water and bound coil: -3.4 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:   14 -  34, Stability relative to coil in water and bound coil: -3.4 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.2 kcal/mol, tilt angle:   89., depth/thickness:   1.2 A
+fpen= 21.0
+ 
+300 7.0 bact P0132 
+DPIDISIELNKAKSDLEESKEWIRRSNQKLDSIG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -  13, Stability relative to coil in water and bound coil: -1.5 and  -0.8 kcal/mol
+Helix 2:   16 -  25, Stability relative to coil in water and bound coil: -2.2 and  -0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.5 kcal/mol
+Helix    4 -  29, Stability relative to coil in water and bound coil: -4.0 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    4 -  29, Stability relative to coil in water and bound coil: -4.0 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.0 kcal/mol, tilt angle:   89., depth/thickness:   1.6 A
+fpen= 26.0
+ 
+300 7.0 bact P0133 
+ELNKAKSDLEESKEWIRRSNQKLDSIGNWHQSST
+Alpha-helices that are more stable than bound coil:
+Helix 1:    8 -  18, Stability relative to coil in water and bound coil: -3.6 and  -1.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.2 kcal/mol
+Helix    8 -  22, Stability relative to coil in water and bound coil: -3.0 and  -1.0 kcal/mol
+Helix   26 -  28, Stability relative to coil in water and bound coil:  0.5 and   0.7 kcal/mol
+Helix   30 -  32, Stability relative to coil in water and bound coil:  0.5 and   0.5 kcal/mol
+Solution NMR detectable helix  1:    8 -  22, Stability relative to coil in water and bound coil: -3.0 and  -1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.5 kcal/mol, tilt angle:   87., depth/thickness:   2.2 A
+Solution NMR detectable helix  2:   26 -  28, Stability relative to coil in water and bound coil:  0.5 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.0 kcal/mol, tilt angle:   73., depth/thickness:   1.2 A
+Solution NMR detectable helix  3:   30 -  32, Stability relative to coil in water and bound coil:  0.5 and   0.5 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  3 to membrane:    -2.6 kcal/mol, tilt angle:   24., depth/thickness:   2.9 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  3 to membrane:    -2.6 kcal/mol, tilt angle:   72., depth/thickness:   2.1 A
+fpen=  7.0
+ 
+300 7.0 bact P0134 
+IDISIELNKAKSDLEESKEWIRRSNQKLDSIGNW
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  11, Stability relative to coil in water and bound coil: -1.5 and  -0.8 kcal/mol
+Helix 2:   14 -  23, Stability relative to coil in water and bound coil: -2.2 and  -0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.9 kcal/mol
+Helix    2 -  27, Stability relative to coil in water and bound coil: -4.2 and  -1.2 kcal/mol
+Solution NMR detectable helix  1:    2 -  27, Stability relative to coil in water and bound coil: -4.2 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.1 kcal/mol, tilt angle:   89., depth/thickness:   2.1 A
+fpen= 26.0
+ 
+300 7.0 bact P0135 
+IELNKAKSDLEESKEWIRRSNQKLDSIGNWHQSS
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   6, Stability relative to coil in water and bound coil: -1.2 and  -0.7 kcal/mol
+Helix 2:    9 -  19, Stability relative to coil in water and bound coil: -3.6 and  -1.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.9 kcal/mol
+Helix    2 -   7, Stability relative to coil in water and bound coil: -1.2 and  -0.7 kcal/mol
+Helix    9 -  23, Stability relative to coil in water and bound coil: -3.0 and  -1.0 kcal/mol
+Solution NMR detectable helix  1:    2 -   7, Stability relative to coil in water and bound coil: -1.2 and  -0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.2 kcal/mol, tilt angle:   50., depth/thickness:   2.4 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -3.2 kcal/mol, tilt angle:   50., depth/thickness:   2.4 A
+Solution NMR detectable helix  2:    9 -  23, Stability relative to coil in water and bound coil: -3.0 and  -1.0 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.5 kcal/mol, tilt angle:   87., depth/thickness:   2.2 A
+fpen= 10.5
+ 
+300 7.0 bact P0136 
+ISIELNKAKSDLEESKEWIRRSNQKLDSIGNWHQ
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   9, Stability relative to coil in water and bound coil: -1.2 and  -0.7 kcal/mol
+Helix 2:   12 -  21, Stability relative to coil in water and bound coil: -2.2 and  -0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.6 kcal/mol
+Helix    2 -  25, Stability relative to coil in water and bound coil: -0.6 and   2.1 kcal/mol
+Solution NMR detectable helix  1:    2 -  25, Stability relative to coil in water and bound coil: -0.6 and   2.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.1 kcal/mol, tilt angle:   89., depth/thickness:   1.0 A
+fpen= 24.0
+ 
+300 7.0 bact P0137 
+ITLNNSVALDPIDISIELNKAKSDLEESKEWIRR
+Alpha-helices that are more stable than bound coil:
+Helix 1:   15 -  22, Stability relative to coil in water and bound coil: -1.5 and  -0.8 kcal/mol
+Helix 2:   25 -  32, Stability relative to coil in water and bound coil: -2.3 and  -0.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.2 kcal/mol
+Helix   13 -  33, Stability relative to coil in water and bound coil: -3.4 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:   13 -  33, Stability relative to coil in water and bound coil: -3.4 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.2 kcal/mol, tilt angle:   89., depth/thickness:   1.2 A
+fpen= 21.0
+ 
+300 7.0 bact P0138 
+LDPIDISIELNKAKSDLEESKEWIRRSNQKLDSI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  14, Stability relative to coil in water and bound coil: -1.5 and  -0.8 kcal/mol
+Helix 2:   17 -  26, Stability relative to coil in water and bound coil: -2.2 and  -0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.0 kcal/mol
+Helix    5 -  30, Stability relative to coil in water and bound coil: -4.0 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    5 -  30, Stability relative to coil in water and bound coil: -4.0 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.0 kcal/mol, tilt angle:   89., depth/thickness:   1.6 A
+fpen= 26.0
+ 
+300 7.0 bact P0139 
+AKKIRVRLSA
+Membrane or micelle binding energy of peptide:  -0.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.8 kcal/mol
+Helix    4 -   8, Stability relative to coil in water and bound coil: -0.1 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    4 -   8, Stability relative to coil in water and bound coil: -0.1 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.4 kcal/mol, tilt angle:   85., depth/thickness:   1.1 A
+fpen=  5.0
+ 
+300 7.0 bact P0140 
+GQKKIRVRLS
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -0.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.8 kcal/mol
+Helix    5 -   9, Stability relative to coil in water and bound coil: -0.1 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    5 -   9, Stability relative to coil in water and bound coil: -0.1 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.4 kcal/mol, tilt angle:   85., depth/thickness:   1.1 A
+fpen=  5.0
+ 
+300 7.0 bact P0141 
+KIRVRLSA
+Membrane or micelle binding energy of peptide:  -0.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.8 kcal/mol
+Helix    3 -   7, Stability relative to coil in water and bound coil:  0.5 and   1.1 kcal/mol
+Solution NMR detectable helix  1:    3 -   7, Stability relative to coil in water and bound coil:  0.5 and   1.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.8 kcal/mol, tilt angle:   85., depth/thickness:   4.0 A
+fpen=  5.0
+ 
+300 7.0 bact P0142 
+KKIRVRLSA
+Membrane or micelle binding energy of peptide:  -0.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.8 kcal/mol
+Helix    3 -   7, Stability relative to coil in water and bound coil: -0.1 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    3 -   7, Stability relative to coil in water and bound coil: -0.1 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.4 kcal/mol, tilt angle:   85., depth/thickness:   1.1 A
+fpen=  5.0
+ 
+300 7.0 bact P0143 
+VWRWWWRWV
+Membrane or micelle binding energy of peptide:  -7.2 kcal/mol
+Energy of micelle/membrane binding:   -7.2 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0144 
+GLLEALAELLEGLRKRLRKFRNKIKEK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  17, Stability relative to coil in water and bound coil: -8.1 and  -4.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -9.4 kcal/mol
+Helix    2 -  23, Stability relative to coil in water and bound coil: -8.6 and  -4.0 kcal/mol
+Solution NMR detectable helix  1:    2 -  23, Stability relative to coil in water and bound coil: -8.6 and  -4.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.9 kcal/mol, tilt angle:   82., depth/thickness:   3.8 A
+fpen= 22.0
+ 
+300 7.0 bact P0145 
+GLLEALAELLEKFHTFPQTAIGVGAP
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  13, Stability relative to coil in water and bound coil: -6.9 and  -3.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.3 kcal/mol
+Helix    2 -  22, Stability relative to coil in water and bound coil: -5.0 and  -0.1 kcal/mol
+Solution NMR detectable helix  1:    2 -  22, Stability relative to coil in water and bound coil: -5.0 and  -0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -11.6 kcal/mol, tilt angle:   89., depth/thickness:   9.7 A
+fpen= 21.0
+ 
+300 7.0 bact P0146 
+FTMKKSLLLIFFLGTISLSLCEQER
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  23, Stability relative to coil in water and bound coil:-12.5 and  -7.9 kcal/mol
+Membrane or micelle binding energy of peptide: -13.6 kcal/mol
+Membrane/micelle binding energy of peptide: -13.6 kcal/mol
+Helix    1 -  24, Stability relative to coil in water and bound coil:-12.9 and  -7.2 kcal/mol
+Solution NMR detectable helix  1:    1 -  24, Stability relative to coil in water and bound coil:-12.9 and  -7.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -19.2 kcal/mol, tilt angle:    8., depth/thickness:  28.1 A
+fpen= 24.0
+ 
+300 7.0 bact P0147 
+IGTISLSLCEQERDADEDEGETLEE
+Membrane or micelle binding energy of peptide:  -1.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.9 kcal/mol
+Helix    3 -  15, Stability relative to coil in water and bound coil:  1.9 and   3.1 kcal/mol
+Solution NMR detectable helix  1:    3 -  15, Stability relative to coil in water and bound coil:  1.9 and   3.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.0 kcal/mol, tilt angle:   90., depth/thickness:   0.2 A
+fpen= 13.0
+ 
+300 7.0 bact P0148 
+TLKKSMLLLFFLGTISLSLCEEERNADEDDGEKE
+Alpha-helices that are more stable than bound coil:
+Helix 1:    1 -  25, Stability relative to coil in water and bound coil:-13.4 and  -8.4 kcal/mol
+Membrane or micelle binding energy of peptide: -13.4 kcal/mol
+Membrane/micelle binding energy of peptide: -13.5 kcal/mol
+Helix    1 -  26, Stability relative to coil in water and bound coil:-13.5 and  -8.6 kcal/mol
+Solution NMR detectable helix  1:    1 -  26, Stability relative to coil in water and bound coil:-13.5 and  -8.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -21.0 kcal/mol, tilt angle:    9., depth/thickness:  29.2 A
+fpen= 26.0
+ 
+300 7.0 bact P0149 
+AAGKWKLFKKLPKFHLHLAKKF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  10, Stability relative to coil in water and bound coil: -1.2 and   0.4 kcal/mol
+Helix 2:   17 -  21, Stability relative to coil in water and bound coil: -2.1 and  -1.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.0 kcal/mol
+Helix    5 -  11, Stability relative to coil in water and bound coil: -1.3 and   2.3 kcal/mol
+Helix   14 -  21, Stability relative to coil in water and bound coil: -2.6 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:    5 -  11, Stability relative to coil in water and bound coil: -1.3 and   2.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.0 kcal/mol, tilt angle:   72., depth/thickness:   2.9 A
+Solution NMR detectable helix  2:   14 -  21, Stability relative to coil in water and bound coil: -2.6 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.1 kcal/mol, tilt angle:   83., depth/thickness:   5.1 A
+fpen=  7.5
+ 
+300 7.0 bact P0150 
+AVAVVGQATQIAKKWKLFKKIEKVGQ
+Alpha-helices that are more stable than bound coil:
+Helix 1:   10 -  14, Stability relative to coil in water and bound coil: -2.3 and  -2.1 kcal/mol
+Helix 2:   19 -  21, Stability relative to coil in water and bound coil: -0.1 and   0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.7 kcal/mol
+Helix    3 -  23, Stability relative to coil in water and bound coil: -4.7 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    3 -  23, Stability relative to coil in water and bound coil: -4.7 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.2 kcal/mol, tilt angle:   72., depth/thickness:   4.7 A
+fpen= 21.0
+ 
+300 7.0 bact P0151 
+EEEEAAAGKWKLFKKLPKFHLHLAKKF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -   8, Stability relative to coil in water and bound coil:  1.2 and   1.2 kcal/mol
+Helix 2:   12 -  15, Stability relative to coil in water and bound coil: -1.2 and   0.4 kcal/mol
+Helix 3:   22 -  26, Stability relative to coil in water and bound coil: -2.1 and  -1.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.5 kcal/mol
+Helix    3 -  16, Stability relative to coil in water and bound coil: -3.9 and  -0.3 kcal/mol
+Helix   19 -  26, Stability relative to coil in water and bound coil: -2.6 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:    3 -  16, Stability relative to coil in water and bound coil: -3.9 and  -0.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.5 kcal/mol, tilt angle:   69., depth/thickness:   2.7 A
+Solution NMR detectable helix  2:   19 -  26, Stability relative to coil in water and bound coil: -2.6 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.1 kcal/mol, tilt angle:   83., depth/thickness:   5.1 A
+fpen= 11.0
+ 
+300 7.0 bact P0152 
+GGHKWKLFKKIGAVLKVL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  10, Stability relative to coil in water and bound coil: -1.1 and   0.5 kcal/mol
+Helix 2:   13 -  16, Stability relative to coil in water and bound coil: -0.6 and  -0.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.5 kcal/mol
+Helix    4 -  17, Stability relative to coil in water and bound coil: -2.0 and   1.9 kcal/mol
+Solution NMR detectable helix  1:    4 -  17, Stability relative to coil in water and bound coil: -2.0 and   1.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.5 kcal/mol, tilt angle:   77., depth/thickness:   1.2 A
+fpen= 14.0
+ 
+300 7.0 bact P0153 
+GIGAVLKVLTTGLKWKLFKKIEKVGQ
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   9, Stability relative to coil in water and bound coil: -1.6 and  -0.4 kcal/mol
+Helix 2:   16 -  21, Stability relative to coil in water and bound coil: -1.0 and   0.8 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.9 kcal/mol
+Helix    4 -  13, Stability relative to coil in water and bound coil: -1.6 and   0.1 kcal/mol
+Helix   16 -  23, Stability relative to coil in water and bound coil: -2.4 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:    4 -  13, Stability relative to coil in water and bound coil: -1.6 and   0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.8 kcal/mol, tilt angle:   72., depth/thickness:   4.5 A
+Solution NMR detectable helix  2:   16 -  23, Stability relative to coil in water and bound coil: -2.4 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -6.1 kcal/mol, tilt angle:   75., depth/thickness:   5.4 A
+fpen=  9.0
+ 
+300 7.0 bact P0154 
+KFLHLAKKFPKWKLFKKI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   8, Stability relative to coil in water and bound coil: -1.4 and  -0.4 kcal/mol
+Helix 2:   13 -  16, Stability relative to coil in water and bound coil: -1.4 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.9 kcal/mol
+Helix    2 -   8, Stability relative to coil in water and bound coil: -3.8 and  -1.6 kcal/mol
+Helix   13 -  17, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:    2 -   8, Stability relative to coil in water and bound coil: -3.8 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.4 kcal/mol, tilt angle:   87., depth/thickness:   4.5 A
+Solution NMR detectable helix  2:   13 -  17, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.6 kcal/mol, tilt angle:   81., depth/thickness:   2.5 A
+fpen=  6.0
+ 
+300 7.0 bact P0155 
+KKKKWKLFKKIGIGKFL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -   9, Stability relative to coil in water and bound coil: -0.7 and   0.9 kcal/mol
+Helix 2:   13 -  15, Stability relative to coil in water and bound coil:  0.1 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.9 kcal/mol
+Helix    6 -  15, Stability relative to coil in water and bound coil: -1.1 and   1.0 kcal/mol
+Solution NMR detectable helix  1:    6 -  15, Stability relative to coil in water and bound coil: -1.1 and   1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.8 kcal/mol, tilt angle:   58., depth/thickness:   5.4 A
+fpen= 10.0
+ 
+300 7.0 bact P0156 
+KLWKLFKKIGIGAVLKVLTTGLPALKLTLK
+Alpha-helices that are more stable than bound coil:
+Helix 1:   11 -  18, Stability relative to coil in water and bound coil: -1.0 and   0.3 kcal/mol
+Helix 2:   23 -  27, Stability relative to coil in water and bound coil: -2.4 and  -1.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.9 kcal/mol
+Helix    2 -  29, Stability relative to coil in water and bound coil: -8.9 and  -1.8 kcal/mol
+Solution NMR detectable helix  1:    2 -  29, Stability relative to coil in water and bound coil: -8.9 and  -1.8 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -15.2 kcal/mol, tilt angle:   19., depth/thickness:  31.1 A
+fpen= 28.0
+ 
+300 7.0 bact P0157 
+KWKLFKKI
+Membrane or micelle binding energy of peptide:  -3.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.2 kcal/mol
+Helix    3 -   7, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Solution NMR detectable helix  1:    3 -   7, Stability relative to coil in water and bound coil: -2.1 and  -0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.6 kcal/mol, tilt angle:   81., depth/thickness:   2.5 A
+fpen=  5.0
+ 
+300 7.0 bact P0158 
+WKLFKKILKFL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   9, Stability relative to coil in water and bound coil: -2.5 and  -0.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.5 kcal/mol
+Helix    2 -  10, Stability relative to coil in water and bound coil: -5.5 and  -2.0 kcal/mol
+Solution NMR detectable helix  1:    2 -  10, Stability relative to coil in water and bound coil: -5.5 and  -2.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.6 kcal/mol, tilt angle:   75., depth/thickness:   6.9 A
+fpen=  9.0
+ 
+300 7.0 bact P0159 
+AGFAKLLAKLAKKLL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  13, Stability relative to coil in water and bound coil: -6.4 and  -3.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.4 kcal/mol
+Helix    3 -  14, Stability relative to coil in water and bound coil: -6.8 and  -3.7 kcal/mol
+Solution NMR detectable helix  1:    3 -  14, Stability relative to coil in water and bound coil: -6.8 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.2 kcal/mol, tilt angle:   80., depth/thickness:   6.8 A
+fpen= 12.0
+ 
+300 7.0 bact P0160 
+EEEEAAAGFAKLLAKLAKKLL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  19, Stability relative to coil in water and bound coil: -5.9 and  -3.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.9 kcal/mol
+Helix    4 -  20, Stability relative to coil in water and bound coil: -5.9 and  -2.8 kcal/mol
+Solution NMR detectable helix  1:    4 -  20, Stability relative to coil in water and bound coil: -5.9 and  -2.8 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.0 kcal/mol, tilt angle:   90., depth/thickness:   3.6 A
+fpen= 17.0
+ 
+300 7.0 bact P0161 
+FAKLLAKAFKKAL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -3.0 and  -2.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.8 kcal/mol
+Helix    5 -  12, Stability relative to coil in water and bound coil: -3.8 and  -2.2 kcal/mol
+Solution NMR detectable helix  1:    5 -  12, Stability relative to coil in water and bound coil: -3.8 and  -2.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.1 kcal/mol, tilt angle:   77., depth/thickness:   6.7 A
+fpen=  8.0
+ 
+300 7.0 bact P0162 
+FIGAIAAALPHVINAIKNTF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   8, Stability relative to coil in water and bound coil: -0.9 and  -0.7 kcal/mol
+Helix 2:   12 -  19, Stability relative to coil in water and bound coil: -3.0 and  -2.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.9 kcal/mol
+Helix    3 -   9, Stability relative to coil in water and bound coil:  0.3 and   1.0 kcal/mol
+Helix   12 -  19, Stability relative to coil in water and bound coil: -3.0 and  -2.6 kcal/mol
+Solution NMR detectable helix  1:    3 -   9, Stability relative to coil in water and bound coil:  0.3 and   1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -2.6 kcal/mol, tilt angle:   72., depth/thickness:   1.2 A
+Solution NMR detectable helix  2:   12 -  19, Stability relative to coil in water and bound coil: -3.0 and  -2.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -7.2 kcal/mol, tilt angle:   82., depth/thickness:   6.0 A
+fpen=  7.5
+ 
+300 7.0 bact P0163 
+FIGAIANLLSKIF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  12, Stability relative to coil in water and bound coil: -3.8 and  -2.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.2 kcal/mol
+Helix    4 -  12, Stability relative to coil in water and bound coil: -3.8 and  -2.4 kcal/mol
+Solution NMR detectable helix  1:    4 -  12, Stability relative to coil in water and bound coil: -3.8 and  -2.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.4 kcal/mol, tilt angle:   87., depth/thickness:   5.7 A
+fpen=  9.0
+ 
+300 7.0 bact P0164 
+FFPAILRVAAKVGPAVLCAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  10, Stability relative to coil in water and bound coil: -1.5 and  -0.7 kcal/mol
+Helix 2:   16 -  21, Stability relative to coil in water and bound coil: -0.5 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.4 kcal/mol
+Helix    4 -  11, Stability relative to coil in water and bound coil: -2.2 and  -1.4 kcal/mol
+Helix   14 -  23, Stability relative to coil in water and bound coil: -0.2 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    4 -  11, Stability relative to coil in water and bound coil: -2.2 and  -1.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.5 kcal/mol, tilt angle:   81., depth/thickness:   4.8 A
+Solution NMR detectable helix  2:   14 -  23, Stability relative to coil in water and bound coil: -0.2 and   0.6 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -3.1 kcal/mol, tilt angle:   68., depth/thickness:   2.5 A
+fpen=  9.0
+ 
+300 7.0 bact P0165 
+FFPIIAGMAAKVICAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  17, Stability relative to coil in water and bound coil: -0.4 and   0.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.8 kcal/mol
+Helix    1 -  19, Stability relative to coil in water and bound coil: -5.8 and  -2.6 kcal/mol
+Solution NMR detectable helix  1:    1 -  19, Stability relative to coil in water and bound coil: -5.8 and  -2.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:   -12.6 kcal/mol, tilt angle:    8., depth/thickness:  24.5 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:   -12.6 kcal/mol, tilt angle:    8., depth/thickness:  24.5 A
+fpen= 19.0
+ 
+300 7.0 bact P0166 
+FFPTIAGLTKLFCAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  16, Stability relative to coil in water and bound coil: -3.5 and  -1.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.8 kcal/mol
+Helix    4 -  18, Stability relative to coil in water and bound coil: -3.2 and  -0.7 kcal/mol
+Solution NMR detectable helix  1:    4 -  18, Stability relative to coil in water and bound coil: -3.2 and  -0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.3 kcal/mol, tilt angle:   81., depth/thickness:   3.9 A
+fpen= 15.0
+ 
+300 7.0 bact P0167 
+FLPFFAACAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   9, Stability relative to coil in water and bound coil: -2.0 and  -0.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.1 kcal/mol
+Helix    3 -  12, Stability relative to coil in water and bound coil: -2.8 and  -0.3 kcal/mol
+Solution NMR detectable helix  1:    3 -  12, Stability relative to coil in water and bound coil: -2.8 and  -0.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.6 kcal/mol, tilt angle:   65., depth/thickness:   6.4 A
+fpen= 10.0
+ 
+300 7.0 bact P0168 
+FLPLFLPKIICAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  15, Stability relative to coil in water and bound coil: -4.2 and  -2.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.8 kcal/mol
+Helix    5 -  16, Stability relative to coil in water and bound coil: -3.8 and  -1.6 kcal/mol
+Solution NMR detectable helix  1:    5 -  16, Stability relative to coil in water and bound coil: -3.8 and  -1.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.6 kcal/mol, tilt angle:   80., depth/thickness:   5.8 A
+fpen= 12.0
+ 
+300 7.0 bact P0169 
+FLPLIAGLAAKFLPKIFCAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  11, Stability relative to coil in water and bound coil: -4.1 and  -2.9 kcal/mol
+Helix 2:   16 -  21, Stability relative to coil in water and bound coil: -2.2 and  -0.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -9.6 kcal/mol
+Helix    3 -  11, Stability relative to coil in water and bound coil: -3.5 and  -2.3 kcal/mol
+Helix   15 -  23, Stability relative to coil in water and bound coil: -1.3 and   0.2 kcal/mol
+Solution NMR detectable helix  1:    3 -  11, Stability relative to coil in water and bound coil: -3.5 and  -2.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.2 kcal/mol, tilt angle:   85., depth/thickness:   2.5 A
+Solution NMR detectable helix  2:   15 -  23, Stability relative to coil in water and bound coil: -1.3 and   0.2 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.9 kcal/mol, tilt angle:   86., depth/thickness:   3.2 A
+fpen=  9.0
+ 
+300 7.0 bact P0170 
+FMGGLIKAATKALPAAFCAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  10, Stability relative to coil in water and bound coil: -1.3 and  -0.6 kcal/mol
+Helix 2:   16 -  22, Stability relative to coil in water and bound coil: -2.1 and  -0.8 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.1 kcal/mol
+Helix    4 -  23, Stability relative to coil in water and bound coil: -0.5 and   2.0 kcal/mol
+Solution NMR detectable helix  1:    4 -  23, Stability relative to coil in water and bound coil: -0.5 and   2.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.0 kcal/mol, tilt angle:    6., depth/thickness:  27.1 A
+fpen= 20.0
+ 
+300 7.0 bact P0171 
+GALFKVASKVLPSVKLAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -   9, Stability relative to coil in water and bound coil: -0.2 and  -0.1 kcal/mol
+Helix 2:   17 -  20, Stability relative to coil in water and bound coil: -1.1 and  -1.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.7 kcal/mol
+Helix    2 -  10, Stability relative to coil in water and bound coil: -2.1 and  -0.2 kcal/mol
+Helix   15 -  20, Stability relative to coil in water and bound coil:  0.5 and   1.2 kcal/mol
+Solution NMR detectable helix  1:    2 -  10, Stability relative to coil in water and bound coil: -2.1 and  -0.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.3 kcal/mol, tilt angle:   85., depth/thickness:   6.4 A
+Solution NMR detectable helix  2:   15 -  20, Stability relative to coil in water and bound coil:  0.5 and   1.2 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -3.6 kcal/mol, tilt angle:   66., depth/thickness:   4.3 A
+fpen=  7.5
+ 
+300 7.0 bact P0172 
+KFLPKIFCAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -  11, Stability relative to coil in water and bound coil: -2.2 and  -0.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.9 kcal/mol
+Helix    2 -  12, Stability relative to coil in water and bound coil: -2.2 and   0.9 kcal/mol
+Solution NMR detectable helix  1:    2 -  12, Stability relative to coil in water and bound coil: -2.2 and   0.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.6 kcal/mol, tilt angle:   84., depth/thickness:   3.4 A
+fpen= 11.0
+ 
+300 7.0 bact P0173 
+KFLPWKIFCAITKKC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  13, Stability relative to coil in water and bound coil: -5.1 and  -2.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.3 kcal/mol
+Helix    4 -  14, Stability relative to coil in water and bound coil: -5.4 and  -2.5 kcal/mol
+Solution NMR detectable helix  1:    4 -  14, Stability relative to coil in water and bound coil: -5.4 and  -2.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.2 kcal/mol, tilt angle:   73., depth/thickness:   5.4 A
+fpen= 11.0
+ 
+300 7.0 bact P0174 
+AGYLLGKINLKALAALAKKIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   7, Stability relative to coil in water and bound coil:  0.0 and   1.0 kcal/mol
+Helix 2:   12 -  19, Stability relative to coil in water and bound coil: -2.1 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.7 kcal/mol
+Helix    3 -   7, Stability relative to coil in water and bound coil: -1.1 and  -0.1 kcal/mol
+Helix   10 -  20, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    3 -   7, Stability relative to coil in water and bound coil: -1.1 and  -0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.0 kcal/mol, tilt angle:   90., depth/thickness:   4.7 A
+Solution NMR detectable helix  2:   10 -  20, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   2.2 A
+fpen=  8.0
+ 
+300 7.0 bact P0175 
+FSGSGSGSGAGYLLGKINLKALAALAKKILGC
+Alpha-helices that are more stable than bound coil:
+Helix 1:   12 -  16, Stability relative to coil in water and bound coil: -1.1 and  -0.1 kcal/mol
+Helix 2:   21 -  28, Stability relative to coil in water and bound coil: -2.1 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.9 kcal/mol
+Helix    9 -  17, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Helix   19 -  29, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    9 -  17, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.1 kcal/mol, tilt angle:   76., depth/thickness:   3.0 A
+Solution NMR detectable helix  2:   19 -  29, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   2.2 A
+fpen= 10.0
+ 
+300 7.0 bact P0176 
+GWTLNSAGYLLGKINLKALAALAKKIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  13, Stability relative to coil in water and bound coil: -1.1 and  -0.1 kcal/mol
+Helix 2:   18 -  25, Stability relative to coil in water and bound coil: -2.1 and  -1.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.6 kcal/mol
+Helix    6 -  14, Stability relative to coil in water and bound coil: -1.0 and   0.1 kcal/mol
+Helix   16 -  26, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Solution NMR detectable helix  1:    6 -  14, Stability relative to coil in water and bound coil: -1.0 and   0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.0 kcal/mol, tilt angle:   89., depth/thickness:   1.4 A
+Solution NMR detectable helix  2:   16 -  26, Stability relative to coil in water and bound coil: -2.5 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   89., depth/thickness:   2.2 A
+fpen= 10.0
+ 
+300 7.0 bact P0177 
+GLRRLLRKIRGRWKGGGRLLRPLLQLLKQKLR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  12, Stability relative to coil in water and bound coil: -1.8 and  -0.7 kcal/mol
+Helix 2:   23 -  30, Stability relative to coil in water and bound coil: -4.2 and  -2.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -9.5 kcal/mol
+Helix    2 -  12, Stability relative to coil in water and bound coil: -2.9 and  -1.2 kcal/mol
+Helix   20 -  31, Stability relative to coil in water and bound coil: -4.5 and  -1.5 kcal/mol
+Solution NMR detectable helix  1:    2 -  12, Stability relative to coil in water and bound coil: -2.9 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.5 kcal/mol, tilt angle:   89., depth/thickness:   2.6 A
+Solution NMR detectable helix  2:   20 -  31, Stability relative to coil in water and bound coil: -4.5 and  -1.5 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -6.4 kcal/mol, tilt angle:   79., depth/thickness:   5.7 A
+fpen= 11.5
+ 
+300 7.0 bact P0178 
+NIKISGKWKAQKRFLKGGGRLLRPLLQLLKQKLR
+Alpha-helices that are more stable than bound coil:
+Helix 1:   25 -  32, Stability relative to coil in water and bound coil: -4.2 and  -2.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -9.1 kcal/mol
+Helix    3 -  13, Stability relative to coil in water and bound coil: -0.3 and   1.3 kcal/mol
+Helix   24 -  33, Stability relative to coil in water and bound coil: -2.1 and   0.4 kcal/mol
+Solution NMR detectable helix  1:    3 -  13, Stability relative to coil in water and bound coil: -0.3 and   1.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.5 kcal/mol, tilt angle:   62., depth/thickness:   1.5 A
+Solution NMR detectable helix  2:   24 -  33, Stability relative to coil in water and bound coil: -2.1 and   0.4 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -3.6 kcal/mol, tilt angle:   65., depth/thickness:   0.9 A
+fpen= 10.5
+ 
+300 7.0 bact P0179 
+RKVRGPPGGGRLLRPLLQLLKQKLR
+Alpha-helices that are more stable than bound coil:
+Helix 1:   16 -  23, Stability relative to coil in water and bound coil: -4.2 and  -2.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.8 kcal/mol
+Helix   11 -  14, Stability relative to coil in water and bound coil: -0.6 and   0.4 kcal/mol
+Helix   16 -  24, Stability relative to coil in water and bound coil: -4.5 and  -2.0 kcal/mol
+Solution NMR detectable helix  1:   11 -  14, Stability relative to coil in water and bound coil: -0.6 and   0.4 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.2 kcal/mol, tilt angle:   69., depth/thickness:   2.3 A
+Solution NMR detectable helix  2:   16 -  24, Stability relative to coil in water and bound coil: -4.5 and  -2.0 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.7 kcal/mol, tilt angle:   57., depth/thickness:   6.3 A
+fpen=  6.5
+ 
+300 7.0 bact P0180 
+SQRKLAAKLTSKGGGRLLRPLLQLLKQKLR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   9, Stability relative to coil in water and bound coil: -1.4 and  -0.4 kcal/mol
+Helix 2:   21 -  28, Stability relative to coil in water and bound coil: -4.2 and  -2.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.1 kcal/mol
+Helix    5 -  11, Stability relative to coil in water and bound coil: -0.8 and   0.2 kcal/mol
+Helix   19 -  29, Stability relative to coil in water and bound coil: -2.5 and   0.0 kcal/mol
+Solution NMR detectable helix  1:    5 -  11, Stability relative to coil in water and bound coil: -0.8 and   0.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.1 kcal/mol, tilt angle:   82., depth/thickness:   1.9 A
+Solution NMR detectable helix  2:   19 -  29, Stability relative to coil in water and bound coil: -2.5 and   0.0 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.7 kcal/mol, tilt angle:   86., depth/thickness:   2.6 A
+fpen=  9.0
+ 
+300 7.0 bact P0181 
+RARAWRARACTKSIPPIC
+Membrane or micelle binding energy of peptide:  -1.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.8 kcal/mol
+Helix    3 -  11, Stability relative to coil in water and bound coil:  1.6 and   3.0 kcal/mol
+Solution NMR detectable helix  1:    3 -  11, Stability relative to coil in water and bound coil:  1.6 and   3.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -2.7 kcal/mol, tilt angle:   82., depth/thickness:   1.0 A
+fpen=  9.0
+ 
+300 7.0 bact P0182 
+RFRFRFWRFRFRFCTKSIPPIC
+Membrane or micelle binding energy of peptide:  -8.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.7 kcal/mol
+Helix    2 -   8, Stability relative to coil in water and bound coil: -2.0 and   2.8 kcal/mol
+Helix   10 -  15, Stability relative to coil in water and bound coil: -1.2 and   1.1 kcal/mol
+Solution NMR detectable helix  1:    2 -   8, Stability relative to coil in water and bound coil: -2.0 and   2.8 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.2 kcal/mol, tilt angle:   87., depth/thickness:   2.5 A
+Solution NMR detectable helix  2:   10 -  15, Stability relative to coil in water and bound coil: -1.2 and   1.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.6 kcal/mol, tilt angle:   72., depth/thickness:   4.3 A
+fpen=  6.5
+ 
+300 7.0 bact P0183 
+VRIPCVTVADCPPTILPVFYECIDKFCMLHIE
+Alpha-helices that are more stable than bound coil:
+Helix 1:   15 -  25, Stability relative to coil in water and bound coil: -5.0 and  -2.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.4 kcal/mol
+Helix    8 -  10, Stability relative to coil in water and bound coil:  0.2 and   0.3 kcal/mol
+Helix   15 -  29, Stability relative to coil in water and bound coil: -5.8 and  -1.8 kcal/mol
+Solution NMR detectable helix  1:    8 -  10, Stability relative to coil in water and bound coil:  0.2 and   0.3 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.8 kcal/mol, tilt angle:   66., depth/thickness:   0.3 A
+Solution NMR detectable helix  2:   15 -  29, Stability relative to coil in water and bound coil: -5.8 and  -1.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:   -10.8 kcal/mol, tilt angle:   73., depth/thickness:   6.8 A
+fpen=  9.0
+ 
+300 7.0 bact P0184 
+KIFKKIEKVGRNVRDGIIKAGPAVAVVEQA
+Alpha-helices that are more stable than bound coil:
+Helix 1:   23 -  25, Stability relative to coil in water and bound coil:  0.4 and   0.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.4 kcal/mol
+Helix    2 -  11, Stability relative to coil in water and bound coil: -0.2 and   1.4 kcal/mol
+Helix   17 -  20, Stability relative to coil in water and bound coil: -0.2 and   0.1 kcal/mol
+Helix   22 -  26, Stability relative to coil in water and bound coil: -0.4 and  -0.2 kcal/mol
+Solution NMR detectable helix  1:    2 -  11, Stability relative to coil in water and bound coil: -0.2 and   1.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.9 kcal/mol, tilt angle:   70., depth/thickness:   3.1 A
+Solution NMR detectable helix  2:   17 -  20, Stability relative to coil in water and bound coil: -0.2 and   0.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.1 kcal/mol, tilt angle:   85., depth/thickness:   1.7 A
+Solution NMR detectable helix  3:   22 -  26, Stability relative to coil in water and bound coil: -0.4 and  -0.2 kcal/mol
+Transfer energy of alpha-helix  3 to membrane:    -3.7 kcal/mol, tilt angle:   81., depth/thickness:   3.1 A
+fpen=  6.3
+ 
+300 7.0 bact P0185 
+KKLFKKILKYLAGPAVAVVGQATQIAKKDEL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  11, Stability relative to coil in water and bound coil: -4.2 and  -1.1 kcal/mol
+Helix 2:   14 -  27, Stability relative to coil in water and bound coil: -2.0 and  -1.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.7 kcal/mol
+Helix    3 -  12, Stability relative to coil in water and bound coil: -4.1 and  -0.9 kcal/mol
+Helix   14 -  27, Stability relative to coil in water and bound coil: -2.0 and  -1.5 kcal/mol
+Solution NMR detectable helix  1:    3 -  12, Stability relative to coil in water and bound coil: -4.1 and  -0.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.9 kcal/mol, tilt angle:   85., depth/thickness:   5.5 A
+Solution NMR detectable helix  2:   14 -  27, Stability relative to coil in water and bound coil: -2.0 and  -1.5 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -6.4 kcal/mol, tilt angle:   70., depth/thickness:   6.0 A
+fpen= 12.0
+ 
+300 7.0 bact P0186 
+RWKIFKKIEKVGQNIRDGIVKAGPAVAVVGQAATI
+Alpha-helices that are more stable than bound coil:
+Helix 1:   25 -  27, Stability relative to coil in water and bound coil:  0.4 and   0.5 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.9 kcal/mol
+Helix    3 -  10, Stability relative to coil in water and bound coil: -2.1 and  -0.6 kcal/mol
+Helix   24 -  34, Stability relative to coil in water and bound coil: -0.6 and  -0.3 kcal/mol
+Solution NMR detectable helix  1:    3 -  10, Stability relative to coil in water and bound coil: -2.1 and  -0.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.9 kcal/mol, tilt angle:   72., depth/thickness:   5.0 A
+Solution NMR detectable helix  2:   24 -  34, Stability relative to coil in water and bound coil: -0.6 and  -0.3 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.4 kcal/mol, tilt angle:   74., depth/thickness:   4.2 A
+fpen=  9.5
+ 
+300 7.0 bact P0187 
+WKPFKKIEKAVRRVRDGVAKAGPAVAVVGQAT
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -  14, Stability relative to coil in water and bound coil: -2.2 and  -0.6 kcal/mol
+Helix 2:   23 -  26, Stability relative to coil in water and bound coil: -0.3 and  -0.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.1 kcal/mol
+Helix    3 -  16, Stability relative to coil in water and bound coil: -1.9 and  -0.4 kcal/mol
+Helix   23 -  30, Stability relative to coil in water and bound coil:  0.5 and   0.8 kcal/mol
+Solution NMR detectable helix  1:    3 -  16, Stability relative to coil in water and bound coil: -1.9 and  -0.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.6 kcal/mol, tilt angle:   82., depth/thickness:   3.1 A
+Solution NMR detectable helix  2:   23 -  30, Stability relative to coil in water and bound coil:  0.5 and   0.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.4 kcal/mol, tilt angle:   76., depth/thickness:   3.8 A
+fpen= 11.0
+ 
+300 7.0 bact P0188 
+ASNYWILEYLWKVPFDFW
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -  13, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Membrane or micelle binding energy of peptide: -10.3 kcal/mol
+Membrane/micelle binding energy of peptide: -10.3 kcal/mol
+Helix    6 -  13, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Solution NMR detectable helix  1:    6 -  13, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.3 kcal/mol, tilt angle:   70., depth/thickness:   7.8 A
+fpen=  8.0
+ 
+300 7.0 bact P0189 
+EFWRWTEQLASNYWILEY
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -   9, Stability relative to coil in water and bound coil:  1.1 and   1.6 kcal/mol
+Helix 2:   15 -  17, Stability relative to coil in water and bound coil: -1.1 and  -0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.1 kcal/mol
+Helix    2 -  12, Stability relative to coil in water and bound coil: -2.5 and   2.0 kcal/mol
+Helix   15 -  17, Stability relative to coil in water and bound coil: -1.1 and  -0.4 kcal/mol
+Solution NMR detectable helix  1:    2 -  12, Stability relative to coil in water and bound coil: -2.5 and   2.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.4 kcal/mol, tilt angle:   88., depth/thickness:   4.3 A
+Solution NMR detectable helix  2:   15 -  17, Stability relative to coil in water and bound coil: -1.1 and  -0.4 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.0 kcal/mol, tilt angle:   46., depth/thickness:   4.1 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  2 to membrane:    -3.6 kcal/mol, tilt angle:   73., depth/thickness:   0.1 A
+fpen=  7.0
+ 
+300 7.0 bact P0190 
+EQLASNYWILEYLWKVPF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  16, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.3 kcal/mol
+Helix    2 -   6, Stability relative to coil in water and bound coil:  1.2 and   1.7 kcal/mol
+Helix    9 -  16, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Solution NMR detectable helix  1:    2 -   6, Stability relative to coil in water and bound coil:  1.2 and   1.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.0 kcal/mol, tilt angle:   84., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:    9 -  16, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.3 kcal/mol, tilt angle:   70., depth/thickness:   7.8 A
+fpen=  6.5
+ 
+300 7.0 bact P0191 
+FWRWTEQLASNYWILEYL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    6 -  10, Stability relative to coil in water and bound coil:  0.3 and   0.8 kcal/mol
+Helix 2:   14 -  17, Stability relative to coil in water and bound coil: -1.8 and  -0.8 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.1 kcal/mol
+Helix    4 -  11, Stability relative to coil in water and bound coil: -1.0 and   0.9 kcal/mol
+Helix   14 -  17, Stability relative to coil in water and bound coil: -1.8 and  -0.8 kcal/mol
+Solution NMR detectable helix  1:    4 -  11, Stability relative to coil in water and bound coil: -1.0 and   0.9 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.6 kcal/mol, tilt angle:   82., depth/thickness:   2.0 A
+Solution NMR detectable helix  2:   14 -  17, Stability relative to coil in water and bound coil: -1.8 and  -0.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.4 kcal/mol, tilt angle:   67., depth/thickness:   4.3 A
+fpen=  6.0
+ 
+300 7.0 bact P0192 
+LASNYWILEYLWKVPFDF
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   4, Stability relative to coil in water and bound coil:  0.1 and   0.1 kcal/mol
+Helix 2:    7 -  14, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -9.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -9.4 kcal/mol
+Helix    2 -   4, Stability relative to coil in water and bound coil:  0.1 and   0.1 kcal/mol
+Helix    7 -  14, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Solution NMR detectable helix  1:    2 -   4, Stability relative to coil in water and bound coil:  0.1 and   0.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.8 kcal/mol, tilt angle:   57., depth/thickness:   0.9 A
+Solution NMR detectable helix  2:    7 -  14, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.3 kcal/mol, tilt angle:   70., depth/thickness:   7.8 A
+fpen=  5.5
+ 
+300 7.0 bact P0193 
+NYWILEYLWKVPFDFWRG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  11, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Helix 2:   14 -  16, Stability relative to coil in water and bound coil: -2.3 and   0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.9 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.9 kcal/mol
+Helix    4 -  11, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Helix   14 -  17, Stability relative to coil in water and bound coil: -2.5 and   0.0 kcal/mol
+Solution NMR detectable helix  1:    4 -  11, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.3 kcal/mol, tilt angle:   70., depth/thickness:   7.8 A
+Solution NMR detectable helix  2:   14 -  17, Stability relative to coil in water and bound coil: -2.5 and   0.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   71., depth/thickness:   1.6 A
+fpen=  6.0
+ 
+300 7.0 bact P0194 
+QLASNYWILEYLWKVPFD
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   5, Stability relative to coil in water and bound coil:  0.6 and   0.6 kcal/mol
+Helix 2:    8 -  15, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -8.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -8.3 kcal/mol
+Helix    2 -   5, Stability relative to coil in water and bound coil:  0.7 and   1.2 kcal/mol
+Helix    8 -  15, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Solution NMR detectable helix  1:    2 -   5, Stability relative to coil in water and bound coil:  0.7 and   1.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.9 kcal/mol, tilt angle:   85., depth/thickness:   2.5 A
+Solution NMR detectable helix  2:    8 -  15, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.3 kcal/mol, tilt angle:   70., depth/thickness:   7.8 A
+fpen=  6.0
+ 
+300 7.0 bact P0195 
+RWTEQLASNYWILEYLWK
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   8, Stability relative to coil in water and bound coil:  0.3 and   0.8 kcal/mol
+Helix 2:   12 -  16, Stability relative to coil in water and bound coil: -3.2 and  -1.8 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.8 kcal/mol
+Helix    2 -   9, Stability relative to coil in water and bound coil: -0.8 and   1.1 kcal/mol
+Helix   12 -  17, Stability relative to coil in water and bound coil: -3.7 and  -1.1 kcal/mol
+Solution NMR detectable helix  1:    2 -   9, Stability relative to coil in water and bound coil: -0.8 and   1.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.4 kcal/mol, tilt angle:   88., depth/thickness:   2.9 A
+Solution NMR detectable helix  2:   12 -  17, Stability relative to coil in water and bound coil: -3.7 and  -1.1 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -7.0 kcal/mol, tilt angle:   71., depth/thickness:   6.3 A
+fpen=  7.0
+ 
+300 7.0 bact P0196 
+SNYWILEYLWKVPFDFWR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -  12, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Membrane or micelle binding energy of peptide: -10.3 kcal/mol
+Membrane/micelle binding energy of peptide: -10.3 kcal/mol
+Helix    5 -  12, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Helix   15 -  17, Stability relative to coil in water and bound coil: -2.3 and   0.3 kcal/mol
+Solution NMR detectable helix  1:    5 -  12, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.3 kcal/mol, tilt angle:   70., depth/thickness:   7.8 A
+Solution NMR detectable helix  2:   15 -  17, Stability relative to coil in water and bound coil: -2.3 and   0.3 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -5.2 kcal/mol, tilt angle:   70., depth/thickness:   2.4 A
+fpen=  5.5
+ 
+300 7.0 bact P0197 
+TEQLASNYWILEYLWKVP
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   6, Stability relative to coil in water and bound coil:  0.5 and   1.0 kcal/mol
+Helix 2:   10 -  17, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.1 kcal/mol
+Helix    2 -   7, Stability relative to coil in water and bound coil:  0.2 and   0.7 kcal/mol
+Helix   10 -  17, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Solution NMR detectable helix  1:    2 -   7, Stability relative to coil in water and bound coil:  0.2 and   0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -2.6 kcal/mol, tilt angle:   43., depth/thickness:   1.6 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -2.6 kcal/mol, tilt angle:   43., depth/thickness:   1.6 A
+Solution NMR detectable helix  2:   10 -  17, Stability relative to coil in water and bound coil: -6.3 and  -3.7 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -8.3 kcal/mol, tilt angle:   70., depth/thickness:   7.8 A
+fpen=  7.0
+ 
+300 7.0 bact P0198 
+LNPLIKAGIFILKHRRPIGRGIEITGRGIKKFFSK
+Alpha-helices that are more stable than bound coil:
+Helix 1:   11 -  13, Stability relative to coil in water and bound coil: -1.7 and  -1.0 kcal/mol
+Helix 2:   29 -  31, Stability relative to coil in water and bound coil: -0.4 and  -0.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.4 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.4 kcal/mol
+Helix    3 -  15, Stability relative to coil in water and bound coil: -2.0 and   0.5 kcal/mol
+Helix   21 -  32, Stability relative to coil in water and bound coil: -1.5 and   0.2 kcal/mol
+Solution NMR detectable helix  1:    3 -  15, Stability relative to coil in water and bound coil: -2.0 and   0.5 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.6 kcal/mol, tilt angle:   80., depth/thickness:   0.9 A
+Solution NMR detectable helix  2:   21 -  32, Stability relative to coil in water and bound coil: -1.5 and   0.2 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -7.0 kcal/mol, tilt angle:   84., depth/thickness:   2.1 A
+fpen= 12.5
+ 
+300 7.0 bact P0199 
+HFLLTLKNLAKKIL
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -  12, Stability relative to coil in water and bound coil: -5.4 and  -2.8 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.1 kcal/mol
+Helix    2 -  13, Stability relative to coil in water and bound coil: -5.5 and  -2.6 kcal/mol
+Solution NMR detectable helix  1:    2 -  13, Stability relative to coil in water and bound coil: -5.5 and  -2.6 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -8.6 kcal/mol, tilt angle:   79., depth/thickness:   7.1 A
+fpen= 12.0
+ 
+300 7.0 bact P0200 
+ATLHLVLRLRGG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -1.3 and  -0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.3 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.5 kcal/mol
+Helix    4 -  10, Stability relative to coil in water and bound coil: -2.5 and  -1.0 kcal/mol
+Solution NMR detectable helix  1:    4 -  10, Stability relative to coil in water and bound coil: -2.5 and  -1.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.8 kcal/mol, tilt angle:   77., depth/thickness:   5.1 A
+fpen=  7.0
+ 
+300 7.0 bact P0201 
+APKEWMEWDREINNYTSLIHSLIKQGI
+Alpha-helices that are more stable than bound coil:
+Helix 1:    7 -  12, Stability relative to coil in water and bound coil: -1.8 and  -0.2 kcal/mol
+Helix 2:   19 -  23, Stability relative to coil in water and bound coil: -2.2 and  -1.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.8 kcal/mol
+Helix    7 -  15, Stability relative to coil in water and bound coil: -1.6 and   0.3 kcal/mol
+Helix   17 -  25, Stability relative to coil in water and bound coil: -2.1 and  -0.7 kcal/mol
+Solution NMR detectable helix  1:    7 -  15, Stability relative to coil in water and bound coil: -1.6 and   0.3 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.0 kcal/mol, tilt angle:   85., depth/thickness:   1.6 A
+Solution NMR detectable helix  2:   17 -  25, Stability relative to coil in water and bound coil: -2.1 and  -0.7 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.3 kcal/mol, tilt angle:   71., depth/thickness:   2.0 A
+fpen=  9.0
+ 
+300 7.0 bact P0202 
+WMEWDREINNYTSLIGSLIEESQNQQEKNEQELLE
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   7, Stability relative to coil in water and bound coil: -0.4 and   1.0 kcal/mol
+Membrane or micelle binding energy of peptide:  -5.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.7 kcal/mol
+Helix    3 -  10, Stability relative to coil in water and bound coil: -0.9 and   0.7 kcal/mol
+Helix   13 -  27, Stability relative to coil in water and bound coil:  0.5 and   1.8 kcal/mol
+Solution NMR detectable helix  1:    3 -  10, Stability relative to coil in water and bound coil: -0.9 and   0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.3 kcal/mol, tilt angle:   75., depth/thickness:   4.9 A
+Solution NMR detectable helix  2:   13 -  27, Stability relative to coil in water and bound coil:  0.5 and   1.8 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -5.3 kcal/mol, tilt angle:   68., depth/thickness:   3.7 A
+fpen= 11.5
+ 
+300 7.0 bact P0203 
+AGVSGHGQHGVHG
+Membrane or micelle binding energy of peptide:  -0.2 kcal/mol
+Energy of micelle/membrane binding:   -0.2 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0204 
+GHGQHGVHG
+Membrane or micelle binding energy of peptide:  -0.1 kcal/mol
+Energy of micelle/membrane binding:   -0.1 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0205 
+GVSGHGQHGVHG
+Membrane or micelle binding energy of peptide:  -0.2 kcal/mol
+Energy of micelle/membrane binding:   -0.2 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0206 
+HGQHGVHG
+Membrane or micelle binding energy of peptide:  -0.1 kcal/mol
+Energy of micelle/membrane binding:   -0.1 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0207 
+SGHGQHGVHG
+Membrane or micelle binding energy of peptide:  -0.1 kcal/mol
+Energy of micelle/membrane binding:   -0.1 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0208 
+VSGHGQHGVHG
+Membrane or micelle binding energy of peptide:  -0.2 kcal/mol
+Energy of micelle/membrane binding:   -0.2 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0209 
+GGGCGLRRLGCKIAHGVKKYGPTVLRIIRIAG
+Alpha-helices that are more stable than bound coil:
+Helix 1:   24 -  28, Stability relative to coil in water and bound coil: -1.8 and  -0.8 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.6 kcal/mol
+Helix    5 -   8, Stability relative to coil in water and bound coil:  0.1 and   0.6 kcal/mol
+Helix   14 -  16, Stability relative to coil in water and bound coil:  0.8 and   0.8 kcal/mol
+Helix   23 -  31, Stability relative to coil in water and bound coil: -1.9 and  -0.8 kcal/mol
+Solution NMR detectable helix  1:    5 -   8, Stability relative to coil in water and bound coil:  0.1 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.2 kcal/mol, tilt angle:   84., depth/thickness:   1.4 A
+Solution NMR detectable helix  2:   14 -  16, Stability relative to coil in water and bound coil:  0.8 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -2.7 kcal/mol, tilt angle:   89., depth/thickness:   0.3 A
+Solution NMR detectable helix  3:   23 -  31, Stability relative to coil in water and bound coil: -1.9 and  -0.8 kcal/mol
+Transfer energy of alpha-helix  3 to membrane:    -5.6 kcal/mol, tilt angle:   78., depth/thickness:   4.2 A
+fpen=  5.3
+ 
+300 7.0 bact P0210 
+GGLRRLGRKILRAVKKYG
+Alpha-helices that are more stable than bound coil:
+Helix 1:   12 -  15, Stability relative to coil in water and bound coil: -0.3 and  -0.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -2.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.1 kcal/mol
+Helix    2 -  16, Stability relative to coil in water and bound coil: -1.0 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    2 -  16, Stability relative to coil in water and bound coil: -1.0 and   0.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -5.2 kcal/mol, tilt angle:   87., depth/thickness:   4.0 A
+fpen= 15.0
+ 
+300 7.0 bact P0211 
+KRIGLIRLIGKILRGLRRLG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -  17, Stability relative to coil in water and bound coil: -5.6 and  -3.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -6.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -6.4 kcal/mol
+Helix    4 -  19, Stability relative to coil in water and bound coil: -6.4 and  -3.4 kcal/mol
+Solution NMR detectable helix  1:    4 -  19, Stability relative to coil in water and bound coil: -6.4 and  -3.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.9 kcal/mol, tilt angle:   81., depth/thickness:   5.6 A
+fpen= 16.0
+ 
+300 7.0 bact P0212 
+EFVAPFPEVFGK
+Membrane or micelle binding energy of peptide:  -3.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.7 kcal/mol
+Helix    5 -   9, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    5 -   9, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -5.7 kcal/mol, tilt angle:   76., depth/thickness:   5.0 A
+fpen=  5.0
+ 
+300 7.0 bact P0213 
+ENLLRFFVAPFPEVFG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   6, Stability relative to coil in water and bound coil: -3.3 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.0 kcal/mol
+Helix    3 -   6, Stability relative to coil in water and bound coil: -3.3 and  -1.2 kcal/mol
+Helix   10 -  14, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    3 -   6, Stability relative to coil in water and bound coil: -3.3 and  -1.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -6.2 kcal/mol, tilt angle:   71., depth/thickness:   5.0 A
+Solution NMR detectable helix  2:   10 -  14, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -5.7 kcal/mol, tilt angle:   76., depth/thickness:   5.0 A
+fpen=  4.5
+ 
+300 7.0 bact P0214 
+FVAPFPEVFG
+Membrane or micelle binding energy of peptide:  -3.7 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.7 kcal/mol
+Helix    4 -   8, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    4 -   8, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -5.7 kcal/mol, tilt angle:   76., depth/thickness:   5.0 A
+fpen=  5.0
+ 
+300 7.0 bact P0215 
+LNENLLRFFVAPFPEVFG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -3.3 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.5 kcal/mol
+Helix    4 -   8, Stability relative to coil in water and bound coil: -1.3 and   0.8 kcal/mol
+Helix   12 -  16, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    4 -   8, Stability relative to coil in water and bound coil: -1.3 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -5.0 kcal/mol, tilt angle:   69., depth/thickness:   3.1 A
+Solution NMR detectable helix  2:   12 -  16, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -5.7 kcal/mol, tilt angle:   76., depth/thickness:   5.0 A
+fpen=  5.0
+ 
+300 7.0 bact P0216 
+NENLLRFFVAPFPEVFG
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   7, Stability relative to coil in water and bound coil: -3.3 and  -1.2 kcal/mol
+Membrane or micelle binding energy of peptide:  -7.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -7.0 kcal/mol
+Helix    3 -   7, Stability relative to coil in water and bound coil: -1.3 and   0.8 kcal/mol
+Helix   11 -  15, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    3 -   7, Stability relative to coil in water and bound coil: -1.3 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -5.0 kcal/mol, tilt angle:   69., depth/thickness:   3.1 A
+Solution NMR detectable helix  2:   11 -  15, Stability relative to coil in water and bound coil: -0.6 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -5.7 kcal/mol, tilt angle:   76., depth/thickness:   5.0 A
+fpen=  5.0
+ 
+300 7.0 bact P0217 
+VAPFPEV
+Membrane or micelle binding energy of peptide:  -1.4 kcal/mol
+Energy of micelle/membrane binding:   -1.4 kcal/mol
+No alpha-helices
+fpen=  0.0
+ 
+300 7.0 bact P0218 
+LIIFRILISH
+Alpha-helices that are more stable than bound coil:
+Helix 1:    2 -   7, Stability relative to coil in water and bound coil: -3.9 and  -1.9 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.2 kcal/mol
+Helix    2 -   9, Stability relative to coil in water and bound coil: -4.2 and  -2.2 kcal/mol
+Solution NMR detectable helix  1:    2 -   9, Stability relative to coil in water and bound coil: -4.2 and  -2.2 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -7.4 kcal/mol, tilt angle:   73., depth/thickness:   5.8 A
+fpen=  8.0
+ 
+300 7.0 bact P0219 
+AKRHHGYHRKFH
+Membrane or micelle binding energy of peptide:  -1.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.5 kcal/mol
+Helix    7 -  10, Stability relative to coil in water and bound coil:  0.8 and   1.1 kcal/mol
+Solution NMR detectable helix  1:    7 -  10, Stability relative to coil in water and bound coil:  0.8 and   1.1 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -2.5 kcal/mol, tilt angle:   62., depth/thickness:   3.0 A
+fpen=  4.0
+ 
+300 7.0 bact P0220 
+DSAAKRHHGYKR
+Alpha-helices that are more stable than bound coil:
+Helix 1:    3 -   6, Stability relative to coil in water and bound coil: -0.3 and  -0.3 kcal/mol
+Membrane or micelle binding energy of peptide:  -0.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.6 kcal/mol
+Helix    3 -   7, Stability relative to coil in water and bound coil: -0.1 and  -0.1 kcal/mol
+Solution NMR detectable helix  1:    3 -   7, Stability relative to coil in water and bound coil: -0.1 and  -0.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.0 kcal/mol, tilt angle:   83., depth/thickness:   2.2 A
+fpen=  5.0
+ 
+300 7.0 bact P0221 
+WDSHAKRHHGYKRKFHEKHHSHRGY
+Alpha-helices that are more stable than bound coil:
+Helix 1:    4 -   6, Stability relative to coil in water and bound coil:  0.6 and   0.6 kcal/mol
+Membrane or micelle binding energy of peptide:  -3.2 kcal/mol
+Membrane/micelle binding energy of peptide:  -3.2 kcal/mol
+Helix    3 -   8, Stability relative to coil in water and bound coil:  2.0 and   2.0 kcal/mol
+Helix   11 -  14, Stability relative to coil in water and bound coil:  0.9 and   1.2 kcal/mol
+Helix   16 -  19, Stability relative to coil in water and bound coil:  1.6 and   1.6 kcal/mol
+Solution NMR detectable helix  1:    3 -   8, Stability relative to coil in water and bound coil:  2.0 and   2.0 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -1.4 kcal/mol, tilt angle:   72., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:   11 -  14, Stability relative to coil in water and bound coil:  0.9 and   1.2 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -2.0 kcal/mol, tilt angle:   57., depth/thickness:   2.6 A
+Solution NMR detectable helix  3:   16 -  19, Stability relative to coil in water and bound coil:  1.6 and   1.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  3 to membrane:    -2.4 kcal/mol, tilt angle:   51., depth/thickness:   2.8 A
+fpen=  4.7
+ 
+300 7.0 bact P0222 
+RSELIVHQR
+Membrane or micelle binding energy of peptide:  -0.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.8 kcal/mol
+Helix    4 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.7 kcal/mol
+Solution NMR detectable helix  1:    4 -   8, Stability relative to coil in water and bound coil: -0.0 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.9 kcal/mol, tilt angle:   68., depth/thickness:   5.2 A
+fpen=  5.0
+ 
+300 7.0 bact P0223 
+SRSELIVHQR
+Membrane or micelle binding energy of peptide:  -0.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -0.8 kcal/mol
+Helix    2 -   4, Stability relative to coil in water and bound coil:  1.0 and   1.0 kcal/mol
+Helix    6 -   9, Stability relative to coil in water and bound coil: -0.6 and  -0.3 kcal/mol
+Solution NMR detectable helix  1:    2 -   4, Stability relative to coil in water and bound coil:  1.0 and   1.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -1.5 kcal/mol, tilt angle:   81., depth/thickness:   0.0 A
+Solution NMR detectable helix  2:    6 -   9, Stability relative to coil in water and bound coil: -0.6 and  -0.3 kcal/mol
+Transfer energy of alpha-helix  2 to membrane:    -4.2 kcal/mol, tilt angle:   68., depth/thickness:   1.2 A
+fpen=  3.5
+ 
+300 7.0 bact P0224 
+LKNVGKEVGMDVVRTGIDIAGCKIKGEC
+Alpha-helices that are more stable than bound coil:
+Helix 1:   11 -  13, Stability relative to coil in water and bound coil:  0.2 and   0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.5 kcal/mol
+Helix   11 -  24, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Solution NMR detectable helix  1:   11 -  24, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   73., depth/thickness:   2.8 A
+fpen= 14.0
+ 
+300 7.0 bact P0225 
+NVGKEVGMDVVRTGIDIAGCKIKGEC
+Alpha-helices that are more stable than bound coil:
+Helix 1:    9 -  11, Stability relative to coil in water and bound coil:  0.2 and   0.4 kcal/mol
+Membrane or micelle binding energy of peptide:  -1.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -1.0 kcal/mol
+Helix    9 -  22, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Solution NMR detectable helix  1:    9 -  22, Stability relative to coil in water and bound coil:  1.6 and   2.4 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.7 kcal/mol, tilt angle:   73., depth/thickness:   2.8 A
+fpen= 14.0
+ 
+300 7.0 bact P0226 
+GLVTSLIKGAGKLLGGLFGSVTGGQS
+Alpha-helices that are more stable than bound coil:
+Helix 1:    5 -   8, Stability relative to coil in water and bound coil: -0.6 and   0.1 kcal/mol
+Membrane or micelle binding energy of peptide:  -4.0 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.0 kcal/mol
+Helix    2 -  21, Stability relative to coil in water and bound coil: -2.3 and   1.7 kcal/mol
+Solution NMR detectable helix  1:    2 -  21, Stability relative to coil in water and bound coil: -2.3 and   1.7 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -9.5 kcal/mol, tilt angle:   88., depth/thickness:   4.3 A
+fpen= 20.0
+ 
+300 7.0 bact P0227 
+GERVWDRGNVTLLCDCPNGP
+Membrane or micelle binding energy of peptide:  -2.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.6 kcal/mol
+Helix    4 -   6, Stability relative to coil in water and bound coil: -0.8 and   0.7 kcal/mol
+Helix   12 -  15, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    4 -   6, Stability relative to coil in water and bound coil: -0.8 and   0.7 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.9 kcal/mol, tilt angle:   55., depth/thickness:   0.4 A
+Solution NMR detectable helix  2:   12 -  15, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -4.0 kcal/mol, tilt angle:   57., depth/thickness:   3.9 A
+fpen=  3.5
+ 
+300 7.0 bact P0228 
+GSRIPTGERVWDRGNVTLLC
+Membrane or micelle binding energy of peptide:  -2.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.8 kcal/mol
+Helix    6 -  12, Stability relative to coil in water and bound coil:  1.6 and   3.1 kcal/mol
+Helix   17 -  19, Stability relative to coil in water and bound coil: -0.5 and   0.5 kcal/mol
+Solution NMR detectable helix  1:    6 -  12, Stability relative to coil in water and bound coil:  1.6 and   3.1 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -3.4 kcal/mol, tilt angle:   89., depth/thickness:   1.7 A
+Solution NMR detectable helix  2:   17 -  19, Stability relative to coil in water and bound coil: -0.5 and   0.5 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.7 kcal/mol, tilt angle:   85., depth/thickness:   1.7 A
+fpen=  5.0
+ 
+300 7.0 bact P0229 
+PTGERVWDRGNVTLLCDCPN
+Membrane or micelle binding energy of peptide:  -2.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.6 kcal/mol
+Helix    4 -   8, Stability relative to coil in water and bound coil:  1.8 and   3.3 kcal/mol
+Helix   14 -  17, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    4 -   8, Stability relative to coil in water and bound coil:  1.8 and   3.3 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -1.5 kcal/mol, tilt angle:   51., depth/thickness:   0.4 A
+Solution NMR detectable helix  2:   14 -  17, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -4.0 kcal/mol, tilt angle:   57., depth/thickness:   3.9 A
+fpen=  4.5
+ 
+300 7.0 bact P0230 
+RGNVTLLCDCPNGPWVWVPA
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.1 kcal/mol
+Helix    6 -   9, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+Helix   14 -  16, Stability relative to coil in water and bound coil: -0.7 and   0.8 kcal/mol
+Solution NMR detectable helix  1:    6 -   9, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -4.0 kcal/mol, tilt angle:   57., depth/thickness:   3.9 A
+Solution NMR detectable helix  2:   14 -  16, Stability relative to coil in water and bound coil: -0.7 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.5 kcal/mol, tilt angle:   72., depth/thickness:   1.5 A
+fpen=  3.5
+ 
+300 7.0 bact P0231 
+RIPTGERVWDRGNVTLLCDC
+Membrane or micelle binding energy of peptide:  -2.8 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.8 kcal/mol
+Helix    3 -  10, Stability relative to coil in water and bound coil:  1.3 and   2.8 kcal/mol
+Helix   16 -  19, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    3 -  10, Stability relative to coil in water and bound coil:  1.3 and   2.8 kcal/mol
+Transfer energy of alpha-helix  1 to membrane:    -4.5 kcal/mol, tilt angle:   84., depth/thickness:   2.2 A
+Solution NMR detectable helix  2:   16 -  19, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -4.0 kcal/mol, tilt angle:   57., depth/thickness:   3.9 A
+fpen=  6.0
+ 
+300 7.0 bact P0232 
+RVWDRGNVTLLCDCPNGPWV
+Membrane or micelle binding energy of peptide:  -4.1 kcal/mol
+Membrane/micelle binding energy of peptide:  -4.1 kcal/mol
+Helix    2 -   4, Stability relative to coil in water and bound coil: -0.7 and   0.8 kcal/mol
+Helix   10 -  13, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    2 -   4, Stability relative to coil in water and bound coil: -0.7 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.8 kcal/mol, tilt angle:   50., depth/thickness:   1.0 A
+A possibly incorrect mode of membrane insertion was detected.
+Recalculated position and stability of the alpha-helix: 
+Transfer energy of alpha-helix  1 to membrane:    -3.8 kcal/mol, tilt angle:   50., depth/thickness:   1.0 A
+Solution NMR detectable helix  2:   10 -  13, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -4.0 kcal/mol, tilt angle:   57., depth/thickness:   3.9 A
+fpen=  3.5
+ 
+300 7.0 bact P0233 
+TGEKVWDRGNVTLLCDCP
+Membrane or micelle binding energy of peptide:  -2.6 kcal/mol
+Membrane/micelle binding energy of peptide:  -2.6 kcal/mol
+Helix    5 -   7, Stability relative to coil in water and bound coil: -0.5 and   1.0 kcal/mol
+Helix   13 -  16, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+Solution NMR detectable helix  1:    5 -   7, Stability relative to coil in water and bound coil: -0.5 and   1.0 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -3.6 kcal/mol, tilt angle:   58., depth/thickness:   1.6 A
+Solution NMR detectable helix  2:   13 -  16, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -4.0 kcal/mol, tilt angle:   57., depth/thickness:   3.9 A
+fpen=  3.5
+ 
+300 7.0 bact P0234 
+WDRGNVTLLCDCPNGPWVWV
+Membrane or micelle binding energy of peptide:  -5.5 kcal/mol
+Membrane/micelle binding energy of peptide:  -5.5 kcal/mol
+Helix    8 -  11, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+Helix   16 -  18, Stability relative to coil in water and bound coil: -0.7 and   0.8 kcal/mol
+Solution NMR detectable helix  1:    8 -  11, Stability relative to coil in water and bound coil: -0.4 and   0.6 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  1 to membrane:    -4.0 kcal/mol, tilt angle:   57., depth/thickness:   3.9 A
+Solution NMR detectable helix  2:   16 -  18, Stability relative to coil in water and bound coil: -0.7 and   0.8 kcal/mol
+This is possibly a false helix!
+Transfer energy of alpha-helix  2 to membrane:    -3.5 kcal/mol, tilt angle:   72., depth/thickness:   1.5 A
+fpen=  3.5
+pen=   10.26

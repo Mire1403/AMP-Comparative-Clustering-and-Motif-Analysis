@@ -6,9 +6,9 @@ import os
 # CONFIG
 # ==============================
 
-FMAP_OUTPUT = "results/statistics/09_fmap_output/fmap_output.txt"
-METADATA = "results/statistics/08_fmap_input/motif_selected_sequences.csv"
-OUTPUT_FILE = "results/statistics/09_fmap_output/fmap_final_results.csv"
+FMAP_OUTPUT = "results/09_motif_mechanism_output/01_fmap_output/fmap_output.txt"
+METADATA = "results/09_motif_mechanism_input/01_fmap_input/motif_selected_sequences.csv"
+OUTPUT_FILE = "results/10_motif_mechanism_output/01_fmap_output/fmap_final_results.csv"
 
 # ==============================
 # PARSER

@@ -6,7 +6,7 @@ import os
 # CONFIG
 # =========================
 
-BASE_DIR = "results/statistics/10_ppm_output"
+BASE_DIR = "results/10_motif_mechanism_output/02_ppm_output"
 
 DATAPAR1 = f"{BASE_DIR}/datapar1"
 DATAPAR2 = f"{BASE_DIR}/datapar2"

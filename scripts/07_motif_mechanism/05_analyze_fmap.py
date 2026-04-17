@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-INPUT_FILE = PROJECT_ROOT / "results" / "statistics" / "09_fmap_output" / "fmap_final_results.csv"
-OUTPUT_DIR = PROJECT_ROOT / "results" / "statistics" / "11_motif_activity_analysis" / "fmap"
+INPUT_FILE = PROJECT_ROOT / "results" / "10_motif_mechanism_output" / "01_fmap_output" / "fmap_final_results.csv"
+OUTPUT_DIR = PROJECT_ROOT / "results" / "11_mechanism_analysis" / "1_motif_activity_analysis" / "fmap"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 df = pd.read_csv(INPUT_FILE)
@@ -33,14 +33,14 @@ for col in NUMERIC_COLUMNS:
 
 df = df.dropna(subset=["Membrane_Binding_Energy", "Tilt_Angle"])
 
-df["Helix_Length"] = df["Helix_End"] - df["Helix_Start"]
+df["Helix_Length"] = df["Helix_End"] - df["Helix_Start"] + 1
 
 def compute_overlap(row):
     if pd.isna(row["Helix_Start"]) or pd.isna(row["Helix_End"]) or pd.isna(row["Motif_Start"]) or pd.isna(row["Motif_End"]):
         return 0
     start = max(row["Helix_Start"], row["Motif_Start"])
     end = min(row["Helix_End"], row["Motif_End"])
-    return max(0, end - start)
+    return max(0, end - start + 1)
 
 df["Motif_Overlap"] = df.apply(compute_overlap, axis=1)
 

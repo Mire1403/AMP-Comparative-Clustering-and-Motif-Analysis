@@ -31,7 +31,7 @@ PROJECT_ROOT = find_repo_root(Path(__file__).parent)
 # =====================================================
 
 FIMO_BASE = PROJECT_ROOT / "results" / "05_motif_scanning"
-OUT_DIR = PROJECT_ROOT / "results" / "statistics" / "03_fimo_enrichment"
+OUT_DIR = PROJECT_ROOT / "results" / "06_motif_statistics" / "01_fimo_enrichment"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 CLUSTER_DIR = PROJECT_ROOT / "results" / "02_clustering"

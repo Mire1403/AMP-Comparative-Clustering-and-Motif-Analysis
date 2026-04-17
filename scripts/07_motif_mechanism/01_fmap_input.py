@@ -1,3 +1,5 @@
+from random import random
+
 import pandas as pd
 import os
 import re
@@ -6,9 +8,9 @@ import re
 # CONFIGURATION
 # ==============================
 
-MOTIF_FILE = "results/statistics/05b_motif_family_analysis_tomtom/motif_family_summary_tomtom.csv"
+MOTIF_FILE = "results/07_motif_families/01_motif_family_analysis_tomtom/motif_family_summary_tomtom.csv"
 AMP_FASTA = "data/final/AMP_MASTER.fasta"
-OUTDIR = "results/statistics/08_fmap_input"
+OUTDIR = "results/09_motif_mechanism_input/01_fmap_input"
 
 SEQS_PER_MOTIF = 10
 MAX_LEN = 35
@@ -38,6 +40,7 @@ def read_fasta(path):
             yield header, "".join(seq)
 
 def motif_to_regex(motif):
+    motif = re.escape(motif)
     motif = motif.replace("J", "[LI]")
     motif = motif.replace("X", ".")
     return motif
@@ -62,7 +65,7 @@ def clean_sequence(seq):
 # ==============================
 
 def load_motifs(path):
-    df = pd.read_csv(path, sep=None, engine="python")
+    df = pd.read_csv(path, sep=";", encoding="utf-8-sig")
 
     df.columns = (
         df.columns
@@ -99,7 +102,10 @@ def main():
     print(f"\nFamilies after filtering: {len(motifs_df)}")
 
     print("\nLoading AMP database...")
+    
     amp_seqs = list(read_fasta(AMP_FASTA))
+    import random
+    random.shuffle(amp_seqs)
 
     results = []
     fmap_entries = []

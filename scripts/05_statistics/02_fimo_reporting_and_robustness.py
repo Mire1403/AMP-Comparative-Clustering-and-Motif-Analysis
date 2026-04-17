@@ -38,8 +38,8 @@ def find_repo_root(start: Path) -> Path:
 
 PROJECT_ROOT = find_repo_root(Path(__file__).parent)
 
-ENRICH_DIR = PROJECT_ROOT / "results" / "statistics" / "03_fimo_enrichment"
-OUT_DIR = PROJECT_ROOT / "results" / "statistics" / "04_fimo_reporting"
+ENRICH_DIR = PROJECT_ROOT / "results" / "06_motif_statistics" / "01_fimo_enrichment"
+OUT_DIR = PROJECT_ROOT / "results" / "06_motif_statistics" / "02_fimo_reporting"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 MOTIF_DIR = PROJECT_ROOT / "results" / "04_motif_discovery"
